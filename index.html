@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<head>
+  <title>신종코로나 바이러스 국내 확산 지도 - coronamap</title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+   <script type="text/javascript" src="script.js"></script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156991281-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'UA-156991281-1');
+   </script>
+
+  </head>
+  <body>
+
+<div class="map-responsive">
+<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-t6kwDe8TJYpiJ1Wv0X_s8ZsjAtmaEEB" width="640" height="100%" style="border:2px solid white;"></iframe>
+</div>
+
+
+
+    <div id="floatingmenu">
+    <div id="listcontainer">
+      <!-- 정보 패널 -->
+
+
+
+        <div class='widget widget--2x1--korea'>
+          <header class='widget-header' style="height:40px;">
+            <div class='widget-header-indicator' style="background: #ffff00;">  </div>
+            <span style="margin-left:30px;">국내 통계 <span style="font-size:10px; color:gray;"> (2020-01-26 09:00 업데이트)</span></span>
+
+          </header>
+          <div class='widget-content'>
+            <canvas id='donut' width='200px'></canvas>
+            <ul class='value-list'>
+              <li>
+                <div class='description' style="color:#f0f0f0">
+                  확진자
+                </div>
+                <div class='value'>
+                  <span>3 <span style="font-size:20px;">명</span></span>
+                </div>
+              </li>
+              <li>
+                <div class='description' style="color:#f0f0f0">
+                  유증상자
+                </div>
+                <div class='value'>
+                  <span>48 <span style="font-size:20px;">명 (격리1, 해제 47)</span></span>
+                </div>
+              </li>
+              <li>
+                <div class='description' style="color:#f0f0f0">
+                  사망자
+                </div>
+                <div class='value'>
+                  <span>0 <span style="font-size:20px;">명</span></span>
+                  <span class='negative small'>
+                     0%<span style="font-size:15px;"> (단순계산)</span>
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          </div>
+
+          <div class='widget widget--2x1'>
+            <header class='widget-header' style="height:40px;">
+              <div class='widget-header-indicator'>  </div>
+              <span style="margin-left:30px;">전세계 통계 <span style="font-size:10px; color:gray;"> (2020-01-26 09:00 업데이트)</span></span>
+
+            </header>
+            <div class='widget-content'>
+              <canvas id='donut' width='200px'></canvas>
+              <ul class='value-list'>
+                <li>
+                  <div class='description' style="color:#f0f0f0">
+                    확진자
+                  </div>
+                  <div class='value'>
+                    <span>2,010 <span style="font-size:20px;">명</span></span>
+                  </div>
+                </li>
+                <li>
+                  <div class='description' style="color:#f0f0f0">
+                    사망자
+                  </div>
+                  <div class='value'>
+                    <span>56 <span style="font-size:20px;">명</span></span>
+                    <span class='negative small'>
+                       2.8%<span style="font-size:15px;"> (단순계산)</span>
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            </div>
+
+<div id="footer--contact" style="color:white; text-align:center;">
+  <br>
+<span style="color:gray;">이 사이트는 정부 제공 데이터를 기준으로 합니다.</span><br>
+<span>오류/개선사항 등 문의는 아래 이메일로 부탁드립니다.</span>
+<a style="color:white;" href="mailto:wuhancoronamapkr@gmail.com">wuhancoronamapkr@gmail.com</a>
+
+</div>
+
+</body>
+
+</html>
