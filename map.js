@@ -10,7 +10,7 @@ var map = new mapboxgl.Map({
 });
 
 
-// Add geolocate control to the map.
+/* Add geolocate control to the map.
 map.addControl(
 new mapboxgl.GeolocateControl({
 positionOptions: {
@@ -19,7 +19,7 @@ enableHighAccuracy: false
 trackUserLocation: false
 })
 );
-
+*/
 
 var geojson_hospital = {
   type: 'FeatureCollection',
