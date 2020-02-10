@@ -1278,7 +1278,62 @@ var geojson_place = {
                                                       title: '인천국제공항',
                                                       description: ''
                                                     }
-                                                  },]
+                                                  },
+             {
+                                                    type: 'Feature',
+                                                    geometry: {
+                                                      type: 'Point',
+                                                      coordinates: [126.811382, 37.417265]
+                                                    },
+                                                    properties: {
+                                                      title: '매화할인마트',
+                                                      description: '(20-02-09 25번 확진자) [2월 5일] 도보로 경기 시흥시 소재 슈퍼마켓 방문'
+                                                    }
+                                                  },
+             {
+                                                    type: 'Feature',
+                                                    geometry: {
+                                                      type: 'Point',
+                                                      coordinates: [126.789514, 37.444550]
+                                                    },
+                                                    properties: {
+                                                      title: '신천연합의원 선별진료소',
+                                                      description: '(20-02-09 25, 26번 확진자) [2월 7일 오전 9시] 자차 이용하여 시흥시 소재 선별진료소 방문<br>[2월 8일] 오후 2시 자차 이용해 의료기관 방문.<br>(20-02-09 27번 확진자) [2월 5일 15:30 ~ 17:25] 자차 이용해 시흥시 소재 선별진료소 방문 후 자택 귀가.'
+                                                    }
+                                                  },
+             {
+                                                    type: 'Feature',
+                                                    geometry: {
+                                                      type: 'Point',
+                                                      coordinates: [126.796396, 37.438150]
+                                                    },
+                                                    properties: {
+                                                      title: '엘마트 시흥점',
+                                                      description: '(20-02-09 25,26번 확진자) [2월 7일 오전 10:44 ~ 11:13] 자차 이용하여 슈퍼마켓 방문 후 자택 귀가'
+                                                    }
+                                                  },
+             {
+                                                    type: 'Feature',
+                                                    geometry: {
+                                                      type: 'Point',
+                                                      coordinates: [113.576466, 22.158054]
+                                                    },
+                                                    properties: {
+                                                      title: '에어마카오 NX826',
+                                                      description: '(20-02-09 27번 확진자) [1월 31일] 오후 8시 40분 마카오에서 인천공항으로 귀국 후 9시 경 택시 이용해 자택으로 이동'
+                                                    }
+                                                  },
+             {
+                                                    type: 'Feature',
+                                                    geometry: {
+                                                      type: 'Point',
+                                                      coordinates: [126.809913, 37.432345]
+                                                    },
+                                                    properties: {
+                                                      title: '그옛날손짜장',
+                                                      description: '(20-02-09 27번 확진자) [2월 3일] 오후 7시 30분 시흥시 안현동 소재 태양38년전통 그옛날손짜장 방문'
+                                                    }
+                                                  }]
 };
 
 geojson_hospital.features.forEach(function(marker) {
