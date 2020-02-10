@@ -1,16 +1,3 @@
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else {
-    console.log('현재 위치를 확인할 수 없습니다');
-  }
-}
-
-function showPosition(position) {
-var lat = position.coords.latitude;
-  var long = position.coords.longitude;
-}
-
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWNlY3JlYW0wOTEwIiwiYSI6ImNrNmFkNjV5bjBjZm8zcHJ6MTV0OW0wamIifQ.ihNhyKaC6K6yO09WyU7LjQ';
 
