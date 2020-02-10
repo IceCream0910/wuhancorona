@@ -1,10 +1,23 @@
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    console.log('현재 위치를 확인할 수 없습니다');
+  }
+}
+
+function showPosition(position) {
+var lat = position.coords.latitude;
+  var long = position.coords.longitude;
+}
+
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWNlY3JlYW0wOTEwIiwiYSI6ImNrNmFkNjV5bjBjZm8zcHJ6MTV0OW0wamIifQ.ihNhyKaC6K6yO09WyU7LjQ';
 
 var map = new mapboxgl.Map({
   container: 'map',
   style: 'mapbox://styles/icecream0910/ck6f1lye23yte1ilfcftdcdym',
-  center: [126.7888, 32.7888],
+  center: [lat, long],
   zoom: 5.7
 
 });
