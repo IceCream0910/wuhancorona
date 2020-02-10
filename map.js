@@ -1265,7 +1265,7 @@ var geojson_place = {
                                                   },
                                                   properties: {
                                                     title: '매화동',
-                                                    description: '(20-02-07 25번 확진자) 거주지 시흥시 매화동으로 확인.'
+                                                    description: '(20-02-09 25번 확진자) 거주지 시흥시 매화동으로 확인.'
                                                   }
                                                 },
                                                 {
