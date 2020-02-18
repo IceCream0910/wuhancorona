@@ -166,7 +166,19 @@ var geojson_hospital = {
       title: '경기도립의료원안성병원(2)',
       description: '(20-02-09 26, 27번 확진자) [2월 9일] 검사 실시하여 결과 양성 확인 후 경기도 지정 감염병관리기관으로 이송돼 격리 치료중.'
     }
-  }]
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.5406159, 35.8596492]
+    },
+    properties: {
+      title: '대구의료원',
+      description: '(20-02-18 31번 확진자) 대구 수성구 보건소에서 검사 후 양성 확인 후 해당 병원에서 격리 치료.'
+    }
+  }
+]
 };
 
 var geojson_place = {
