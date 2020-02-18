@@ -1489,7 +1489,7 @@ var geojson_place = {
                      coordinates: [128.582389, 35.838970]
                     },
                      properties: {
-                    title: '남구 대구교회',
+                    title: '남구 신천지 대구교회',
                     description: '(20-02-18 31번 확진자) [2월 9일, 16일] 대구 남구 소재 교회에서 2시간씩 예배 참석.'
                                 }
                               },
