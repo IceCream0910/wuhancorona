@@ -1477,7 +1477,7 @@ var geojson_place = {
                      coordinates: [128.635214, 35.858396]
                     },
                      properties: {
-                    title: ',새로난한방병원',
+                    title: '새로난한방병원',
                     description: '(20-02-18 31번 확진자) [2월 7일] 전날 교통사고 당한 뒤 수성구 범어동 소재 한방병원에 입원.'
                                 }
                               },
