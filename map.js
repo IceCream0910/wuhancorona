@@ -2201,7 +2201,7 @@ map.addSource('lines', {
 {
 'type': 'Feature',
 'properties': {
-'color': '##4a7d00' // red
+'color': '#4a7d00' // red
 },
 'geometry': {
 'type': 'LineString',
