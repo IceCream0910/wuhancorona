@@ -1713,7 +1713,7 @@ var geojson_place = {
        type: 'Feature',
        geometry: {
        type: 'Point',
-       coordinates: [127.005990, 37.576682]
+       coordinates: [126.969122, 37.581828]
        },
        properties: {
        title: '종로구 보건소',
@@ -2334,7 +2334,7 @@ map.addSource('lines', {
 'coordinates': [
   //56 확진자
   [127.005990, 37.576682],
-  [127.005990, 37.576682],
+  [126.969122, 37.581828],
   [127.098167, 37.613044],
   
 ]
