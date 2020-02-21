@@ -23,7 +23,7 @@ essential: true // this animation is considered essential with respect to prefer
 }
 
 
-
+/*
 map.addControl(
 new mapboxgl.GeolocateControl({
 positionOptions: {
@@ -37,7 +37,7 @@ accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl
 })  
 );
-
+*/
 
 var geojson_hospital = {
   type: 'FeatureCollection',
