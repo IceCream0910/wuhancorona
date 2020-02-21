@@ -1,4 +1,124 @@
 
+  $( document ).ready( function() {
+    toastr.options = {
+                      closeButton: true,
+                      progressBar: false,
+                      showMethod: 'slideDown',
+                      timeOut: 5000
+                  };
+                  toastr.info('최근 국내 확진자가 다수 발생함에 따라 보건당국의 역학조사의 신속성이 낮아지고 있습니다. 정보가 공개되는 대로 업데이트하고 있으니 양해 부탁드리며, 개인 위생 수칙을 준수하여 지역사회 확산 저지에 기여하여 주시기 바랍니다.', '확진자 급증에 따른 업데이트 지연');
+
+angular.module("myApp", [])
+
+.controller('mainCtrl', function($scope, getCryptoNewsArticles){
+  
+  getCryptoNewsArticles.getNewsArticles(function(response){
+    $scope.articles = response.data.articles;   
+  });  
+})
+
+.service('getCryptoNewsArticles', function($http){
+   this.getNewsArticles = function(callback){
+  $http.get('https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=100&sortBy=publishedAt')
+     .then(callback);
+     //inside services
+     
+   };
+  
+})
+
+    document.getElementById("map").style.display = 'block';
+    $('.container').removeClass('modal-open');
+    document.getElementById("prevent").style.display = 'none';
+    map.setLayoutProperty('country-label', 'text-field', [
+        'get',
+        'name_' + ko
+    ]);
+  } );
+
+  $('.js-click-map').click(function(){
+    $('.container').removeClass('modal-open');
+    document.getElementById("map").style.display = 'block';
+    document.getElementById("prevent").style.display = 'none';
+    $('.container').removeClass('modal-place-open');
+    document.getElementById("placePopupBtn").style.display = 'block';
+    document.getElementById("geocoder").style.display = 'block';
+
+
+});
+
+$('.js-click-dashboard').click(function(){
+  $('.container').addClass('modal-open');
+  document.getElementById("map").style.display = 'none';
+  document.getElementById("prevent").style.display = 'none';
+  $('.container').removeClass('modal-place-open');
+  document.getElementById("placePopupBtn").style.display = 'none';
+document.getElementById("geocoder").style.display = 'none';
+
+});
+
+$('.js-click-prevent').click(function(){
+  $('.container').removeClass('modal-open');
+  document.getElementById("map").style.display = 'none';
+  document.getElementById("prevent").style.display = 'block';
+  $('.container').removeClass('modal-place-open');
+  document.getElementById("placePopupBtn").style.display = 'none';
+document.getElementById("geocoder").style.display = 'none';
+
+
+});
+
+function openplacepopup() {
+  $('.container').addClass('modal-place-open');
+  document.getElementById("placePopupBtn").style.display = 'none';
+}
+
+function closeplacepopup() {
+  $('.container').removeClass('modal-place-open');
+  document.getElementById("placePopupBtn").style.display = 'block';
+}
+
+
+const tabs = document.querySelectorAll('.tab');
+
+tabs.forEach(clickedTab =>{
+  clickedTab.addEventListener('click', () =>{
+    tabs.forEach(tab => {
+      tab.classList.remove('active');
+    });
+    clickedTab.classList.add('active');
+  });
+});
+
+function handlePermission() {
+  navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state == 'granted') {
+      report(result.state);
+      geoBtn.style.display = 'none';
+    } else if (result.state == 'prompt') {
+      report(result.state);
+      geoBtn.style.display = 'none';
+      navigator.geolocation.getCurrentPosition(revealPosition,positionDenied,geoSettings);
+    } else if (result.state == 'denied') {
+      report(result.state);
+      geoBtn.style.display = 'inline';
+    }
+    result.onchange = function() {
+      report(result.state);
+    }
+  });
+}
+
+function report(state) {
+  console.log('Permission ' + state);
+}
+
+
+handlePermission();
+
+
+
+// 여기서부터 지도 코드
 mapboxgl.accessToken = 'pk.eyJ1IjoiaWNlY3JlYW0wOTEwIiwiYSI6ImNrNmFkNjV5bjBjZm8zcHJ6MTV0OW0wamIifQ.ihNhyKaC6K6yO09WyU7LjQ';
 
 var map = new mapboxgl.Map({
@@ -22,22 +142,13 @@ essential: true // this animation is considered essential with respect to prefer
 });
 }
 
-
-/*
-map.addControl(
-new mapboxgl.GeolocateControl({
-positionOptions: {
-enableHighAccuracy: false
-},
-trackUserLocation: false
-})
-  
-new MapboxGeocoder({
+var geocoder = new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})  
-);
-*/
+mapboxgl: mapboxgl,
+placeholder: "장소 검색"
+});
+ 
+document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
 
 var geojson_hospital = {
   type: 'FeatureCollection',
@@ -251,7 +362,18 @@ var geojson_hospital = {
       description: '(20-02-19 54, 55번 확진자) 해당 병원에서 격리치료.'
     }
   },           
-             
+         
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.140564, 35.847185]
+    },
+    properties: {
+      title: '전북대병원',
+      description: '(20-02-20 113번 확진자) 해당 병원에서 격리치료.'
+    }
+  },             
 ]
 };
 
@@ -1723,7 +1845,164 @@ var geojson_place = {
        title: '종로구 보건소',
        description: '(20-02-19 56번 확진자) 폐렴으로 종로구보건소 선별진료소를 거쳐 확진 판정.'
        }
-        },      
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.630224, 35.878282]
+       },
+       properties: {
+       title: '동대구 터미널',
+       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.'
+       }
+        },
+        
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.121693, 35.833388]
+       },
+       properties: {
+       title: 'AXA손해보험 전주보상센터',
+       description: '(20-02-20 113번 확진자) [2월 10, 11, 12일] 직장 출근.'
+       }
+        },
+
+ {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.101762, 35.849505]
+       },
+       properties: {
+       title: 'KS공업사',
+       description: '(20-02-20 113번 확진자) [2월 10일] 오후 2시 ~ 3시 지하1층 방문.'
+       }
+        },
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.111001, 35.843625]
+       },
+       properties: {
+       title: '푸라닭 전주하가점',
+       description: '(20-02-20 113번 확진자) [2월 10일] 오후 8시 ~ 9시 치킨집 이용.'
+       }
+        }, 
+
+             {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.149794, 35.805368]
+       },
+       properties: {
+       title: '상진바이크샵',
+       description: '(20-02-20 113번 확진자) [2월 13일] 전주 서신동 소재 오토바이점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.116441, 35.828115]
+       },
+       properties: {
+       title: '안전오토바이 종합랜드',
+       description: '(20-02-20 113번 확진자) [2월 13일] 전주 서신동 소재 오토바이점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.121114, 35.861360]
+       },
+       properties: {
+       title: '원이비인후과 의원',
+       description: '(20-02-20 113번 확진자) [2월 14일] 오후 4시 ~ 5시 송천동 소재 이비인후과 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.121210, 35.861374]
+       },
+       properties: {
+       title: '전주종로약국',
+       description: '(20-02-20 113번 확진자) [2월 14일] 이비인후과 방문 후 약국 이용.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.121883, 35.834423]
+       },
+       properties: {
+       title: '롯데백화점 전주',
+       description: '(20-02-20 113번 확진자) [2월 14일] 입생로랑, 샤넬 및 롯네시네마 7관에서 <인셉션> 관람'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.125064, 35.807788]
+       },
+       properties: {
+       title: '이철헤어커커 전주효자CGV점',
+       description: '(20-02-20 113번 확진자) [2월 14일] 전주 효자동 소재 미용시설 이용.'
+       }
+        }, 
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.127513, 35.843710]
+       },
+       properties: {
+       title: '쓰리팝PC방 전북대점',
+       description: '(20-02-20 113번 확진자) [2월 16일] 오후 3시 ~ 6시 전북대 인근 PC방 이용.'
+       }
+        },  
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.176032, 35.825982]
+       },
+       properties: {
+       title: '아중리 청혜참치',
+       description: '(20-02-20 113번 확진자) [2월 16일] 오후 7시 30분 아중리 청혜참치 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.120408, 35.854332]
+       },
+       properties: {
+       title: '송천롯데마트',
+       description: '(20-02-20 113번 확진자) [2월 16일] 오후 8시 ~ 8시 30분 송천롯데마트 방문.'
+       }
+        },   
+
   ]
 };
 
@@ -2341,6 +2620,40 @@ map.addSource('lines', {
   [126.969122, 37.581828],
   [127.098167, 37.613044],
   
+]
+}
+},
+
+
+    {
+'type': 'Feature',
+'properties': {
+'color': '#0ac682'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //113 확진자
+[128.630224, 35.878282], //동대구 터미널 [2월 9일]
+//빽다방 위치확인중
+//왕중왕짜장 위치확인중
+[127.121693, 35.833388], //axa손해보험(직장) [2월 10일]
+[127.101762, 35.849505], //ks공업사 [2월 10일]
+[127.121693, 35.833388], //axa손해보험(직장) [2월 10일] 
+[127.111001, 35.843625], //푸라닭 전주하가점
+[127.121693, 35.833388], //axa손해보험(직장) [2월 11, 12일]
+//세븐일레븐 위치확인중
+[127.149794, 35.805368], //상진바이크샵
+[127.116441, 35.828115], //안전오토바이종합랜드
+[127.121114, 35.861360], //원이비인후과 의원
+[127.121210, 35.861374],//전주종로약국
+[127.121883, 35.834423], //롯데백화점 입생로랑, 샤넬롯데시네마 7관 인셉션
+[127.125064, 35.807788], //이철헤어커커 전주효자CGV점
+[127.127513, 35.843710],//쓰리팝 PC방
+//스타벅스 송천동 위치확인중
+[127.176032, 35.825982], //아중리 청혜참치 
+[127.120408, 35.854332], //송천롯데마트
+[127.140564, 35.847185], //전북대병원 격리
 ]
 }
 },
