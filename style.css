@@ -1,4 +1,49 @@
 
+
+.marker_hospital {
+  background-image: url('https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Plus-512.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.marker_place {
+  background-image: url('https://www.freeiconspng.com/uploads/exercise-icon-1.png');
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  border-radius: 20px;
+  max-width: 100px;
+}
+
+.mapboxgl-popup-content {
+  text-align: left;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media ( min-width: 1024px ) {
+  .modal-place {
+    display:block;
+    left:20px;
+    bottom:20px;
+    position: fixed;
+    z-index:99999;
+width:25%;
+height:25%;
+}
+
+.closeplace {
+  display: none;
+}
+}
+
 .imgBanner {
 display:none;
 }
