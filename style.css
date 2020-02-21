@@ -4,6 +4,7 @@ z-index: 1;
 width: 70%;
 left: 20px;
 top: 20px;
+border-radius: 20px;
 }
 
 .marker_hospital {
