@@ -28,21 +28,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-@media ( min-width: 1024px ) {
-  .modal-place {
-    display:block;
-    left:20px;
-    bottom:20px;
-    position: fixed;
-    z-index:99999;
-width:25%;
-height:25%;
-}
-
-.closeplace {
-  display: none;
-}
-}
 
 .imgBanner {
 display:none;
@@ -794,6 +779,20 @@ display:block;
 display: none;
 }
 
+	 .modal-place {
+    display:block;
+    left:20px;
+    bottom:20px;
+    position: fixed;
+    z-index:99999;
+width:25%;
+height:25%;
+}
+
+.closeplace {
+  display: none;
+}
+	
 }
 /* 여기까지 pc 반응형 css코드 */
 
