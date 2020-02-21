@@ -10,12 +10,6 @@ var map = new mapboxgl.Map({
 });
 
 
-map.addControl(
-new MapboxGeocoder({
-accessToken: mapboxgl.accessToken,
-mapboxgl: mapboxgl
-})
-);
 
 
 function flyTarget(el) {
@@ -29,7 +23,7 @@ essential: true // this animation is considered essential with respect to prefer
 }
 
 
-/*
+
 map.addControl(
 new mapboxgl.GeolocateControl({
 positionOptions: {
@@ -37,8 +31,13 @@ enableHighAccuracy: false
 },
 trackUserLocation: false
 })
+  
+new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+mapboxgl: mapboxgl
+})  
 );
-*/
+
 
 var geojson_hospital = {
   type: 'FeatureCollection',
