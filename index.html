@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 
 <head>
-  <title>신종코로나 바이러스 국내 확산 지도 - coronamap</title>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-   <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="map.js"></script>
+  <title>코로나맵 - COVID-19(코로나19) 확진자 이동경로</title>
+<meta name="naver-site-verification" content="8f27f18ca940f5911cb370fe9e8bf51cb94b961d"/>
+<link rel="icon" type="image/ico" href="https://www.gstatic.com/mapspro/images/favicon-001.ico" />
+<link rel="canonical" href="http://map.wuhancorona.kro.kr" />
+<meta name="description" content="우한코로나(코로나19) 국내 확진자의 이동경로 및 확산 정보를 제공합니다">
+<meta property="og:type" content="website">
+<meta property="og:title" content="우한코로나(코로나19) 국내 확산 지도">
+<meta property="og:url" content="http://map.wuhancorona.kro.kr">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="우한코로나(코로나19) 국내 확산 지도">
+<meta name="twitter:description" content="우한코로나(코로나19) 국내 확진자의 이동경로 및 확산 정보를 제공합니다">
+<meta name="twitter:image" content="http://www.mysite.com/article/article1.html">
+<meta name="twitter:domain" content="우한코로나(코로나19) 국내 확산 지도">
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
+<meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156991281-1"></script>
    <script>
@@ -14,102 +27,854 @@
 
      gtag('config', 'UA-156991281-1');
    </script>
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
+
+
+<!-- 팝업시작
+<div id="light-main" class="white_content_main"><h4 style="color:white;"></h4><a style="text-decoration: none; color:white;" href = "javascript:void(0)" onclick = "document.getElementById('light-main').style.display='none';document.getElementById('fade-main').style.display='none'">닫기</a></div>
+<div id="fade-main" class="black_overlay_main" onclick = "document.getElementById('light-main').style.display='none';document.getElementById('fade-main').style.display='none'"></div>
+팝업 끝 -->
   </head>
   <body>
 
-<div class="map-responsive">
-<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1-t6kwDe8TJYpiJ1Wv0X_s8ZsjAtmaEEB" width="640" height="100%" style="border:2px solid white;"></iframe>
+    <div class="map-responsive" id="map-pc">
+    </div>
+
+<div class="container">
+
+  <div id='map' style="width: 103%; height: 1000px;"></div>
+<div id="geocoder" class="geocoder"></div>
+
+
+  <div id="prevent" style=" height:90%; width:100%; overflow:scroll;">
+
+
+   <div id="listcontainer" style="position:fixed; height:90%; overflow:scroll;">
+     <!-- 예방수칙 -->
+     <h3 style="margin-left:20px; margin-top:50px; margin-bottom: 0px;">여러분의 실천이 필요합니다</h3>
+     <h1 style="margin-left:20px;  margin-top:0px;">#예방수칙</h1>
+     <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:300px; height:169px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+     <br><br><br>
+     <div id="frontier" ng-app="myApp">
+
+  <div ng-controller="mainCtrl">
+   
+    <div class="flexCont">
+      <h1 style="color:white; text-align: left; width:100%; margin:30px 20px 40px 20px;">#최신뉴스</h1><br>
+
+      <div class="article" ng-repeat="item in articles">
+         
+        
+        <a href="{{item.url}}" id="infotainer" target="_blank">
+           <img class="imageCover" src="{{item.urlToImage}}" alt="{{articles.title}}" />
+          <h2 class="itemName">{{item.title}}</h2>
+
+          <h4 class="itemAuthorName">{{item.author}}</h4>
+          <p class="itemDesc">{{item.description}}</p>
+        </a>
+        <!--         infotainer end -->
+      </div>
+      <!--     end ng-repeat div -->
+    </div>
+    <!--     end flexCont -->
+  </div>
+  <!-- end main controller div -->
+  
+</div>
+<!-- end frontier div -->
+<br><br><br>
+
+
+</div>
 </div>
 
+  <!-- 하단 내비게이션 바-->
+  <div class="tab-nav-container">
+  <div class="tab active purple js-click-map">
+    <i class="fa fa-map-marker"></i>
+    <p>동선</p>
+  </div>
+  <div class="tab pink js-click-dashboard">
+    <i class="fa fa-line-chart"></i>
+    <p>확산상황</p>
+  </div>
+  <div class="tab teal js-click-prevent">
+    <i class="fa fa-check-circle"></i>
+    <p>정보</p>
+  </div>
+  <div class="js-click" style=" margin-top:7px;">
+    <strong><p class="seonbyul" style="margin-top:-10px; color:transparent;">제보하기</p></strong>
+  </div>
 
-
-    <div id="floatingmenu">
-    <div id="listcontainer">
-      <!-- 정보 패널 -->
-
-
-
-        <div class='widget widget--2x1--korea'>
-          <header class='widget-header' style="height:40px;">
-            <div class='widget-header-indicator' style="background: #ffff00;">  </div>
-            <span style="margin-left:30px;">국내 통계 <span style="font-size:10px; color:gray;"> (2020-01-26 09:00 업데이트)</span></span>
-
-          </header>
-          <div class='widget-content'>
-            <canvas id='donut' width='200px'></canvas>
-            <ul class='value-list'>
-              <li>
-                <div class='description' style="color:#f0f0f0">
-                  확진자
-                </div>
-                <div class='value'>
-                  <span>3 <span style="font-size:20px;">명</span></span>
-                </div>
-              </li>
-              <li>
-                <div class='description' style="color:#f0f0f0">
-                  유증상자
-                </div>
-                <div class='value'>
-                  <span>48 <span style="font-size:20px;">명 (격리1, 해제 47)</span></span>
-                </div>
-              </li>
-              <li>
-                <div class='description' style="color:#f0f0f0">
-                  사망자
-                </div>
-                <div class='value'>
-                  <span>0 <span style="font-size:20px;">명</span></span>
-                  <span class='negative small'>
-                     0%<span style="font-size:15px;"> (단순계산)</span>
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
-          </div>
-
-          <div class='widget widget--2x1'>
-            <header class='widget-header' style="height:40px;">
-              <div class='widget-header-indicator'>  </div>
-              <span style="margin-left:30px;">전세계 통계 <span style="font-size:10px; color:gray;"> (2020-01-26 09:00 업데이트)</span></span>
-
-            </header>
-            <div class='widget-content'>
-              <canvas id='donut' width='200px'></canvas>
-              <ul class='value-list'>
-                <li>
-                  <div class='description' style="color:#f0f0f0">
-                    확진자
-                  </div>
-                  <div class='value'>
-                    <span>2,010 <span style="font-size:20px;">명</span></span>
-                  </div>
-                </li>
-                <li>
-                  <div class='description' style="color:#f0f0f0">
-                    사망자
-                  </div>
-                  <div class='value'>
-                    <span>56 <span style="font-size:20px;">명</span></span>
-                    <span class='negative small'>
-                       2.8%<span style="font-size:15px;"> (단순계산)</span>
-                    </span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            </div>
-
-<div id="footer--contact" style="color:white; text-align:center;">
-  <br>
-<span style="color:gray;">이 사이트는 정부 제공 데이터를 기준으로 합니다.</span><br>
-<span>오류/개선사항 등 문의는 아래 이메일로 부탁드립니다.</span>
-<a style="color:white;" href="mailto:wuhancoronamapkr@gmail.com">wuhancoronamapkr@gmail.com</a>
-<br><br>
 </div>
+  <!-- <a class="btn js-click-modal"><span style="font-size:20px; margin-top:10px;">실시간 확산 정보</span></a> -->
+  <div class="modal" style="background-color:#0f0f0f;">
+
+
+    <div class="header" id="pannelExit">
+      <a class="js-close-modal float" id="float"><img class="my-float" style="margin-top:10px;" src="https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" width="30px" height="30px"></a>
+    </div>
+    <div class="body" style="oveflow:scroll;">
+      <div id="floatingmenu">
+
+      <div id="listcontainer">
+        <!-- 정보 패널 -->
+
+
+
+                 <div class='widget widget--2x1--korea'>
+                   <header class='widget-header' style="height:40px;">
+                     <div class='widget-header-indicator' style="background: #ffff00;">  </div>
+                     <span style="margin-left:30px;">국내 통계 <span style="font-size:10px; color:gray;"> (20-02-22 17:00 기준)</span></span>
+
+                   </header>
+                   <div class='widget-content'>
+                     <canvas id='donut' width='200px'></canvas>
+                     <ul class='value-list'>
+                       <li>
+                         <div class='description' style="color:#f0f0f0">
+                           확진자
+                         </div>
+                         <div class='value'>
+                           <span>443 <span style="font-size:20px;">명 <span style="color:#80c904">(완치 18)</span></span></span>
+                         </div>
+                       </li>
+                       <li>
+                         <div class='description' style="color:#f0f0f0">
+                           유증상자
+                         </div>
+                         <div class='value'>
+                           <span style="font-size:30px;">21,153 <span style="font-size:14px;">명 (검사중 6,037, 음성 15,116)</span></span>
+                           
+                         </div>
+                       </li>
+       <li>
+                         <div class='description' style="color:#f0f0f0">
+                           사망자
+                         </div>
+                         <div class='value'>
+                         <span>3 <span style="font-size:18px;">명 </span></span>
+                         </div>
+                       </li>
+                       <li>
+
+                       </li>
+                     </ul>
+                   </div>
+                   </div>
+           <br>
+                   <div class='widget widget--2x1--global'>
+                     <header class='widget-header' style="height:40px;">
+                       <div class='widget-header-indicator'>  </div>
+                       <span style="margin-left:30px;">전세계 통계 <span style="font-size:10px; color:gray;"> (20-02-22 09:00 기준)</span></span>
+
+                     </header>
+                     <div class='widget-content'>
+                       <canvas id='donut' width='200px'></canvas>
+                       <ul class='value-list'>
+                         <li>
+                           <div class='description' style="color:#f0f0f0">
+                             확진자
+                           </div>
+                           <div class='value'>
+                             <span>77,432 <span style="font-size:20px;">명</span></span>
+                           </div>
+                         </li>
+                         <li>
+                           <div class='description' style="color:#f0f0f0">
+                             사망자
+                           </div>
+                           <div class='value'>
+                             <span style="font-size:38px;">2,357 <span style="font-size:20px;">명</span></span>
+                             <span class='negative small' style="color:#ca3433;">
+                                <span style="font-size:12px;"> </span>
+                             </span>
+                           </div>
+                         </li>
+                       </ul>
+                     </div>
+                     </div><br>
+
+
+                     <h2 style="color:white; margin:20px;">전세계 확진자 추이</h2>
+                     <div style="background-color:#3b3b3b;  border-radius:20px; padding-left:20px; padding-right:20px;">
+                              <div id="chartContainer" style="height: 250px; width: 100%;"></div>
+                            </div>
+                              <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                              <br>
+
+           <div class="bycountry" style="margin-left:20px; padding-right:20px;">
+           <h2 style="color:white;">국가별 확진자 현황</h2>
+                     <ul>
+                       <li><a href="#">중국 : 76,288 (사망 2,245)</a></li>
+<li><a href="#">일본 : 739 (사망 3, 크루즈 634)</a></li>
+<li><a href="#">대한민국 : 346 (사망 2)</a></li>
+<li><a href="#">싱가포르 : 86</a></li>
+                       <li><a href="#">홍콩 : 69 (사망 2)</a></li>
+                       <li><a href="#">태국 : 35</a></li>
+                       <li><a href="#">대만 : 24 (사망 1)</a></li>
+                       <li><a href="#">말레이시아 : 22</a></li>
+                       <li><a href="#">독일 : 16</a></li>
+                       <li><a href="#">베트남 : 16</a></li>
+                       <li><a href="#">호주 : 15</a></li>
+                       <li><a href="#">미국 : 15</a></li>
+                       <li><a href="#">프랑스 : 12 (사망 1)</a></li>
+                       <li><a href="#">마카오 : 10</a></li>
+                       <li><a href="#">영국 : 9</a></li>
+                       <li><a href="#">아랍에미리트 : 9</a></li>
+                       <li><a href="#">캐나다 : 8</a></li>
+                       <li><a href="#">이란 : 5 (사망 2)</a></li>
+                       <li><a href="#">필리핀 : 3 (사망 1)</a></li>
+                       <li><a href="#">인도 : 3</a></li>
+                       <li><a href="#">이탈리아 : 3</a></li>
+                       <li><a href="#">러시아 : 2</a></li>
+                       <li><a href="#">스페인 : 2</a></li>
+                       <li><a href="#">네팔 : 1</a></li>
+                       <li><a href="#">캄보디아 : 1</a></li>
+                       <li><a href="#">스리랑카 : 1</a></li>
+                       <li><a href="#">핀란드 : 1</a></li>
+                       <li><a href="#">스웨덴 : 1</a></li>
+                       <li><a href="#">벨기에 : 1</a></li>
+                       <li><a href="#">이집트 : 1</a></li>
+
+                     </ul>
+                     </div>
+
+    <br><br><br><br><br><br><br><br><br><br>
+<div class="imgBanner">
+    <a href="http://www.mohw.go.kr/react/popup_200128.html" target="_blank" style="text-decoration:none;"><img  width="100%" style="margin-top:20px;" src="https://i.imgur.com/mj5Omgi.png " alt="선별진료소 목록"></a>
+<h1 style="margin:20px; color:white;">예방수칙</h1>
+     <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:90%; height:290px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <br><br>
+
+
+    <a href="tel:1339" style="color:#f0f0f0; text-decoration:none;  ">
+    <div style="border-radius:20px; background:#ca3433; text-align:center; height:50px; width:100%;">
+    <h2 style="padding-top:10px; height:100%; font-size:20px;">1339 신고하기</h2>
+    </div>
+    </a>
+</div>
+
+    <div id="footer--contact" style="color:white; text-align:center; margin-top:50px; margin-left:20px; margin-right:20px;">
+    <br>
+    <span style="color:#0f0f0f;">출처 : 질병관리본부, JHU CSSE</span><br>
+    <span style="color:gray;">정보제공 : <a href="http://ncov.mohw.go.kr" style="text-decoration:none; color:gray;">질병관리본부</a>, <a href="https://systems.jhu.edu/" style="text-decoration:none; color:gray;">JHU CSSE</a></span><br>
+    <span style="color:gray;">지도제공 : <a href="https://mapbox.com" style="text-decoration:none; color:gray;">Mapbox</a>, OpenstreetMap</span><br>
+    <span style="color:gray;">뉴스제공 : <a href="https://newsapi.org" style="text-decoration:none; color:gray;">newsapi.org</a></span><br><br>
+    <span style="color:white">본 정보의 당사자는 공개된 사항 중 사실과 다르거나 의견이 있는 경우 아래 이메일로 문의하여 이의를 제기할 수 있습니다.</span><br><br>
+
+    <a style="color:white;" href="mailto:wuhancoronamapkr@gmail.com">wuhancoronamapkr@gmail.com</a>
+    <br><br><br><br><br>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+<div onclick="openplacepopup()" id="placePopupBtn"><h3 style="font-size:20px; margin-top:15px; ">상세보기</h3></div>
+<!-- 방문장소 팝업 -->
+
+<div class="modal-place">
+      <!-- 여기에 팝업 콘텐츠-->
+    <a onclick="closeplacepopup()" class="closeplace" style="position:fixed; text-align:center; width:100%; background:rgb(240, 240, 240, 1); border-radius:20px;"><h3>닫기</h3></a>
+
+      <div class="placelist" style="margin-left:20px; padding-right:20px; text-align:left; color:black;">
+
+        <script>
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  backgroundColor:"",
+  fontColor:"#ffffff",
+
+  title:{
+    text: ""
+  },
+  axisX:{
+    valueFormatString: "MM-DD",
+      labelFontColor:"#a9a9a9",
+  },
+  axisY: {
+    title: "",
+    includeZero: false,
+      labelFontColor:"#a9a9a9",
+  },
+  data: [{
+    type: "line",
+    xValueFormatString: "MM월 DD일",
+    color: "#ca3433",
+    dataPoints: [
+     { x: new Date(2020, 1, 1), y: 11924},
+     { x: new Date(2020, 1, 2), y: 14528},
+     { x: new Date(2020, 1, 3), y: 17459},
+     { x: new Date(2020, 1, 4), y: 20571},
+     { x: new Date(2020, 1, 5), y: 24506},
+     { x: new Date(2020, 1, 6), y: 28450},
+     { x: new Date(2020, 1, 7), y: 31472},
+     { x: new Date(2020, 1, 8), y: 34679},
+     { x: new Date(2020, 1, 9), y: 37162},
+     { x: new Date(2020, 1, 10), y: 40536},
+     { x: new Date(2020, 1, 11), y: 43065},
+     { x: new Date(2020, 1, 12), y: 45097},
+     { x: new Date(2020, 1, 13), y: 60239},
+     { x: new Date(2020, 1, 14), y: 64893},
+     { x: new Date(2020, 1, 16), y: 69125},
+     { x: new Date(2020, 1, 17), y: 71309},
+     { x: new Date(2020, 1, 18), y: 73295},
+     { x: new Date(2020, 1, 19), y: 75196},
+     { x: new Date(2020, 1, 20), y: 75662},
+     { x: new Date(2020, 1, 21), y: 76081},
+     { x: new Date(2020, 1, 22), y: 77432},
+
+    ]
+  }]
+});
+chart.render();
+
+}
+</script>
+
+    <!--
+        <div id="patientInfo">
+          <a class="btn" href="#">1</a>
+          <a class="btn" href="#">2</a>
+          <a class="btn" href="#">2</a>
+          <a class="btn" href="#">2</a>
+          <a class="btn" href="#">2</a>
+          <a class="btn" href="#">2</a>
+          <a class="btn" href="#">2</a>
+
+
+        </div>
+<style>
+  #patientInfo .btn {
+        display: inline-block; height: 50px; width: 40px; border-radius: 50%;
+        margin-right:10px;
+        padding-left:-10px;
+        text-decoration: none;
+  }
+
+  #patientInfo {
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px
+    width: 100%;
+    padding-top:50px;
+  }
+</style>
+-->
+
+                <ul>
+                  <br>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="114.21853322535755" data-long="30.77093202627814"><span style="color:#960823; margin-right:20px;">1번째</span>중국남방항공 CZ6079</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#960823; margin-right:20px;">1번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.668652" data-long="37.478787"><span style="color:#960823; margin-right:20px;">1번째</span>인천의료원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="121.80628828704357" data-long="31.1490694115591"><span style="color:#FF860D; margin-right:20px;">2번째</span>상하이항공 FM828</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.794442" data-long="37.558723"><span style="color:#FF860D; margin-right:20px;">2번째</span>김포국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.86827700000003" data-long="37.5496053"><span style="color:#FF860D; margin-right:20px;">2번째</span>강서구보건소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="color:#FF860D; margin-right:20px;">2번째</span>국립중앙의료원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#E80CC9; margin-right:20px;">3번째</span>인천공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.02794819999997" data-long="37.524355"><span style="color:#E80CC9; margin-right:20px;">3번째</span>글로비성형외과 의원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.04913390000002" data-long="37.50299260000001"><span style="color:#E80CC9; margin-right:20px;">3번째</span>호텔 뉴브</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01592170000004" data-long="37.5243968"><span style="color:#E80CC9; margin-right:20px;">3번째</span>GS한강잠원 1호점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.03247799999997" data-long="37.527737"><span style="color:#E80CC9; margin-right:20px;">3번째</span>한일관 압구정점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.0503248" data-long="37.524819"><span style="color:#E80CC9; margin-right:20px;">3번째</span>본죽 청담프리마점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.02794819999997" data-long="37.524355"><span style="color:#E80CC9; margin-right:20px;">3번째</span>글로비성형외과 의원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.77693350000006" data-long="37.6740054"><span style="color:#E80CC9; margin-right:20px;">3번째</span>본죽 일산정발산점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.8121754" data-long="37.6778604"><span style="color:#E80CC9; margin-right:20px;">3번째</span>스타벅스 일산식사점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.831248" data-long="37.642304"><span style="color:#E80CC9; margin-right:20px;">3번째</span>명지병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="114.21853322535755" data-long="30.77093202627814"><span style="color:#5D7FC2; margin-right:20px;">4번째</span>중국남방항공 CZ6079</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.4522185" data-long="37.4651805"><span style="color:#5D7FC2; margin-right:20px;">4번째</span>인천공항 공항버스</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.05869899999993" data-long="37.07905100000001"><span style="color:#5D7FC2; margin-right:20px;">4번째</span>송탄터미널</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.05732009999997" data-long="37.05201149999999"><span style="color:#5D7FC2; margin-right:20px;">4번째</span>365연합의원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.123389" data-long="37.351563"><span style="color:#5D7FC2; margin-right:20px;">4번째</span>분당서울대병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#FF3A32; margin-right:20px;">5번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01704829999994" data-long="37.5925601"><span style="color:#FF3A32; margin-right:20px;">5번째</span>CGV성신여대입구</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01682189999997" data-long="37.5918099"><span style="color:#FF3A32; margin-right:20px;">5번째</span>다이소 성신여대역점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.02953419999994" data-long="37.5639923"><span style="color:#FF3A32; margin-right:20px;">5번째</span>선녀보살</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01522069999999" data-long="37.59033"><span style="color:#FF3A32; margin-right:20px;">5번째</span>선호케어</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.00976600000001" data-long="37.5895897"><span style="color:#FF3A32; margin-right:20px;">5번째</span>두꺼비마트</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01889830000005" data-long="37.5920573"><span style="color:#FF3A32; margin-right:20px;">5번째</span>돈암동떡볶이</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.00976600000001" data-long="37.5895897"><span style="color:#FF3A32; margin-right:20px;">5번째</span>럭키후레쉬마트</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.018415" data-long="37.591684"><span style="color:#FF3A32; margin-right:20px;">5번째</span>예쁠레뷰티라인</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.09194309999998" data-long="37.589035"><span style="color:#FF3A32; margin-right:20px;">5번째</span>이가네바지락칼국수</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.04654329999994" data-long="37.523674"><span style="color:#FF3A32; margin-right:20px;">5번째</span>와이즈웨딩</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.092762" data-long="37.606502"><span style="color:#FF3A32; margin-right:20px;">5번째</span>중랑구보건소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="color:#FF3A32; margin-right:20px;">5번째</span>서울의료원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.03247799999997" data-long="37.527737"><span style="color:#0CC27D; margin-right:20px;">6번째</span>한일관 압구정점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.99981019999996" data-long="37.5863828"><span style="color:#0CC27D; margin-right:20px;">6번째</span>명륜교회</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.999714" data-long="37.578241"><span style="color:#0CC27D; margin-right:20px;">6번째</span>서울대병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="120.3831232" data-long="36.2666745"><span style="color:#A17CE8; margin-right:20px;">7번째</span>청도항공 QW9901</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#A17CE8; margin-right:20px;">7번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="color:#A17CE8; margin-right:20px;">7번째</span>서울의료원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="120.3831232" data-long="36.2666745"><span style="color:#65C287; margin-right:20px;">8번째</span>청도항공 QW9901</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#65C287; margin-right:20px;">8번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.0118524" data-long="37.4921876"><span style="color:#65C287; margin-right:20px;">8번째</span>풍미감자탕</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.70814940000002" data-long="35.9866939"><span style="color:#65C287; margin-right:20px;">8번째</span>아센휘트니스사우나</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.7091256" data-long="35.9784314"><span style="color:#65C287; margin-right:20px;">8번째</span>유남진내과</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.71245450000004" data-long="35.954685"><span style="color:#65C287; margin-right:20px;">8번째</span>군산의료원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.70551109999997" data-long="35.97602849999999"><span style="color:#65C287; margin-right:20px;">8번째</span>우리떡갈비</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.73486560000003" data-long="35.9827419"><span style="color:#65C287; margin-right:20px;">8번째</span>이마트 군산점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.959568" data-long="35.964991"><span style="color:#65C287; margin-right:20px;">8번째</span>원광대학교병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.791968" data-long="37.6411412"><span style="color:#BFB149; margin-right:20px; font-size:20px;">10,11번째</span>메종드아이디헤어 백석벨라시타점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.999714" data-long="37.578241"><span style="color:#BFB149; margin-right:20px;">10,11번째</span>서울대병원</li>
+                    <!--_-->
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.00769850000006" data-long="37.55717130000001"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>신라면세점 서울점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.78101570000001" data-long="37.4858187"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>CGV 부천역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.78036959999997" data-long="37.48278541"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>小串王왕중왕</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.63162609999995" data-long="37.4617728"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>인천출입국사무소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.65047709999999" data-long="37.4636808"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>인천 남구</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.96961950000002" data-long="37.5536067"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>서울역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="128.89929000000006" data-long="37.764152"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>강릉역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="129.0438501" data-long="37.6834634"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>썬크루즈리조트</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="129.03211669999996" data-long="37.690560"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>정동진초당순두부</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.7781024999999337" data-long="37.4836803"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>서전약국</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.00151789999995" data-long="37.2675123"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>수원역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.9309464" data-long="37.3591354"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>더건강한내과</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.9308901" data-long="37.3590543"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>현대약국</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.78101570000001" data-long="37.4858187"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>CGV 부천역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.00769850000006" data-long="37.55717130000001"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>신라면세점 서울점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.7817966" data-long="37.483597"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>부천종로약국</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.7781776" data-long="37.4837016"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>서전약국</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.76285359999997" data-long="37.49839769999999"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>순천향대부천병원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.78266540000004" data-long="37.4840296"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>이마트 부천점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.123389" data-long="37.351563"><span style="color:#BF2200; margin-right:20px;">12,14번째</span>분당서울대병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.98722580000003" data-long="36.74037130000001"><span style="color:#8C5F91; margin-right:20px;">13번째</span>경찰인재개발원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="color:#8C5F91; margin-right:20px;">13번째</span>국립중앙의료원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.460190"><span style="color:#C28966; margin-right:20px;">15번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.9784995" data-long="37.295636"><span style="color:#C28966; margin-right:20px;">15번째</span>천천동</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01017679999995" data-long="37.3043448"><span style="color:#C28966; margin-right:20px;">15번째</span>장안구보건소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.149085" data-long="37.392769"><span style="color:#C28966; margin-right:20px;">15번째</span>국군수도병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="100.75011240000003" data-long="13.6899991"><span style="color:#917F8D; margin-right:20px;">16번째</span>태국 수완나품 공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.3878446" data-long="34.9935821"><span style="color:#917F8D; margin-right:20px;">16번째</span>무안국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.83019650000006" data-long="35.08229710000001"><span style="color:#917F8D; margin-right:20px;">16번째</span>우리마트</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.71075719999999" data-long="35.0160601"><span style="color:#917F8D; margin-right:20px;">16번째</span>나주시</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.81813169999998" data-long="35.1757929"><span style="color:#917F8D; margin-right:20px;">16번째</span>무안국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.921549" data-long="35.142085"><span style="color:#917F8D; margin-right:20px;">16번째</span>우리마트</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.818131699999985" data-long="35.1757929"><span style="color:#917F8D; margin-right:20px;">16번째</span>광주21세기병원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.921549" data-long="35.142085"><span style="color:#917F8D; margin-right:20px;">16번째</span>전남대학교병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="122.1165062" data-long="33.8386846"><span style="color:#407965; margin-right:20px;">제주도</span>춘추항공</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.49135339999998" data-long="33.510413500000016"><span style="color:#407965; margin-right:20px;">제주도</span>제주공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.49161930000002" data-long="33.4894038"><span style="color:#407965; margin-right:20px;">제주도</span>플로라호텔 제이드림</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.66743980000001" data-long="33.447037"><span style="color:#407965; margin-right:20px;">제주도</span>에코랜드</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.6900058" data-long="33.4316207"><span style="color:#407965; margin-right:20px;">제주도</span>산굼부리</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.95404800000006" data-long="33.5042977"><span style="color:#407965; margin-right:20px;">제주도</span>우도</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.94193900000005" data-long="33.4581918"><span style="color:#407965; margin-right:20px;">제주도</span>성산일출봉</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.48642719999998" data-long="33.4906618"><span style="color:#407965; margin-right:20px;">제주도</span>롯데면세점 제주점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.48757649999993" data-long="33.48607189999999"><span style="color:#407965; margin-right:20px;">제주도</span>신라면세점 제주점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.46336270000006" data-long="33.3576784"><span style="color:#407965; margin-right:20px;">제주도</span>한라산(1100고지)</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.47131760000002" data-long="33.5090001"><span style="color:#407965; margin-right:20px;">제주도</span>무지개도로</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.490707700000032" data-long="33.4860985"><span style="color:#407965; margin-right:20px;">제주도</span>누웨마루 거리</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="103.99153079999996" data-long="1.3644202"><span style="color:#C36F91; margin-right:20px;">17번째</span>대한항공 KE646</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#C36F91; margin-right:20px;">17번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.96961950000002" data-long="37.5536067"><span style="color:#C36F91; margin-right:20px;">17번째</span>서울역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.97046580000006" data-long="37.5490645"><span style="color:#C36F91; margin-right:20px;">17번째</span>중앙온누리약국 서울역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.970442" data-long="37.549065"><span style="color:#C36F91; margin-right:20px;">17번째</span>서울역 북창동순두부</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="128.62847585231066" data-long="35.87966704616757"><span style="color:#C36F91; margin-right:20px;">17번째</span>동대구역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="128.625035" data-long="35.842651"><span style="color:#C36F91; margin-right:20px;">17번째</span>미니주유소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="128.627832" data-long="35.880691"><span style="color:#C36F91; margin-right:20px;">17번째</span>스토리웨이 동대구신맞이방스낵점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.1323584" data-long="37.6012093"><span style="color:#C36F91; margin-right:20px;">17번째</span>한양대구리병원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.13911929999995" data-long="37.6063384"><span style="color:#C36F91; margin-right:20px;">17번째</span>삼성서울가정의원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.1391743" data-long="37.6063788"><span style="color:#C36F91; margin-right:20px;">17번째</span>구리종로약국</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.13873899999999" data-long="37.5871664"><span style="color:#C36F91; margin-right:20px;">17번째</span>프리마트</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.13840189999996" data-long="37.58693960000001"><span style="color:#C36F91; margin-right:20px;">17번째</span>이삭토스트 구리장자못점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.13821410000003" data-long="37.58702559999999"><span style="color:#C36F91; margin-right:20px;">17번째</span>서울아산내과의원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.138253" data-long="37.5870803"><span style="color:#C36F91; margin-right:20px;">17번째</span>수약국</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.138735" data-long="37.5872504"><span style="color:#C36F91; margin-right:20px;">17번째</span>본죽 구리토평점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.10323500000004" data-long="37.545475"><span style="color:#C36F91; margin-right:20px;">17번째</span>광나루역</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.10306700000001" data-long="37.5448436"><span style="color:#C36F91; margin-right:20px;">17번째</span>이마트24 광나루역점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.10261700000001" data-long="37.543272"><span style="color:#C36F91; margin-right:20px;">17번째</span>광나루역.극동아파트(버스)</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.1323584" data-long="37.6012093"><span style="color:#C36F91; margin-right:20px;">17번째</span>한양대구리병원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.831248" data-long="37.642304"><span style="color:#C36F91; margin-right:20px;">17번째</span>명지병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.81813169999998" data-long="37.4601908"><span style="color:#25796B; margin-right:20px;">18번째</span>광주21세기병원</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.11890570000004" data-long="37.382699"><span style="color:#25796B; margin-right:20px;">18번째</span>전남대학교병원</li>
+
+
+
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>인천국제공항</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.11890570000004" data-long="37.382699"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>분당구</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.1247641" data-long="37.50885"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>파리바게트 헬리오시티점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.12000519999992" data-long="37.49695030000001"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>교촌치킨 가락2호점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.02756729999999" data-long="37.5047369"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>르메르디앙서울</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.65803359999995" data-long="37.3816748"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>현대프리미엄아울렛 송도점</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.11750000000006" data-long="37.4952778"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>원가네칼국수</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.11274950000006" data-long="37.3771388"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>통영별미</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="color:#CCAB1A; margin-right:20px;">19번째</span>서울의료원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.88934059999997" data-long="37.5206499"><span style="color:#C28966; margin-right:20px;">20번째</span>GS홈쇼핑 본사</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.9784995" data-long="37.295636"><span style="color:#C28966; margin-right:20px;">20번째</span>천천동</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.01017679999995" data-long="37.3043448"><span style="color:#C28966; margin-right:20px;">20번째</span>장안구보건소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.149085" data-long="37.392769"><span style="color:#C28966; margin-right:20px;">20번째</span>국군수도병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.99981019999996" data-long="37.5863828"><span style="color:#CC572C; margin-right:20px;">21번째</span>명륜교회</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="127.03951810000001" data-long="37.6026426"><span style="color:#CC572C; margin-right:20px;">21번째</span>성북구보건소</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.999714" data-long="37.578241"><span style="color:#CC572C; margin-right:20px;">21번째</span>서울대병원</li>
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.71075719999999" data-long="35.0160601"><span style="color:#906500; margin-right:20px;">22번째</span>나주시</li>
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.926592" data-long="35.138675"><span style="color:#906500; margin-right:20px;">22번째</span>조선대학교병원</li>
+
+
+
+                  <li id="fly" onclick="flyTarget(this)" data-lat="126.97944299999995" data-long="37.565622"><span style="color:#014146; margin-right:20px;">23번째</span>프레지던트 호텔</li>
+                   <li id="fly" onclick="flyTarget(this)" data-lat="126.981927400000022" data-long="37.5648507"><span style="color:#014146; margin-right:20px;">23번째</span>롯데백화점 본점</li>
+                    <li id="fly" onclick="flyTarget(this)" data-lat="126.93677890000004" data-long="37.5791158"><span style="color:#014146; margin-right:20px;">23번째</span>서대문구 소재 숙소</li>
+                     <li id="fly" onclick="flyTarget(this)" data-lat="126.95336199999997" data-long="37.542371"><span style="color:#014146; margin-right:20px;">23번째</span>이마트 마포공덕점</li>
+                      <li id="fly" onclick="flyTarget(this)" data-lat="126.93677890000004" data-long="37.5791158"><span style="color:#014146; margin-right:20px;">23번째</span>서대문구 소재 숙소(복귀)</li>
+                       <li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="color:#014146; margin-right:20px;">23번째</span>국립중앙의료원</li>
+
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#058F1F; margin-right:20px;">24번째</span>인천국제공항</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.98722580000003" data-long="36.74037130000001"><span style="color:#058F1F; margin-right:20px;">24번째</span>경찰인재개발원</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="color:#058F1F; margin-right:20px;">24번째</span>국립중앙의료원</li>
+
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.811382" data-long="37.417265"><span style="color:#00ECCC; margin-right:20px;">25번째</span>매화할인마트</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.789514" data-long="37.444550"><span style="color:#00ECCC; margin-right:20px;">25번째</span>신천연합의원</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.796396" data-long="37.438150"><span style="color:#00ECCC; margin-right:20px;">25번째</span>엘마트 시흥점</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.789514" data-long="37.444550"><span style="color:#00ECCC; margin-right:20px;">25번째</span>신천연합의원(재방문)</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="127.123389" data-long="37.351563"><span style="color:#00ECCC; margin-right:20px;">25번째</span>분당서울대병원</li>
+
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.789514" data-long="37.444550"><span style="color:#461F01; margin-right:20px;">26번째</span>신천연합의원</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.796396" data-long="37.438150"><span style="color:#461F01; margin-right:20px;">26번째</span>엘마트 시흥점</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.789514" data-long="37.444550"><span style="color:#461F01; margin-right:20px;">26번째</span>신천연합의원(재방문)</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="127.260411" data-long="37.017228"><span style="color:#461F01; margin-right:20px;">26번째</span>경기도립의료원안성병원</li>
+
+                <li id="fly" onclick="flyTarget(this)" data-lat="113.576466" data-long="22.158054"><span style="color:#4C7D8F; margin-right:20px;">27번째</span>에어마카오 NX826</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#4C7D8F; margin-right:20px;">27번째</span>인천국제공항</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.809913" data-long="37.432345"><span style="color:#4C7D8F; margin-right:20px;">27번째</span>그옛날손짜장</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="126.789514" data-long="37.444550"><span style="color:#4C7D8F; margin-right:20px;">27번째</span>신천연합의원</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="127.260411" data-long="37.017228"><span style="color:#4C7D8F; margin-right:20px;">27번째</span>경기도립의료원안성병원</li>
+
+
+
+                <li id="fly" onclick="flyTarget(this)" data-lat="127.015407" data-long="37.575650"><span style="color:#ffc836; margin-right:20px;">29번째</span>신중호내과의원</li>
+                <li id="fly" onclick="flyTarget(this)" data-lat="127.013963" data-long="37.572262"><span style="color:#ffc836; margin-right:20px;">29번째</span>보람약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.018740" data-long="37.620200"><span style="color:#ffc836; margin-right:20px;">29번째</span>강북서울외과의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.015321" data-long="37.573293"><span style="color:#ffc836; margin-right:20px;">29번째</span>봄약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.026343" data-long="37.587342"><span style="color:#ffc836; margin-right:20px;">29번째</span>고려대 안암병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.999714" data-long="37.578241"><span style="color:#ffc836; margin-right:20px;">29번째</span>서울대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.995370" data-long="37.560088"><span style="color:#4a7d00; margin-right:20px;">30번째</span>서울 중구 소재 회사</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.999897" data-long="37.577630"><span style="color:#4a7d00; margin-right:20px;">30번째</span>서울대병원 외래</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.018740" data-long="37.620200"><span style="color:#4a7d00; margin-right:20px;">30번째</span>강북서울외과의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.421170" data-long="37.423644"><span style="color:#4a7d00; margin-right:20px;">30번째</span>용유도</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.701198" data-long="37.572926"><span style="color:#4a7d00; margin-right:20px;">30번째</span>경인아라뱃길</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.015649" data-long="37.572152"><span style="color:#4a7d00; margin-right:20px;">30번째</span>동묘앞역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.015935" data-long="37.574509"><span style="color:#4a7d00; margin-right:20px;">30번째</span>단골온누리약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.013272" data-long="37.572490"><span style="color:#4a7d00; margin-right:20px;">30번째</span>명륜진사갈비 서울동묘점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.015984" data-long="37.572751"><span style="color:#4a7d00; margin-right:20px;">30번째</span>스타벅스 동묘앞역점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.995370" data-long="37.560088"><span style="color:#4a7d00; margin-right:20px;">30번째</span>서울 중구 소재 회사</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.018740" data-long="37.620200"><span style="color:#4a7d00; margin-right:20px;">30번째</span>강북서울외과의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.015935" data-long="37.574509"><span style="color:#4a7d00; margin-right:20px;">30번째</span>단골온누리약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.026343" data-long="37.587342"><span style="color:#4a7d00; margin-right:20px;">30번째</span>고려대안암병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.999714" data-long="37.578241"><span style="color:#4a7d00; margin-right:20px;">30번째</span>서울대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.6276121" data-long="35.8750042"><span style="color:#ed7014; margin-right:20px;">31번째</span>부띠끄시티테라스 오피스텔 C클럽</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.635214" data-long="35.858396"><span style="color:#ed7014; margin-right:20px;">31번째</span>새로난한방병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#ed7014; margin-right:20px;">31번째</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.635214" data-long="35.858396"><span style="color:#ed7014; margin-right:20px;">31번째</span>새로난한방병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.662125" data-long="35.882360"><span style="color:#ed7014; margin-right:20px;">31번째</span>퀸벨호텔</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.635214" data-long="35.858396"><span style="color:#ed7014; margin-right:20px;">31번째</span>새로난한방병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#ed7014; margin-right:20px;">31번째</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.635214" data-long="35.858396"><span style="color:#ed7014; margin-right:20px;">31번째</span>새로난한방병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.612246" data-long="35.844609"><span style="color:#ed7014; margin-right:20px;">31번째</span>수성구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#ed7014; margin-right:20px;">31번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.123389" data-long="37.351563"><span style="color:##982c87; margin-right:20px;">32번째</span>분당서울대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#545496; margin-right:20px;">33번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#1b3a6f; margin-right:20px;">34번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#e20841; margin-right:20px;">35번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#9106a1; margin-right:20px;">36번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.605098" data-long="35.865977"><span style="color:##aafff1; margin-right:20px;">37번째</span>경북대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.605098" data-long="35.865977"><span style="color:#b339fc; margin-right:20px;">38번째</span>경북대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.196749" data-long="35.858329"><span style="color:#21524d; margin-right:20px;">39번째</span>동북대학교경주병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.0440466" data-long="37.55964796"><span style="color:#9b0c33; margin-right:20px;">40번째</span>한양대학교병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="color:#9b0c33; margin-right:20px;">40번째</span>국립중앙의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.196749" data-long="35.858329"><span style="color:#227d66; margin-right:20px;">41번째</span>동북대학교경주병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#505c4d; margin-right:20px;">42번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.209615" data-long="35.845427"><span style="color:#74622a; margin-right:20px;">43번째</span>계명대동산병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.605098" data-long="35.865977"><span style="color:#ff53b1; margin-right:20px;">44번째</span>경북대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#8036fd; margin-right:20px;">45번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#af602e; margin-right:20px;">46번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#3c44fd; margin-right:20px;">47번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.564375" data-long="35.956719"><span style="color:#cf1928; margin-right:20px;">48번째</span>칠곡경북대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.605098" data-long="35.865977"><span style="color:#a64459; margin-right:20px;">49번째</span>경북대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.584788" data-long="35.847300"><span style="color:#d09883; margin-right:20px;">50번째</span>영남대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.209615" data-long="35.845427"><span style="color:#7d7470; margin-right:20px;">51번째</span>계명대동산병원</li>
+
+<li id="fly"><span style="color:#a9a9a9; margin-right:20px;">52번째</span>확인중</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.5406159" data-long="35.8596492"><span style="color:#44339b; margin-right:20px;">53번째</span>대구의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.354906" data-long="36.034891"><span style="color:#163545; margin-right:20px;">54번째</span>포항의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.354906" data-long="36.034891"><span style="color:#6620e3; margin-right:20px;">55번째</span>포항의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.005990" data-long="37.576682"><span style="color:#8a5b85; margin-right:20px;">56번째</span>종로노인종합복지관</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.969122" data-long="37.581828"><span style="color:#8a5b85; margin-right:20px;">56번째</span>종로구 보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="color:#8a5b85; margin-right:20px;">56번째</span>서울의료원</li>
+
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.605098" data-long="35.865977"><span style="color:#4f26d7; margin-right:20px;">65번째</span>경북대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.557786" data-long="35.836751"><span style="color:#327ce0; margin-right:20px;">85번째</span>대구서부터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.345336" data-long="36.017935"><span style="color:#327ce0; margin-right:20px;">85번째</span>대잠아델리아</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.375417" data-long="36.060849"><span style="color:#327ce0; margin-right:20px;">85번째</span>리플러스 장성점</li>
+<li id="fly"><span style="color:#327ce0; margin-right:20px;">85번째</span>자택 귀가</li>
+<li id="fly"><span style="color:#327ce0; margin-right:20px;">85번째</span>장성동 -> 대잠동 (버스)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.374795" data-long="36.053280"><span style="color:#327ce0; margin-right:20px;">85번째</span>영일대해수욕장(버스정류장)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.362243" data-long="36.030720"><span style="color:#327ce0; margin-right:20px;">85번째</span>죽도시장(버스정류장)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.341973" data-long="36.018169"><span style="color:#327ce0; margin-right:20px;">85번째</span>코아이빈후과</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.341973" data-long="36.018169"><span style="color:#327ce0; margin-right:20px;">85번째</span>미래건강약국</li>
+<li id="fly"><span style="color:#327ce0; margin-right:20px;">85번째</span>자택 귀가</li>
+<li id="fly"><span style="color:#327ce0; margin-right:20px;">85번째</span>대잠동 -> 장성동 (버스)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.361959" data-long="36.017887"><span style="color:#327ce0; margin-right:20px;">85번째</span>세명기독병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.354906" data-long="36.034891"><span style="color:#327ce0; margin-right:20px;">85번째</span>포항의료원</li>
+
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.630224" data-long="35.878282"><span style="color:#0ac682; margin-right:20px;">113번째</span>동대구 터미널</li>
+<li id="fly" data-lat="128.630224" data-long="35.878282"><span style="color:#0ac682; margin-right:20px;">113번째</span>빽다방 서신동(위치확인중)</li>
+<li id="fly"data-lat="128.630224" data-long="35.878282"><span style="color:#0ac682; margin-right:20px;">113번째</span>왕중왕짜장(위치확인중)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121693" data-long="35.833388"><span style="color:#0ac682; margin-right:20px;">113번째</span>AXA손해보험 전주보상센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.101762" data-long="35.849505"><span style="color:#0ac682; margin-right:20px;">113번째</span>KS공업사</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121693" data-long="35.833388"><span style="color:#0ac682; margin-right:20px;">113번째</span>AXA손해보험 전주보상센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.111001" data-long="35.843625"><span style="color:#0ac682; margin-right:20px;">113번째</span>푸라닭 전주하가점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121693" data-long="35.833388"><span style="color:#0ac682; margin-right:20px;">113번째</span>AXA손해보험 전주보상센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.149794" data-long="35.805368"><span style="color:#0ac682; margin-right:20px;">113번째</span>상진바이크샵</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.116441" data-long="35.828115"><span style="color:#0ac682; margin-right:20px;">113번째</span>안전오토바이 종합랜드</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121114" data-long="35.861360"><span style="color:#0ac682; margin-right:20px;">113번째</span>원이비인후과 의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121210" data-long="35.861374"><span style="color:#0ac682; margin-right:20px;">113번째</span>전주종로약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121883" data-long="35.834423"><span style="color:#0ac682; margin-right:20px;">113번째</span>롯데백화점 전주(입생로랑, 샤넬, 롯데시네마 7관 인셉션)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.125064" data-long="35.807788"><span style="color:#0ac682; margin-right:20px;">113번째</span>이철헤어커커 전주효자CGV점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.127513" data-long="35.843710"><span style="color:#0ac682; margin-right:20px;">113번째</span>쓰리팝PC방 전북대점</li>
+<li id="fly" data-lat="127.121883" data-long="35.834423"><span style="color:#0ac682; margin-right:20px;">113번째</span>송천동 스타벅스(위치확인중)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.176032" data-long="35.825982"><span style="color:#0ac682; margin-right:20px;">113번째</span>아중리 청혜참치</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.120408" data-long="35.854332"><span style="color:#0ac682; margin-right:20px;">113번째</span>송천롯데마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.140564" data-long="35.847185"><span style="color:#0ac682; margin-right:20px;">113번째</span>전북대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="color:#22a6a6; margin-right:20px;">121번째</span>서울의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="color:#4d6736; margin-right:20px;">서초구</span>국립중앙의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.727451" data-long="35.819447"><span style="color:#b23337; margin-right:20px;">상주시</span>경산역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.114678" data-long="36.123423"><span style="color:#b23337; margin-right:20px;">상주시</span>김천역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.164258" data-long="36.410390"><span style="color:#b23337; margin-right:20px;">상주시</span>상주역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.159748" data-long="36.420344"><span style="color:#b23337; margin-right:20px;">상주시</span>상주성모병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.150492" data-long="36.416683"><span style="color:#b23337; margin-right:20px;">상주시</span>상주보건소 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.150823" data-long="36.417082"><span style="color:#b23337; margin-right:20px;">상주시</span>상주 행림약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.732302" data-long="36.568139"><span style="color:#b23337; margin-right:20px;">상주시</span>안동의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#2405b6; margin-right:20px;">예천군</span>인천국제공항</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.452964" data-long="36.657700"><span style="color:#2405b6; margin-right:20px;">예천군</span>예천보건소 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.732302" data-long="36.568139"><span style="color:#2405b6; margin-right:20px;">예천군</span>안동의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.896249" data-long="35.127322"><span style="color:#29d381; margin-right:20px;">126번째</span>카페소요</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.895606" data-long="35.135405"><span style="color:#29d381; margin-right:20px;">126번째</span>최가박당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.902415" data-long="35.132998"><span style="color:#29d381; margin-right:20px;">126번째</span>남구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.911596" data-long="35.128048"><span style="color:#29d381; margin-right:20px;">126번째</span>사계진미숯불닭갈비 광주봉선점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.905957" data-long="35.125515"><span style="color:#29d381; margin-right:20px;">126번째</span>아이리스PC방 방림점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.889886" data-long="35.152299"><span style="color:#29d381; margin-right:20px;">126번째</span>서구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.926592" data-long="35.138675"><span style="color:#29d381; margin-right:20px;">126번째</span>조선대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.923194" data-long="35.145610"><span style="color:#af64b3; margin-right:20px;">164번째</span>동구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.911596" data-long="35.128048"><span style="color:#af64b3; margin-right:20px;">164번째</span>사계진미숯불닭갈비 광주봉선점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.905957" data-long="35.125515"><span style="color:#af64b3; margin-right:20px;">164번째</span>아이리스PC방 방림점</li>
+<li id="fly"><span style="color:#af64b3; margin-right:20px;">164번째</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.926592" data-long="35.138675"><span style="color:#af64b3; margin-right:20px;">164번째</span>조선대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#9b4605; margin-right:20px;">210번째</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.926492" data-long="35.149200"><span style="color:#9b4605; margin-right:20px;">210번째</span>동명식빵</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.913983" data-long="35.173365"><span style="color:#9b4605; margin-right:20px;">210번째</span>중흥헬스</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.854334" data-long="35.154884"><span style="color:#9b4605; margin-right:20px;">210번째</span>치평동 텐토</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.878982" data-long="35.208997"><span style="color:#9b4605; margin-right:20px;">210번째</span>양산동 음식점 '양떼목장'</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.913983" data-long="35.173365"><span style="color:#9b4605; margin-right:20px;">210번째</span>중흥헬스</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.278230" data-long="34.610367"><span style="color:#9b4605; margin-right:20px;">210번째</span>고흥 실버대학</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.135658" data-long="34.525779"><span style="color:#9b4605; margin-right:20px;">210번째</span>고흥 뚝배기식당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.912124" data-long="35.173399"><span style="color:#9b4605; margin-right:20px;">210번째</span>북구보건소 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.921549" data-long="35.142085"><span style="color:#9b4605; margin-right:20px;">210번째</span>전남대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.913855" data-long="35.175683"><span style="color:#e6866d; margin-right:20px;">239번째</span>포켓볼하우스 오픈스페이스</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.910849" data-long="35.170002"><span style="color:#e6866d; margin-right:20px;">239번째</span>후라이드참잘하는집 전대점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.914267" data-long="35.165124"><span style="color:#e6866d; margin-right:20px;">239번째</span>CU광주역 행복주택점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.905957" data-long="35.125515"><span style="color:#e6866d; margin-right:20px;">239번째</span>아이리스PC방 방림점</li>
+<li id="fly"><span style="color:#e6866d; margin-right:20px;">239번째</span>보성 문덕면 버섯농장</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.098688" data-long="35.005984"><span style="color:#e6866d; margin-right:20px;">239번째</span>우리식육식당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.916660" data-long="35.161395"><span style="color:#e6866d; margin-right:20px;">239번째</span>홈플러스 계림점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.921549" data-long="35.142085"><span style="color:#e6866d; margin-right:20px;">239번째</span>전남대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.638362" data-long="35.899470"><span style="color:#bf96b6; margin-right:20px;">제주A</span>대구국제공항</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.502993" data-long="33.513040"><span style="color:#bf96b6; margin-right:20px;">제주A</span>CU제주용해로점</li>
+<li id="fly"><span style="color:#bf96b6; margin-right:20px;">제주A</span>해군 부대 복귀해 생활</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.485095" data-long="33.489983"><span style="color:#bf96b6; margin-right:20px;">제주A</span>제주한라병원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.545227" data-long="33.467085"><span style="color:#bf96b6; margin-right:20px;">제주A</span>제주대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.638362" data-long="35.899470"><span style="color:#da5b2e; margin-right:20px;">제주B</span>대구국제공항</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.444137" data-long="33.286241"><span style="color:#da5b2e; margin-right:20px;">제주B</span>서귀포 위호텔(근무)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.423082" data-long="33.252003"><span style="color:#da5b2e; margin-right:20px;">제주B</span>중문신내과의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.565406" data-long="33.254428"><span style="color:#da5b2e; margin-right:20px;">제주B</span>서귀포 열린병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.428373" data-long="33.255016"><span style="color:#da5b2e; margin-right:20px;">제주B</span>CU제주중문오네뜨점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.565406" data-long="33.254428"><span style="color:#da5b2e; margin-right:20px;">제주B</span>서귀포 열린병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.545227" data-long="33.467085"><span style="color:#da5b2e; margin-right:20px;">제주B</span>제주대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.101298" data-long="37.487466"><span style="color:#4c7e55; margin-right:20px;">부산A</span>수서역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.042229" data-long="35.115229"><span style="color:#4c7e55; margin-right:20px;">부산A</span>부산역</li>
+<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.125558" data-long="35.205756"><span style="color:#4c7e55; margin-right:20px;">부산A</span>장산 성당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119137" data-long="35.199104"><span style="color:#4c7e55; margin-right:20px;">부산A</span>반여동 장산명가</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.116698" data-long="35.199541"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자연드림 반여점</li>
+<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119941" data-long="35.202698"><span style="color:#4c7e55; margin-right:20px;">부산A</span>센텀내과의원</li>
+<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.181970" data-long="35.173503"><span style="color:#4c7e55; margin-right:20px;">부산A</span>부산해운대백병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#4c7e55; margin-right:20px;">부산A</span>부산의료원</li>
+
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.073828" data-long="35.215220"><span style="color:#e551fe; margin-right:20px;">부산B</span>전자공고</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.081204" data-long="35.219545"><span style="color:#e551fe; margin-right:20px;">부산B</span>대성탕</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.084164" data-long="35.198336"><span style="color:#e551fe; margin-right:20px;">부산B</span>동래밀면 본점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.086084" data-long="35.205803"><span style="color:#e551fe; margin-right:20px;">부산B</span>복산동 행정복지센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.083637" data-long="35.204852"><span style="color:#e551fe; margin-right:20px;">부산B</span>동래구청(복지정책과)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="35.187235"><span style="color:#e551fe; margin-right:20px;">부산B</span>부산의료원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.215985"><span style="color:#e551fe; margin-right:20px;">부산B</span>온천교회</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119051" data-long="35.154387"><span style="color:#e551fe; margin-right:20px;">부산B</span>피자몰 광안리점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.120726" data-long="35.198026"><span style="color:#e551fe; margin-right:20px;">부산B</span>GS25 꿈에그린점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.080164" data-long="35.204381"><span style="color:#e551fe; margin-right:20px;">부산B</span>대동병원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.079803" data-long="35.204549"><span style="color:#e551fe; margin-right:20px;">부산B</span>가까운약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.081163" data-long="35.204297"><span style="color:#e551fe; margin-right:20px;">부산B</span>메가마트 동래점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.098633" data-long="35.199459"><span style="color:#e551fe; margin-right:20px;">부산B</span>얼쑤대박터지는집 동래점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.079854" data-long="35.211385"><span style="color:#e551fe; margin-right:20px;">부산B</span>동래구보건소</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#213a97; margin-right:20px;">진주A,B</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.566484" data-long="35.198809"><span style="color:#213a97; margin-right:20px;">진주A,B</span>마산의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.264352" data-long="35.198809"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>계룡역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.256727" data-long="36.274807"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>맛나감자탕 계룡본점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.241536" data-long="36.282520"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>늘푸른목장식당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.235973" data-long="36.288471"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>향한리가는길에</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.242266" data-long="36.288896"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>김밥천국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.417777" data-long="36.362561"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>대전병원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.149085" data-long="37.392769"><span style="color:#eb3b6f; margin-right:20px;">계룡시</span>국군수도병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.149085" data-long="37.392769"><span style="color:#3fb8a8; margin-right:20px;">증평군</span>국군수도병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#327e7a; margin-right:20px;">합천A</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.159829" data-long="35.566468"><span style="color:#327e7a; margin-right:20px;">합천A</span>왕비세탁소 </li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.154939" data-long="35.568384"><span style="color:#327e7a; margin-right:20px;">합천A</span>세운할인마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.162587" data-long="35.567116"><span style="color:#327e7a; margin-right:20px;">합천A</span>합천 시외버스 터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.156550" data-long="35.568023"><span style="color:#327e7a; margin-right:20px;">합천A</span>합천보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.161325" data-long="35.567495"><span style="color:#327e7a; margin-right:20px;">합천A</span>소정약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.093825" data-long="35.176235"><span style="color:#327e7a; margin-right:20px;">합천A</span>경상대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#fc0534; margin-right:20px;">합천B</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.162587" data-long="35.567116"><span style="color:#fc0534; margin-right:20px;">합천B</span>합천 시외버스 터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.139512" data-long="35.762724"><span style="color:#fc0534; margin-right:20px;">합천B</span>가야면사무소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.138579" data-long="35.762706"><span style="color:#fc0534; margin-right:20px;">합천B</span>야천1구 경로당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.093825" data-long="35.176235"><span style="color:#fc0534; margin-right:20px;">합천B</span>경상대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.162587" data-long="35.567116"><span style="color:#2a5684; margin-right:20px;">합천C</span>합천 시외버스 터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.163660" data-long="35.568030"><span style="color:#2a5684; margin-right:20px;">합천C</span>합천참정형외과</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.162204" data-long="35.568443"><span style="color:#2a5684; margin-right:20px;">합천C</span>김경호내과</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.566484" data-long="35.198809"><span style="color:#2a5684; margin-right:20px;">합천C</span>마산의료원</li>
+
+<li id="fly"><span style="color:#a9a9a9; margin-right:20px;">나머지</span>동선 및 격리시설 확인중</li>
+
+
+
+<br><Br><br><br><Br><br>
+                </ul>
+                </div>
+<!-- 여기까지 팝업 콘텐츠-->
+
+  </div>
+
+
+<link
+rel="stylesheet"
+href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+type="text/css"
+/>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+<!-- 팝업시작 -->
+<a href="http://www.cdc.go.kr/gallery.es?mid=a20503020000&bid=0003" target="_blank">
+  <div id="light" class="white_content">
+    <!--css에서 background-image로 예방수칙 팝업 변경-->
+  </div>
+</a>
+<div id="fade" class="black_overlay" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'"></div>
+<!-- 팝업끝 -->
+
+
 
 </body>
 
 </html>
+
+
+
+
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</li>
+</ul>
+
+ <!-- Toastr -->
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+ <script src="map.js"></script>
+ <link rel="stylesheet" href="style.css">
+ <!--
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+ <script type="text/javascript">
+ (function(w,d,v3){
+ w.chaportConfig = {
+ appId : '5e440199d9d3b143e8105db2'
+ };
+
+ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+ </script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
