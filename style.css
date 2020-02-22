@@ -9,6 +9,7 @@ border-radius: 20px;
 
 .marker_hospital {
   background-image: url('https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Plus-512.png');
+  background-size:cover;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -777,8 +778,8 @@ display:block;
 #toast-container {
     opacity:1;
     font-size:13px;
-	top:50px;
-    right:80px;
+	top:80px;
+    right:110px;
     width: 93%;
 }
 
