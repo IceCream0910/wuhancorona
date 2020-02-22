@@ -1,13 +1,12 @@
-
-  $( document ).ready( function() {
-    toastr.options = {
+$( document ).ready( function() {
+    /*toastr.options = {
                       closeButton: true,
                       progressBar: false,
                       showMethod: 'slideDown',
                       timeOut: 5000
                   };
-                  toastr.info('최근 국내 확진자가 다수 발생함에 따라 보건당국의 역학조사가 일부 지연되고 있습니다. 정보가 공개되는 대로 업데이트하고 있으니 양해 부탁드리며, 개인 위생 수칙을 준수하여 지역사회 확산 저지에 기여하여 주시기 바랍니다.', '확진자 급증에 따른 업데이트 지연');
-
+                  toastr.info('최근 국내 확진자가 다수 발생함에 따라 보건당국의 역학조사가 일부 지연되고 있습니다. 정보가 공개되는 대로 업데이트하고 있으니 양해 부탁드리며 개인 위생 수칙을 준수하여 지역사회 확산 저지에 기여하여 주시기 바랍니다.', '확진자 급증에 따른 업데이트 지연');
+*/
 angular.module("myApp", [])
 
 .controller('mainCtrl', function($scope, getCryptoNewsArticles){
@@ -21,7 +20,6 @@ angular.module("myApp", [])
    this.getNewsArticles = function(callback){
   $http.get('https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=100&sortBy=publishedAt')
      .then(callback);
-     //inside services
      
    };
   
@@ -30,10 +28,6 @@ angular.module("myApp", [])
     document.getElementById("map").style.display = 'block';
     $('.container').removeClass('modal-open');
     document.getElementById("prevent").style.display = 'none';
-    map.setLayoutProperty('country-label', 'text-field', [
-        'get',
-        'name_' + ko
-    ]);
   } );
 
   $('.js-click-map').click(function(){
@@ -90,31 +84,7 @@ tabs.forEach(clickedTab =>{
   });
 });
 
-function handlePermission() {
-  navigator.permissions.query({name:'geolocation'}).then(function(result) {
-    if (result.state == 'granted') {
-      report(result.state);
-      geoBtn.style.display = 'none';
-    } else if (result.state == 'prompt') {
-      report(result.state);
-      geoBtn.style.display = 'none';
-      navigator.geolocation.getCurrentPosition(revealPosition,positionDenied,geoSettings);
-    } else if (result.state == 'denied') {
-      report(result.state);
-      geoBtn.style.display = 'inline';
-    }
-    result.onchange = function() {
-      report(result.state);
-    }
-  });
-}
 
-function report(state) {
-  console.log('Permission ' + state);
-}
-
-
-handlePermission();
 
 
 
@@ -145,10 +115,10 @@ essential: true // this animation is considered essential with respect to prefer
 var geocoder = new MapboxGeocoder({
 accessToken: mapboxgl.accessToken,
 mapboxgl: mapboxgl,
-placeholder: "장소 검색"
+placeholder: "장소 검색 (Beta)"
 });
- 
 document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
 
 var geojson_hospital = {
   type: 'FeatureCollection',
@@ -171,7 +141,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '서울의료원(5)',
-      description: '(20-01-30 다섯번째 확진자) 32세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-30 7번째 확진자) 28세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 9번째 확진자) 5번 확진자의 접촉자로 자택에 머물다 확진 판정 받고 서울의료원으로 이송.<br> (20-02-05 19번 확진자) 36세 한국인 남성으로 서울의료원으로 격리 조치.<br>(20-02-19 56번 확진자) 해당 병원에 격리 조치.'
+      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번 확진자/20-01-30 5번 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -218,8 +188,8 @@ var geojson_hospital = {
       coordinates: [127.005580, 37.567226]
     },
     properties: {
-      title: '국립중앙의료원(4)',
-      description: '(20-01-24 두번째 확진자) 격리 병원(퇴원)<br>(20-02-02 13번 확진자) 본 병원에 격리 조치<br>(20-02-06 23번 확진자) 해당 병원에 격리 조치.<br>(20-02-19 40번 확진자) 검사 결과 양성 확인되어 격리 입원치료.'
+      title: '국립중앙의료원(5)',
+      description: '(20-01-24 두번째 확진자) 격리 병원(퇴원)<br>(20-02-02 13번/02-06 23번/02-19 40번/02-21 서울 서초구 확진자) 검사 결과 양성 확인되어 격리 입원치료.'
     }
   },
 
@@ -254,8 +224,8 @@ var geojson_hospital = {
       coordinates: [126.921549, 35.142085]
     },
     properties: {
-      title: '전남대학교병원(2)',
-      description: '(20-02-04 16번 확진자) [1월 27일 오후 6시] 광주21세기병원에서 전원됐으나 중국 방문 이력이 없어 의심환자 미분류 및 21세기 병원으로 재이동. [2월 3일] 증세 악화로 응급실 격리병동으로 이송. [2월 4일] 격리 중 확진 판정.<br>(20-02-05 18번 확진자) 본 병원으로 격리 조치.'
+      title: '전남대학교병원(4)',
+      description: '(20-02-04 16번 확진자) [1월 27일 오후 6시] 광주21세기병원에서 전원됐으나 중국 방문 이력이 없어 의심환자 미분류 및 21세기 병원으로 재이동. [2월 3일] 증세 악화로 응급실 격리병동으로 이송. [2월 4일] 격리 중 확진 판정.<br>(20-02-05 18번/02-21 210번, 239번 확진자) 본 병원으로 격리 조치.'
     }
   },
 
@@ -266,8 +236,8 @@ var geojson_hospital = {
       coordinates: [126.926592, 35.138675]
     },
     properties: {
-      title: '조선대학교병원',
-      description: '(20-02-06 22번 확진자) 해당 병원에 격리 조치.'
+      title: '조선대학교병원(3)',
+      description: '(20-02-06 22번/02-21 126번째/02-21 164번째 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -358,8 +328,8 @@ var geojson_hospital = {
       coordinates: [129.354906, 36.034891]
     },
     properties: {
-      title: '포항의료원(2)',
-      description: '(20-02-19 54, 55번 확진자) 해당 병원에서 격리치료.'
+      title: '포항의료원(3)',
+      description: '(20-02-19 54, 55번 확진자/20-02-20 85번 확진자) 해당 병원에서 격리치료.'
     }
   },           
          
@@ -373,9 +343,34 @@ var geojson_hospital = {
       title: '전북대병원',
       description: '(20-02-20 113번 확진자) 해당 병원에서 격리치료.'
     }
-  },             
+  },  
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.732302, 36.568139]
+    },
+    properties: {
+      title: '안동의료원(2)',
+      description: '(20-02-19 상주시/02-21 예천군 확진자) 해당 병원에서 격리치료.'
+    }
+  }, 
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.545227, 33.467085]
+    },
+    properties: {
+      title: '제주대병원',
+      description: '(20-02-20 제주A 확진자) 해당 병원에서 격리치료.'
+    }
+  },          
 ]
 };
+
 
 var geojson_place = {
   type: 'FeatureCollection',
@@ -2001,8 +1996,441 @@ var geojson_place = {
        title: '송천롯데마트',
        description: '(20-02-20 113번 확진자) [2월 16일] 오후 8시 ~ 8시 30분 송천롯데마트 방문.'
        }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.557786, 35.836751]
+       },
+       properties: {
+       title: '대구서부터미널',
+       description: '(20-02-20 85번 확진자) [2월 17일] 오후 12시 50분경, 대구서부터미널에서 포항으로 이동.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.345336, 36.017935]
+       },
+       properties: {
+       title: '대잠아델리아',
+       description: '(20-02-20 85번 확진자) [2월 17일] 오후 1시 40분경, 대잠아델리아 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.375417, 36.060849]
+       },
+       properties: {
+       title: '리플러스 장성점',
+       description: '(20-02-20 85번 확진자) [2월 17일] 오후 10시경, 리플러스 장성점 마트 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.374795, 36.053280]
+       },
+       properties: {
+       title: '영일대 해수욕장(버스정류장)',
+       description: '(20-02-20 85번 확진자) [2월 18일] 영일대 해수욕장에서 101번 버스 탑승해 죽도시장까지 이동.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.362243, 36.030720]
+       },
+       properties: {
+       title: '죽도시장(버스정류장)',
+       description: '(20-02-20 85번 확진자) [2월 18일] 죽도시장에서 108번 버스 환승.'
+       }
+        }, 
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.341973, 36.018169]
+       },
+       properties: {
+       title: '코아이빈후과, 미래건강약국',
+       description: '(20-02-20 85번 확진자) [2월 18일] 오후 2시 22분 코아이빈후과 방문 후 44분경, 미래건강약국 방문.'
+       }
+        },
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.361959, 36.017887]
+       },
+       properties: {
+       title: '세명기독병원',
+       description: '(20-02-20 85번 확진자) [2월 19일] 개인차량으로 세명기독병원 방문 후 자택 귀가.'
+       }
+        }, 
+
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.727451, 35.819447]
+       },
+       properties: {
+       title: '경산역',
+       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 2시 38분경 경산역 출발.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.114678, 36.123423]
+       },
+       properties: {
+       title: '김천역',
+       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 3시 49분경 김천역 경유.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.164258, 36.410390]
+       },
+       properties: {
+       title: '상주역',
+       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 4시 30분경 상주역 도착.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.159748, 36.420344]
+       },
+       properties: {
+       title: '상주성모병원',
+       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 4시 50분경 성모병원입구에서 체온 측정.'
+       }
+        },  
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.150492, 36.416683]
+       },
+       properties: {
+       title: '상주보건소 선별진료소',
+       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 5시 20분경 상주보건소 선별진료소 방문. '
+       }
         },   
 
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.150823, 36.417082]
+       },
+       properties: {
+       title: '상주 행림약국',
+       description: '(20-02-19 상주시 확진자) [2월 19일] 행림약국 방문 후 자택 귀가.'
+       }
+        },   
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.452964, 36.657700]
+       },
+       properties: {
+       title: '예천보건소 선별진료소',
+       description: '(20-02-21 예천군 확진자) [2월 20일] 예천보건소 선별진료소 방문.'
+       }
+        },
+
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.896249, 35.127322]
+       },
+       properties: {
+       title: '카페소요',
+       description: '(20-02-20 126번째 확진자) [2월 18일] 오후 4시경 주월동 소재 카페 <소요> 방문'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.895606, 35.135405]
+       },
+       properties: {
+       title: '최가박당',
+       description: '(20-02-20 126번째 확진자) [2월 18일] 오후 11시경 백운동 소재 음식점 최가박당 방문.'
+       }
+        }, 
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.902415, 35.132998]
+       },
+       properties: {
+       title: '남구보건소',
+       description: '(20-02-20 126번째 확진자) [2월 19일] 남구보건소 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.911596, 35.128048]
+       },
+       properties: {
+       title: '사계진미숯불닭갈비 광주봉선점',
+       description: '(20-02-20 126번째/02-21 164번째 확진자) [2월 19일] 봉선동 소재 식당 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.905957, 35.125515]
+       },
+       properties: {
+       title: '아이리스PC방 방림점',
+       description: '(20-02-20 126번째/02-21 164번째,239번째 확진자) [2월 19일] 봉선동 소재 PC방 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.889886, 35.152299]
+       },
+       properties: {
+       title: '서구보건소',
+       description: '(20-02-20 126번째 확진자) [2월 20일] 서구보건소 진료.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.923194, 35.145610]
+       },
+       properties: {
+       title: '동구보건소',
+       description: '(20-02-21 164번째 확진자) [2월 19일] 월산동 학습관 방문 후 동구보건소 방문.'
+       }
+        },   
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.926492, 35.149200]
+       },
+       properties: {
+       title: '동명식빵',
+       description: '(20-02-21 210번째 확진자) [2월 16일] 오후 8시 50분경 동명동 소재 빵집 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.913983, 35.173365]
+       },
+       properties: {
+       title: '중흥헬스',
+       description: '(20-02-21 210번째 확진자) [2월 17일] 오후 6시 30분경 중흥동 소재 헬스장 방문 후 귀가.<br>2월 18일] 오후 10시경 방문 후 자정 귀가.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.854334, 35.154884]
+       },
+       properties: {
+       title: '치평동 텐토',
+       description: '(20-02-21 210번째 확진자) [2월 18일] 오전 11시 30분경 치평동 소재 음식점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.878982, 35.208997]
+       },
+       properties: {
+       title: '양산동 양떼목장',
+       description: '(20-02-21 210번째 확진자) [2월 18일] 오후 7시경 양산동 소재 음식점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.278230, 34.610367]
+       },
+       properties: {
+       title: '고흥 실버대학',
+       description: '(20-02-21 210번째 확진자) [2월 20일] 오전 9시경 자차로 전남 고흥읍 소재 실버대학 출장.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.135658, 34.525779]
+       },
+       properties: {
+       title: '고흥 뚝배기식당',
+       description: '(20-02-21 210번째 확진자) [2월 20일] 오전 11시 30분경 전남 고흥 소재 음식점 방문 후 오후 6시 30분 귀가.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.912124, 35.173399]
+       },
+       properties: {
+       title: '북구보건소 선별진료소',
+       description: '(20-02-21 210번째 확진자) [2월 20일] 자정 북구보건소 선별진료소 방문하여 검사 후 자가 격리 시작.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.913855, 35.175683]
+       },
+       properties: {
+       title: '포켓볼하우스 오픈스페이스',
+       description: '(20-02-21 239번째 확진자) [2월 18일] 오후 8시 40분경 용봉동 소재 포켓볼하우스(오픈스페이스) 방문.'
+       }
+        },    
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.910849, 35.170002]
+       },
+       properties: {
+       title: '후라이드참잘하는집 전대점',
+       description: '(20-02-21 239번째 확진자) [2월 18일] 오후 9시 56분경 중흥동 소재 음식점(후라이드참잘하는집 전대점) 방문하여 포장음식 수령(5분 대기)'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.914267, 35.165124]
+       },
+       properties: {
+       title: '후라이드참잘하는집 전대점',
+       description: '(20-02-21 239번째 확진자) [2월 18일] 오후 10시 18분경 중흥동 소재 편의점(CU광주역 행복주택점) 방문 후 자택 귀가'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.098688, 35.005984]
+       },
+       properties: {
+       title: '우리식육식당',
+       description: '(20-02-21 239번째 확진자) [2월 20일] 오후 12시 30분경 화순 사평면 사평리 소재 음식점 우리식육식당(전남 화순군 사평면 370-1) 방문'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.916660, 35.161395]
+       },
+       properties: {
+       title: '홈플러스 계림점',
+       description: '(20-02-21 239번째 확진자) [2월 20일] 오후 6시경 계림동 소재 대형마트(홈플러스 계림점) 방문 후 귀가'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.638362, 35.899470]
+       },
+       properties: {
+       title: '대구국제공항',
+       description: '(20-02-20 제주A 확진자) [2월 18일] 티웨이 항공 TW809 탑승.'
+       }
+        },    
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.502993, 33.513040]
+       },
+       properties: {
+       title: 'CU제주용해로점',
+       description: '(20-02-20 제주A 확진자) [2월 18일] 오후 8시 40분경 택시로 CU제주용해로점 방문. '
+       }
+        },   
+
+              {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.485095, 33.489983]
+       },
+       properties: {
+       title: '한라병원 선별진료소',
+       description: '(20-02-20 제주A 확진자) [2월 20일] 한라병원 선별진료소 방문.'
+       }
+        },                      
   ]
 };
 
@@ -2033,6 +2461,8 @@ geojson_place.features.forEach(function(marker) {
       .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
     .addTo(map);
 });
+
+
 map.on('load', function() {
 map.addSource('lines', {
 'type': 'geojson',
@@ -2290,7 +2720,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //제주도 확진자
+  //제주관광객 확진자
 [122.1165062,33.8386846],
 [126.49135339999998,33.51041350000001],
 [126.49161930000002,33.4894038],
@@ -2624,6 +3054,28 @@ map.addSource('lines', {
 }
 },
 
+    {
+'type': 'Feature',
+'properties': {
+'color': '#327ce0'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //85 확진자
+[128.557786, 35.836751], //대구서부터미널
+[129.345336, 36.017935], //대잠아델리아
+[129.375417, 36.060849], //리플러스 장성점
+[129.374795, 36.053280], //영일대 해수욕장(버스정류장)
+[129.362243, 36.030720], //죽도시장(버스정류장)
+[129.341973, 36.018169], //코아이빈후과, 미래건강약국
+[129.361959, 36.017887], //세명기독병원
+[129.354906, 36.034891], //포항의료원
+  
+]
+}
+},
+
 
     {
 'type': 'Feature',
@@ -2657,7 +3109,167 @@ map.addSource('lines', {
 ]
 }
 },
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#b23337'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //상주시 확진자
+[128.727451, 35.819447], //경산역
+[128.114678, 36.123423], //김천역
+[128.164258, 36.410390], //상주역
+[128.159748, 36.420344], //상주성모병원
+[128.150492, 36.416683], //상주보건소
+[128.150823, 36.417082], //행림약국
+[128.732302, 36.568139], //안동의료원
+
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#2405b6'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //예천군 확진자
+[126.44069569999999, 37.4601908], //경산역
+[128.452964, 36.657700], //예천보건소
+[128.732302, 36.568139], //안동의료원
+
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#29d381'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //126번째 확진자
+[126.896249, 35.127322], //카페소요
+[126.895606, 35.135405], //백운동 최가박당
+[126.902415, 35.132998], //남구보건소
+[126.911596, 35.128048], //사계진미숯불닭갈비
+[126.905957, 35.125515], //아이리스pc 봉선
+[126.889886, 35.152299], //서구보건소
+[126.926592, 35.138675], //조선대학교병원
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#29d381'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //126번째 확진자
+[126.923194, 35.145610], //카페소요
+[126.911596, 35.128048], //백운동 최가박당
+[126.905957, 35.125515], //남구보건소
+[126.911596, 35.128048], //사계진미숯불닭갈비
+[126.905957, 35.125515], //아이리스pc 봉선
+[126.889886, 35.152299], //서구보건소
+[126.926592, 35.138675], //조선대학교병원
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#9b4605'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //210번째 확진자
+[128.582389, 35.838970], //신천지
+[126.926492, 35.149200], //동명식빵
+[126.913983, 35.173365], //중흥헬스
+[126.854334, 35.154884], //치평동 텐토
+[126.878982, 35.208997], //양산동 양떼목장
+[126.913983, 35.173365], //중흥헬스
+[127.278230, 34.610367], //고흥 실버대학
+[127.135658, 34.525779], //고흥 뚝배기식당
+[126.912124, 35.173399], //북구보건소
+[126.921549, 35.142085], //전남대병원
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#af64b3'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //164번째 확진자
+[126.923194, 35.145610], //동구보건소
+[126.911596, 35.128048], //사계진미숯불닭갈비
+[126.905957, 35.125515], //아이리스pc 봉선
+[126.926592, 35.138675], //조선대병원
+]
+}
+},
   
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#af64b3'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //239번째 확진자
+[126.913855, 35.175683], //오픈스페이스 포켓볼하우스
+[126.910849, 35.170002], //후라이드참잘하는집 전대점
+[126.914267, 35.165124], //Cu광주역 행복주택점
+[126.905957, 35.125515], //아이리스pc
+// 보성군 문덕면 소재 버섯농장
+[127.098688, 35.005984], //우리식육식당
+[126.916660, 35.161395], //홈플러스 계림점
+[126.921549, 35.142085], //전남대병원
+
+
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#bf96b6'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //제주A 확진자
+[128.638362, 35.899470], //대구국제공항
+[126.502993, 33.513040], //CU제주용해로점
+[126.485095, 33.489983], //제주한라병원 선별
+[126.545227, 33.467085], //제주대병원
+]
+}
+},
+
+
 ]
 }
 });
