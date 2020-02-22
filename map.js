@@ -365,9 +365,45 @@ var geojson_hospital = {
     },
     properties: {
       title: '제주대병원',
-      description: '(20-02-20 제주A 확진자) 해당 병원에서 격리치료.'
+      description: '(20-02-20 제주A, 02-21 제주B 확진자) 해당 병원에서 격리치료.'
     }
-  },          
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.059186, 35.187235]
+    },
+    properties: {
+      title: '부산의료원',
+      description: '(20-02-21 부산A/부산B 확진자) 해당 병원에서 격리치료.'
+    }
+  },  
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.566484, 35.198809]
+    },
+    properties: {
+      title: '마산의료원',
+      description: '(20-02-21 진주A/02-22 합천C 확진자) 해당 병원에서 격리치료.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.093825, 35.176235]
+    },
+    properties: {
+      title: '경상대병원',
+      description: '(20-02-21 합천A,B 확진자) 해당 병원에서 격리치료.'
+    }
+  },         
 ]
 };
 
@@ -1692,8 +1728,8 @@ var geojson_place = {
                      coordinates: [128.582389, 35.838970]
                     },
                      properties: {
-                    title: '신천지예수교 증거장막성전 다대오지파대구교회',
-                    description: '현재 신천지를 중심으로 집단 감염 발생중. (20-02-18 31번 확진자) [2월 9일] 오전 7시 30분 자차 이용해 방문.<br>[2월 16일] 오전 7시 20분경 택시 이용해 방문. '
+                    title: '신천지예수교회다대오지성전',
+                    description: '신천지를 중심으로 집단 감염 발생.'
                                 }
                               },
              
@@ -2404,7 +2440,7 @@ var geojson_place = {
        },
        properties: {
        title: '대구국제공항',
-       description: '(20-02-20 제주A 확진자) [2월 18일] 티웨이 항공 TW809 탑승.'
+       description: '(20-02-20 제주A 확진자) [2월 18일] 티웨이 항공 TW809 탑승.<br>(20-02-20 제주B 확진자) [2월 16일] 대구국제공항에서 출발해 제주로 입도.'
        }
         },    
 
@@ -2430,7 +2466,478 @@ var geojson_place = {
        title: '한라병원 선별진료소',
        description: '(20-02-20 제주A 확진자) [2월 20일] 한라병원 선별진료소 방문.'
        }
-        },                      
+        }, 
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.444137, 33.286241]
+       },
+       properties: {
+       title: '서귀포 위호텔',
+       description: '(20-02-21 제주B 확진자) [2월 17, 19일] 서귀포 소재 WE호텔 근무.'
+       }
+        },       
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.423082, 33.252003]
+       },
+       properties: {
+       title: '중문신내과의원',
+       description: '(20-02-21 제주B 확진자) [2월 19일] 중문신내과의원 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.565406, 33.254428]
+       },
+       properties: {
+       title: '서귀포열린병원',
+       description: '(20-02-21 제주B 확진자) [2월 19, 20일] 서귀포열린병원 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [126.428373, 33.255016]
+       },
+       properties: {
+       title: 'CU제주중문오네뜨점',
+       description: '(20-02-21 제주B 확진자) [2월 20일] CU제주중문오네뜨점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.101298, 37.487466]
+       },
+       properties: {
+       title: '수서역',
+       description: '(20-02-21 부산A 확진자) [2월 18일] 수서역에서 SRT타고 부산역으로 출발.(14:00~17:00)'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.042229, 35.115229]
+       },
+       properties: {
+       title: '부산역',
+       description: '(20-02-21 부산A 확진자) [2월 18일] 부산역 도착.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.119137, 35.199104]
+       },
+       properties: {
+       title: '반여동 장산명가',
+       description: '(20-02-21 부산A 확진자) [2월 19일] 오전 11시~12시 40분경 반여동 소재 장산명가 방문.'
+       }
+        },   
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.125558, 35.205756]
+       },
+       properties: {
+       title: '장산 성당',
+       description: '(20-02-21 부산A 확진자) [2월 19일] 오전 10시~11시 장산 성당 방문.'
+       }
+        }, 
+
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.116698, 35.199541]
+       },
+       properties: {
+       title: '자연드림 반여점',
+       description: '(20-02-21 부산A 확진자) [2월 19일] 오후 12시 53분~1시 30분, 유기농 식품 전문점 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.119941, 35.202698]
+       },
+       properties: {
+       title: '센텀 내과의원',
+       description: '(20-02-21 부산A 확진자) [2월 20일] 오전 11시 20분 ~ 11시 50분, 센텀 내과의원 방문.'
+       }
+        },  
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.181970, 35.173503]
+       },
+       properties: {
+       title: '부산해운대백병원',
+       description: '(20-02-21 부산A 확진자) [2월 21일] 부산해운대백병원 방문 후 자택 기거.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.073828, 35.215220]
+       },
+       properties: {
+       title: '전자공고',
+       description: '(20-02-21 부산B 확진자) [2월 18일] 오전 11시 50분~오후 12시 40분 전자공고 운동장 이용.'
+       }
+        }, 
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.081204, 35.219545]
+       },
+       properties: {
+       title: '대성탕',
+       description: '(20-02-21 부산B 확진자) [2월 18일] 오후 1시부터 2시 40분까지 대성탕(목욕탕) 이용.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.084164, 35.198336]
+       },
+       properties: {
+       title: '동래밀면 본점',
+       description: '(20-02-21 부산B 확진자) [2월 18일] 오후 3시 10분~4시 40분, 동래밀면 본점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.086084, 35.205803]
+       },
+       properties: {
+       title: '복산동 행정복지센터',
+       description: '(20-02-21 부산B 확진자) [2월 18일] 오후  4시 20분부터 10분간 복산동 주민센터 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.083637, 35.204852]
+       },
+       properties: {
+       title: '동래구청 복지정책과',
+       description: '(20-02-21 부산B 확진자) [2월 18일] 오후 5시부터 20분까지 동래구청 복지정책과 방문.'
+       }
+        }, 
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.077126, 35.215985]
+       },
+       properties: {
+       title: '온천교회',
+       description: '(20-02-21 부산B 확진자) [2월 19일] 오전 10시~오후 1시/오후 6시 30분~9시, 온천교회 1층카페 이용, 2층서 예배.'
+       }
+        }, 
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.119051, 35.154387]
+       },
+       properties: {
+       title: '피자몰 광안리점',
+       description: '(20-02-21 부산B 확진자) [2월 20일] 오후 1시 40분 ~ 3시, 광안리 소재 피자몰 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.120726, 35.198026]
+       },
+       properties: {
+       title: 'GS25 꿈에그린점',
+       description: '(20-02-21 부산B 확진자) [2월 20일] GS25 동래꿈에그린점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.080164, 35.204381]
+       },
+       properties: {
+       title: '대동병원 선별진료소',
+       description: '(20-02-21 부산B 확진자) [2월 21일] 대동병원 선별진료소 방문.'
+       }
+        }, 
+
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.079803, 35.204549]
+       },
+       properties: {
+       title: '가까운약국',
+       description: '(20-02-21 부산B 확진자) [2월 21일] <가까운약국> 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.081163, 35.204297]
+       },
+       properties: {
+       title: '메가마트 동래점',
+       description: '(20-02-21 부산B 확진자) [2월 21일] 메가마트 동래점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.098633, 35.199459]
+       },
+       properties: {
+       title: '얼쑤대박터지는집 동래점',
+       description: '(20-02-21 부산B 확진자) [2월 21일] 음식점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.079854, 35.211385]
+       },
+       properties: {
+       title: '동래구 보건소',
+       description: '(20-02-21 부산B 확진자) [2월 21일] 동래구보건소 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.264352, 36.273366]
+       },
+       properties: {
+       title: '계룡역',
+       description: '(20-02-19 계룡시 확진자) [2월 17일] 대전역에서 계룡역 도착.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.256727, 36.274807]
+       },
+       properties: {
+       title: '맛나감자탕 계룡본점',
+       description: '(20-02-19 계룡시 확진자) [2월 17일] 맛나감자탕 계룡본점 방문.'
+       }
+        },
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.241536, 36.282520]
+       },
+       properties: {
+       title: '늘푸른목장식당',
+       description: '(20-02-19 계룡시 확진자) [2월 18일] 늘푸른목장식당 방문.'
+       }
+        }, 
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.235973, 36.288471]
+       },
+       properties: {
+       title: '향한리가는길에',
+       description: '(20-02-19 계룡시 확진자) [2월 18일] <향한리가는길에> 방문.'
+       }
+        },   
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.242266, 36.288896]
+       },
+       properties: {
+       title: '김밥천국',
+       description: '(20-02-19 계룡시 확진자) [2월 19일] 김밥천국 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.417777, 36.362561]
+       },
+       properties: {
+       title: '대전병원 선별진료소',
+       description: '(20-02-19 계룡시 확진자) [2월 19일] 대전병원 선별진료소에서 진료.'
+       }
+        },
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.159829, 35.566468]
+       },
+       properties: {
+       title: '왕비세탁소',
+       description: '(20-02-21 합천A 확진자) [2월 18일] 왕비세탁소 방문.'
+       }
+        },
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.154939, 35.568384]
+       },
+       properties: {
+       title: '세운할인마트',
+       description: '(20-02-21 합천A 확진자) [2월 18일] 세운할인마트 방문.'
+       }
+        },  
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.162587, 35.567116]
+       },
+       properties: {
+       title: '합천 시외버스 터미널',
+       description: '(20-02-21 합천A 확진자) [2월 19일] 합천 시외버스 터미널 방문.<br>(20-02-21 합천B 확진자) [2월 16일] 합천 시외버스 터미널 도착.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.156550, 35.568023]
+       },
+       properties: {
+       title: '합천 보건소',
+       description: '(20-02-21 합천A 확진자) [2월 19일] 합천 보건소 진료.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.161325, 35.567495]
+       },
+       properties: {
+       title: '소정약국',
+       description: '(20-02-21 합천A 확진자) [2월 19일] 소정약국 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.139512, 35.762724]
+       },
+       properties: {
+       title: '가야면사무소',
+       description: '(20-02-21 합천B 확진자) [2월 18일] 가야면사무소 20분간 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.138579, 35.762706]
+       },
+       properties: {
+       title: '야천1구 경로당',
+       description: '(20-02-21 합천B 확진자) [2월 18일] 야천1구 경로당 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.163660, 35.568030]
+       },
+       properties: {
+       title: '합천참정형외과',
+       description: '(20-02-21 합천C 확진자) [2월 15일] 합천참정형외과 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.162204, 35.568443]
+       },
+       properties: {
+       title: '김경호내과',
+       description: '(20-02-21 합천C 확진자) [2월 20일] 김경호내과 방문.'
+       }
+        }, 
+
   ]
 };
 
@@ -3270,9 +3777,175 @@ map.addSource('lines', {
 },
 
 
+  {
+'type': 'Feature',
+'properties': {
+'color': '#da5b2e'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //제주B 확진자
+[128.638362, 35.899470], //대구국제공항
+[126.444137, 33.286241], //서귀포 위호텔
+[126.423082, 33.252003], //중문신내과의원
+[126.565406, 33.254428], //서귀포 열린병원
+[126.428373, 33.255016], //CU제주중문오네뜨점
+[126.565406, 33.254428], //서귀포 열린병원
+[126.545227, 33.467085], //제주대병원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#4c7e55'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산A 확진자
+[127.101298, 37.487466], //수서역
+[129.042229, 35.115229], //부산역
+//자택 기거
+[129.125558, 35.205756], //장산 성당
+[129.119137, 35.199104], //반여동 장산명가
+[129.116698, 35.199541], //자연드림 반여점
+//자택 기거
+[129.119941, 35.202698], //센텀 내과의원
+//자택 기거
+[129.181970, 35.173503], //부산해운대백병원
+[129.059186, 35.187235], //부산의료원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#e551fe'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산B 확진자
+[129.073828, 35.215220], //전자공고운동장
+[129.081204, 35.219545], //대성탕
+[129.084164, 35.198336], //동래밀면 본점
+[129.086084, 35.205803], //복산동행정복지센터
+[129.083637, 35.204852], //동래구청(복지정책과)
+//명륜역 인근마트 방문 후 자택기거
+[129.077126, 35.215985], //온천교회
+[129.119051, 35.154387], //피자몰 광안리점
+[129.120726, 35.198026], //GS25꿈에그린점
+[129.080164, 35.204381], //대동병원 선별
+[129.079803, 35.204549], //가까운약국
+[129.081163, 35.204297], //메가마트 동래점
+[129.098633, 35.199459], //얼쑤대박터지는집 동래점
+[129.079854, 35.211385], //동래구보건소
+[129.059186, 35.187235], //부산의료원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#213a97'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //진주A,B 확진자
+[128.582389, 35.838970], //신천지
+[128.566484, 35.198809], //마산의료원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#eb3b6f'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //계룡시 확진자
+[127.264352, 36.273366], //계룡역
+[127.256727, 36.274807], //맛나감자탕 계룡본점
+[127.241536, 36.282520], //늘푸른목장식당
+[127.235973, 36.288471], //향한리가는길에
+[127.242266, 36.288896], //김밥천국
+[127.417777, 36.362561], //대전병원 선별
+[127.149085, 37.392769], //국군수도병원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#327e7a'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //합천A 확진자
+[128.582389, 35.838970], //신천지
+[128.159829, 35.566468], //왕비세탁소
+[128.154939, 35.568384], //세운할인마트
+[128.162587, 35.567116], //합천 시외버스 터미널
+[128.156550, 35.568023], //합천보건소
+[128.161325, 35.567495], //소정약국
+[128.093825, 35.176235], //경상대병원 격리
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#fc0534'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //합천B 확진자
+[128.582389, 35.838970], //신천지
+[128.162587, 35.567116], //합천 시외버스 터미널
+[128.139512, 35.762724], //가야면사무소
+[128.138579, 35.762706], //야천1구경로당
+[128.093825, 35.176235], //경상대병원 격리
+
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#2a5684'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //합천C 확진자
+[128.162587, 35.567116], //합천 시외버스 터미널
+[128.163660, 35.568030], //합천참정형외과
+[128.162204, 35.568443], //김경호내과
+[128.566484, 35.198809], //마산의료원 격리
+
+]
+}
+},
+
 ]
 }
 });
+
+
 map.addLayer({
 'id': 'lines',
 'type': 'line',
