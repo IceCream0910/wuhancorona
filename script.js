@@ -328,8 +328,8 @@ var geojson_hospital = {
       coordinates: [129.354906, 36.034891]
     },
     properties: {
-      title: '포항의료원(3)',
-      description: '(20-02-19 54, 55번 확진자/20-02-20 85번 확진자) 해당 병원에서 격리치료.'
+      title: '포항의료원(4)',
+      description: '(20-02-19 54, 55번 확진자/20-02-20 85번/포항B 확진자) 해당 병원에서 격리치료.'
     }
   },           
          
@@ -377,7 +377,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '부산의료원',
-      description: '(20-02-21 부산A/부산B 확진자) 해당 병원에서 격리치료.'
+      description: '(부산A,B,E 확진자) 해당 병원에서 격리치료.'
     }
   },  
 
@@ -403,7 +403,32 @@ var geojson_hospital = {
       title: '경상대병원',
       description: '(20-02-21 합천A,B 확진자) 해당 병원에서 격리치료.'
     }
-  },         
+  }, 
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.019032, 35.100541]
+    },
+    properties: {
+      title: '부산대병원',
+      description: '(부산C,D 확진자) 해당 병원에서 격리치료.'
+    }
+  }, 
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.172511, 36.841942]
+    },
+    properties: {
+      title: '단국대천안병원',
+      description: '(세종A 확진자) 해당 병원에서 격리치료.'
+    }
+  }, 
+
 ]
 };
 
@@ -1886,7 +1911,7 @@ var geojson_place = {
        },
        properties: {
        title: '동대구 터미널',
-       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.'
+       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(포항B 확진자) [2월 16일] 포항으로 출발.'
        }
         },
         
@@ -2127,7 +2152,7 @@ var geojson_place = {
        },
        properties: {
        title: '경산역',
-       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 2시 38분경 경산역 출발.'
+       description: '(20-02-19 상주시 확진자) [2월 19일] 오후 2시 38분경 경산역 출발.<br>(241번 확진자) [2월 18일] 경산역에서 대전역 출발.'
        }
         },  
 
@@ -2938,6 +2963,356 @@ var geojson_place = {
        }
         }, 
 
+ {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.064809, 35.176295]
+       },
+       properties: {
+       title: '부산시교육청',
+       description: '(부산 확진자C) [2월 21일] 오후 1시 30분부터 30분간 부산시 교육청(검정고시 신청부스) 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.115170, 35.160697]
+       },
+       properties: {
+       title: '수영구 슈가스팟',
+       description: '(부산 확진자C) [2월 21일] 오후 2시부터 3시경 수영구 광안동 소재 슈가스팟 건물 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.113196, 35.160835]
+       },
+       properties: {
+       title: '부산한서병원 선별진료소',
+       description: '(부산 확진자C) [2월 21일] 오후 3시부터 5시 40분, 부산(BHS) 한서병원 선별진료소 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.160547, 35.164793]
+       },
+       properties: {
+       title: '해운대시외버스터미널',
+       description: '(부산 확진자D) [2월 18일] 오후 8시 40분, 해운대시외버스터미널 도착.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.203441, 35.186468]
+       },
+       properties: {
+       title: '신선지국밥',
+       description: '(부산 확진자D) [2월 18일] 오후 9시부터 1시간 동안 음식점에서 식사.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.175792, 35.173830]
+       },
+       properties: {
+       title: '베스킨라빈스 해운대좌동점',
+       description: '(부산 확진자D) [2월 18일] 오후 10시 20분부터 10분간 아이스크림점 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.178640, 35.164109]
+       },
+       properties: {
+       title: '해운대보건소 선별진료소',
+       description: '(부산 확진자D) [2월 21일] 오후 5시 45분경 해운대보건소 선별진료소에서 진료후 자택 귀가.<br>(부산 확진자E) [2월 21일] 오후 7시 40분경 자차로 선별진료소에서 진료.'
+       }
+        },    
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.119805, 35.201312]
+       },
+       properties: {
+       title: '청산곱창',
+       description: '(부산 확진자E) [2월 19일] 오후 6시반, 해운대구 선수촌로 소재 청산곱창 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.119353, 35.203818]
+       },
+       properties: {
+       title: '스타벅스 수영강변점',
+       description: '(부산 확진자E) [2월 19일] 오후 8시반, 스타벅스 수영강변점 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.121797, 35.202014]
+       },
+       properties: {
+       title: '세븐일레븐 반여선수촌점',
+       description: '(부산 확진자E) [2월 19일] 오후 10시 50분경 반여선수촌 세븐일레븐 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.123605, 35.203456]
+       },
+       properties: {
+       title: '세븐일레븐 반여선수촌점',
+       description: '(부산 확진자E) [2월 19일] 오후 11시 30분경 CU반여선수촌점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.434196, 36.332326]
+       },
+       properties: {
+       title: '대전역',
+       description: '(241번째 확진자) [2월 18일] 경산역에서 대전역 도착.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.449351, 36.335629]
+       },
+       properties: {
+       title: '불난뚱땡이',
+       description: '(241번째 확진자) [2월 18일] 오후 8시경 자양동 소재 불난뚱땡이(음식점) 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.449351, 36.335629]
+       },
+       properties: {
+       title: '불난뚱땡이',
+       description: '(241번째 확진자) [2월 18일] 오후 8시경 자양동 소재 불난뚱땡이(음식점) 방문.'
+       }
+        },
+        
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.447762, 36.337698]
+       },
+       properties: {
+       title: '매직코인노래연습장',
+       description: '(241번째 확진자) [2월 18일] 오후 9시 30분부터 11시까지 자양동 소재 코인노래방 방문.<br>[2월 19일] 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.449456, 36.338686]
+       },
+       properties: {
+       title: 'GS25 우송IT센터점',
+       description: '(241번째 확진자) [2월 18일] 오후 11시 30분부터 GS25우송IT센터점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.449456, 36.338686]
+       },
+       properties: {
+       title: 'GS25 우송IT센터점',
+       description: '(241번째 확진자) [2월 18일] 오후 11시 30분부터 GS25우송IT센터점 방문.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.449266, 36.338782]
+       },
+       properties: {
+       title: '1983더그레이커피숍',
+       description: '(241번째 확진자) [2월 19일] 오후 3시 10분경 자양동 소재 커피숍 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.427789, 36.327637]
+       },
+       properties: {
+       title: '레스모아 중앙점',
+       description: '(241번째 확진자) [2월 19일] 중구 은행동 소재 업소 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.426869, 36.328556]
+       },
+       properties: {
+       title: '토마토(중구)',
+       description: '(241번째 확진자) [2월 19일] 중구 은행동 소재 업소 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.428116, 36.329026]
+       },
+       properties: {
+       title: '원더플레이스(중구)',
+       description: '(241번째 확진자) [2월 19일] 중구 은행동 소재 업소 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.427936, 36.327697]
+       },
+       properties: {
+       title: '인생사진(중구)',
+       description: '(241번째 확진자) [2월 19일] 중구 은행동 소재 업소 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.425347, 36.328472]
+       },
+       properties: {
+       title: '에메필(중구)',
+       description: '(241번째 확진자) [2월 19일] 중구 은행동 소재 업소 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.427416, 36.327809]
+       },
+       properties: {
+       title: '섹시쿠키 대전은행점',
+       description: '(241번째 확진자) [2월 19일] 중구 은행동 소재 업소 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.421522, 36.327125]
+       },
+       properties: {
+       title: '중앙로 지하상가',
+       description: '(241번째 확진자) [2월 19일] 중앙로 지하상가 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.454827, 36.311854]
+       },
+       properties: {
+       title: '대전 동구보건소',
+       description: '(241번째 확진자) [2월 20/21일] 각각 방문, 검사 실시.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.449565, 36.340482]
+       },
+       properties: {
+       title: '우리동네DC아울렛자양점',
+       description: '(241번째 확진자) [2월 21일] 우리동네DC아울렛자양점 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.280779, 36.463017]
+       },
+       properties: {
+       title: '쑥티식당',
+       description: '(세종A 확진자) [2월 19일] 쑥티식당 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [127.018744, 36.778476]
+       },
+       properties: {
+       title: '아산 항아리보쌈',
+       description: '(세종A 확진자) [2월 21일] 항아리보쌈 방문.'
+       }
+        },    
+
+
+
   ]
 };
 
@@ -2968,6 +3343,7 @@ geojson_place.features.forEach(function(marker) {
       .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
     .addTo(map);
 });
+
 
 
 map.on('load', function() {
@@ -3941,6 +4317,133 @@ map.addSource('lines', {
 }
 },
 
+  {
+'type': 'Feature',
+'properties': {
+'color': '#3476c3'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산C 확진자
+[129.064809, 35.176295], //부산교육청
+[129.115170, 35.160697], //수영구 슈가스팟
+[129.113196, 35.160835], //부산한서병원 선별
+[129.019032, 35.100541], //부산대병원 격리
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#60b015'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산C 확진자
+[128.630224, 35.878282], //동대구시외터미널
+[129.160547, 35.164793], //해운대시외터미널
+[129.203441, 35.186468], //신선지국밥
+[129.175792, 35.173830], //베라 해운대좌동
+//cu,자이마트 확인중
+[129.178640, 35.164109], //해운대보건소 선별
+[129.019032, 35.100541], //부산대병원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#60b015'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산C 확진자
+[128.630224, 35.878282], //동대구시외터미널
+[129.160547, 35.164793], //해운대시외터미널
+[129.203441, 35.186468], //신선지국밥
+[129.175792, 35.173830], //베라 해운대좌동
+//cu,자이마트 확인중
+[129.178640, 35.164109], //해운대보건소 선별
+[129.019032, 35.100541], //부산대병원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#4442f1'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산E 확진자
+[129.119805, 35.201312], //청산곱창
+[129.119353, 35.203818], //스타벅스수영강변
+[129.121797, 35.202014], //세븐일레븐 반여선수촌 
+[129.123605, 35.203456], //cu반여선수촌점
+[129.178640, 35.164109], //해운대보건소 선별
+[129.059186, 35.187235], //부산의료원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#4442f1'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //241 확진자
+[128.727451, 35.819447], //경산역
+[127.434196, 36.332326], //대전역
+[127.449351, 36.335629], //불난뚱땡이 
+[127.447762, 36.337698], //매직코인노래연습장
+[127.449456, 36.338686], //GS25 우송IT센터점
+[127.449266, 36.338782], //1983더그레이커피숍
+[127.427789, 36.327637], //레스모아 중앙점
+[127.426869, 36.328556], //토마토
+[127.428116, 36.329026], //원더플레이스
+[127.427936, 36.327697], //인생사진
+[127.425347, 36.328472], //에메필
+[127.427416, 36.327809], //섹시쿠키 대전은행점
+//케이스닥터
+[127.421522, 36.327125], //중앙로 지하상가
+[127.447762, 36.337698], //매직코인노래연습장
+//아지트PC방(자양동)
+[127.454827, 36.311854], //대전 동구보건소
+[127.449565, 36.340482], //우리동네DC아울렛자양
+[127.415538, 36.316891], //충남대병원 격리
+
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#93b485'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //세종A 확진자
+[128.582389, 35.838970], //남구 신천지대구교회
+[127.280779, 36.463017], //쑥티식당
+[127.018744, 36.778476], //아산항아리보쌈
+[127.172511, 36.841942], //단국대천안병원
+]
+}
+},
+
+
 ]
 }
 });
@@ -3953,7 +4456,7 @@ map.addLayer({
 'paint': {
 'line-width': 2,
 // Use a get expression (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-get)
-// to set the line-color to a feature property value.
+// to set the line-color to a feature property value
 'line-color': ['get', 'color']
 }
 });
