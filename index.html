@@ -49,9 +49,9 @@
   <div id="prevent" style=" height:90%; width:100%; overflow:scroll;">
 
 
-   <div id="listcontainer" style="position:fixed; height:90%; overflow:scroll;">
+   <div id="listcontainer" style="position:fixed; height:93%; overflow:scroll;">
      <!-- 예방수칙 -->
-     <h3 style="margin-left:20px; margin-top:50px; margin-bottom: 0px;">여러분의 실천이 필요합니다</h3>
+     <h5 style="margin-top:20px; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">여러분이 실천이 필요합니다</h5>
      <h1 style="margin-left:20px;  margin-top:0px;">#예방수칙</h1>
      <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:300px; height:169px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
      <br><br><br>
@@ -121,91 +121,75 @@
         <!-- 정보 패널 -->
 
 
+<h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
+ (20-02-24 17:00 기준)</span></h3>
+<div class="card-list">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                      <div class="card purple">
+                            <div class="title">국내 확진자</div>
+                            <i class="zmdi zmdi-download"></i>
+                            <div class="value">833명</div>
+                            <div class="stat"><b>전일 대비 </b>+277</div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="card blue">
+                            <div class="title">국내 완치자</div>
+                            <i class="zmdi zmdi-upload"></i>
+                            <div class="value">22</div>
+                            <div class="stat"><b>전일 대비 </b>+3</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="card red">
+                            <div class="title">국내 사망자</div>
+                            <i class="zmdi zmdi-download"></i>
+                            <div class="value">8</div>
+                            <div class="stat"><b>전일 대비 </b>+3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                 <div class='widget widget--2x1--korea'>
-                   <header class='widget-header' style="height:40px;">
-                     <div class='widget-header-indicator' style="background: #ffff00;">  </div>
-                     <span style="margin-left:30px;">국내 통계 <span style="font-size:10px; color:gray;"> (20-02-24 16:00 기준)</span></span>
+            <h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">전세계 통계 <span style="font-size:10px; color:gray;">
+ (20-02-24 09:00 기준)</span></h3>
+<div class="card-list">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                      <div class="card orange">
+                            <div class="title">전세계 확진자</div>
+                            <i class="zmdi zmdi-download"></i>
+                            <div class="value">78,377명</div>
+                        </div>
+                        
+                    </div>
 
-                   </header>
-                   <div class='widget-content'>
-                     <canvas id='donut' width='200px'></canvas>
-                     <ul class='value-list'>
-                       <li>
-                         <div class='description' style="color:#f0f0f0">
-                           확진자
-                         </div>
-                         <div class='value'>
-                           <span>833 <span style="font-size:20px;">명 <span style="color:#80c904">(완치 22)</span></span></span>
-                         </div>
-                       </li>
-                       <li>
-                         <div class='description' style="color:#f0f0f0">
-                           유증상자
-                         </div>
-                         <div class='value'>
-                           <span style="font-size:30px;">31,923 <span style="font-size:14px;">명 (검사중 11,631, 음성 20,292)</span></span>
-                           
-                         </div>
-                       </li>
-       <li>
-                         <div class='description' style="color:#f0f0f0">
-                           사망자
-                         </div>
-                         <div class='value'>
-                         <span>7 <span style="font-size:18px;">명</span></span>
-                         </div>
-                       </li>
-                       <li>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
+                        <div class="card darkred">
+                            <div class="title">전세계 사망자</div>
+                            <i class="zmdi zmdi-download"></i>
+                            <div class="value">2,460</div>
+                            <div class="stat"><b>단순계산 치명율 </b>3.1%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                       </li>
-                     </ul>
-                   </div>
-                   </div>
-           <br>
-                   <div class='widget widget--2x1--global'>
-                     <header class='widget-header' style="height:40px;">
-                       <div class='widget-header-indicator'>  </div>
-                       <span style="margin-left:30px;">전세계 통계 <span style="font-size:10px; color:gray;"> (20-02-24 09:00 기준)</span></span>
+                 <br><br>
+        
 
-                     </header>
-                     <div class='widget-content'>
-                       <canvas id='donut' width='200px'></canvas>
-                       <ul class='value-list'>
-                         <li>
-                           <div class='description' style="color:#f0f0f0">
-                             확진자
-                           </div>
-                           <div class='value'>
-                             <span> 78,377 <span style="font-size:20px;">명</span></span>
-                           </div>
-                         </li>
-                         <li>
-                           <div class='description' style="color:#f0f0f0">
-                             사망자
-                           </div>
-                           <div class='value'>
-                             <span style="font-size:38px;">2,460 <span style="font-size:20px;">명</span></span>
-                             <span class='negative small' style="color:#ca3433;">
-                                <span style="font-size:12px;"> </span>
-                             </span>
-                           </div>
-                         </li>
-                       </ul>
-                     </div>
-                     </div><br>
-
-
-                     <h2 style="color:white; margin:20px;">전세계 확진자 추이</h2>
-                     <div style="background-color:#3b3b3b;  border-radius:20px; padding-left:20px; padding-right:20px;">
+                     <h2 style="margin:20px;">전세계 확진자 추이</h2>
+                     <div style="  border-radius:20px; padding-left:20px; padding-right:20px;">
                               <div id="chartContainer" style="height: 250px; width: 100%;"></div>
                             </div>
                               <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                               <br>
 
            <div class="bycountry" style="margin-left:20px; padding-right:20px;">
-           <h2 style="color:white;">국가별 확진자 현황</h2>
-                     <ul>
+           <h2>국가별 확진자 현황</h2>
+                     <ul style="color:black;">
                        <li><a href="#">중국 : 76,936 (사망 2,442)</a></li>
                        <li><a href="#">일본 : 835 (사망 3, 크루즈 691)</a></li>
                        <li><a href="#">대한민국 : 763 (사망 7)</a></li>
@@ -238,11 +222,11 @@
                        <li><a href="#">이집트 : 1</a></li>
                        <li><a href="#">이스라엘 : 1</a></li>
                        <li><a href="#">레바논 : 1</a></li>
-
+<br><br>
                      </ul>
                      </div>
 
-    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="imgBanner">
     <a href="http://www.mohw.go.kr/react/popup_200128.html" target="_blank" style="text-decoration:none;"><img  width="100%" style="margin-top:20px;" src="https://i.imgur.com/mj5Omgi.png " alt="선별진료소 목록"></a>
 <h1 style="margin:20px; color:white;">예방수칙</h1>
@@ -258,12 +242,12 @@
 </div>
 
     <div id="footer--contact" style="color:white; text-align:center; margin-top:50px; margin-left:20px; margin-right:20px;">
-    <br>
-    <span style="color:#0f0f0f;">출처 : 질병관리본부, JHU CSSE</span><br>
+    <br><br><br><br>
+    <span style="color:gray; margin-top:50px;">출처 : 질병관리본부, JHU CSSE</span><br>
     <span style="color:gray;">정보제공 : <a href="http://ncov.mohw.go.kr" style="text-decoration:none; color:gray;">질병관리본부</a>, <a href="https://systems.jhu.edu/" style="text-decoration:none; color:gray;">JHU CSSE</a></span><br>
     <span style="color:gray;">지도제공 : <a href="https://mapbox.com" style="text-decoration:none; color:gray;">Mapbox</a>, OpenstreetMap</span><br>
     <span style="color:gray;">뉴스제공 : <a href="https://newsapi.org" style="text-decoration:none; color:gray;">newsapi.org</a></span><br><br>
-    <span style="color:white">본 정보의 당사자는 공개된 사항 중 사실과 다르거나 의견이 있는 경우 우측 하단 채팅 버튼으로 문의하여 이의를 제기할 수 있습니다.</span><br><br>
+    <span style="color:black;">본 정보의 당사자는 공개된 사항 중 사실과 다르거나 의견이 있는 경우 우측 하단 채팅 버튼으로 문의하여 이의를 제기할 수 있습니다.</span><br><br>
     <br><br><br><br><br>
 
     </div>
