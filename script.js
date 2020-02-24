@@ -3309,7 +3309,212 @@ var geojson_place = {
        title: '아산 항아리보쌈',
        description: '(세종A 확진자) [2월 21일] 항아리보쌈 방문.'
        }
-        },    
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.362948, 36.036658]
+       },
+       properties: {
+       title: '중앙상가 애슐리',
+       description: '(포항B 확진자) [2월 17일] 중앙상가 애슐리 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.365557, 36.035029]
+       },
+       properties: {
+       title: '달콤커피 죽도시장점',
+       description: '(포항B 확진자) [2월 17일] 달콤커피 죽도시장점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.359088, 36.025112]
+       },
+       properties: {
+       title: '동원성',
+       description: '(포항B 확진자) [2월 17일] 동원성에서 식사.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.364912, 36.031666]
+       },
+       properties: {
+       title: '김밥나라(오거리)',
+       description: '(포항B,E 확진자) [2월 18일] 김밥나라에서 식사.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.396211, 35.992428]
+       },
+       properties: {
+       title: '포항남구보건소',
+       description: '(포항B,C 확진자) [2월 20일] 포항남구보건소 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.360372, 36.025222]
+       },
+       properties: {
+       title: '어림지',
+       description: '(포항C 확진자) [2월 16일] 어림지 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.345033, 35.999782]
+       },
+       properties: {
+       title: '매직PC방',
+       description: '(포항C 확진자) [2월 17일] 매직PC방 방문 후 귀가.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.345871, 35.996375]
+       },
+       properties: {
+       title: '맘스터치 연일점',
+       description: '(포항C 확진자) [2월 18일] 맘스터치 연일점 방문.'
+       }
+        }, 
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.374110, 36.060095]
+       },
+       properties: {
+       title: '바디라인 피트니스',
+       description: '(포항D 확진자) [2월 16일] 바디라인 피트니스 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.349156, 36.011109]
+       },
+       properties: {
+       title: '포항우체국',
+       description: '(포항D 확진자) [2월 18일] 포항우체국 출근'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.372315, 36.066697]
+       },
+       properties: {
+       title: '라라코스트',
+       description: '(포항E 확진자) [2월 18일] 라라코스트 방문.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.347175, 36.011452]
+       },
+       properties: {
+       title: '호텔팰리스',
+       description: '(포항E 확진자) [2월 18,20일] 호텔팰리스 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.366402, 36.032990]
+       },
+       properties: {
+       title: '홍성철성형외과',
+       description: '(포항E 확진자) [2월 20일] 홍성철성형외과 (4층) 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.366832, 36.033008]
+       },
+       properties: {
+       title: '독일약국',
+       description: '(포항E 확진자) [2월 20일] 독일 약국 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.380461, 36.070717]
+       },
+       properties: {
+       title: '포항북구보건소',
+       description: '(포항F 확진자) [2월 19,20일] 북구보건소 근무.'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.392358, 36.080566]
+       },
+       properties: {
+       title: 'CU포항인성점',
+       description: '(포항F 확진자) [2월 19일] CU포항인성점 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.392485, 36.079387]
+       },
+       properties: {
+       title: '장성동 진할인마트',
+       description: '(포항F 확진자) [2월 21일] 진할인마트 방문.'
+       }
+        },   
+
 
 
 
@@ -4442,6 +4647,100 @@ map.addSource('lines', {
 ]
 }
 },
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#697b34'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //포항B 확진자
+[128.582389, 35.838970], //남구 신천지대구교회
+[128.630224, 35.878282], //동대구시외터미널
+//신천지 포항교회(장성동)
+[129.362948, 36.036658], //중앙상가 애슐리
+[129.365557, 36.035029], //달콤커피 죽도시장점
+[129.359088, 36.025112], //동원성
+[129.364912, 36.031666], //김밥나라
+//맥도날드(중앙상가)
+[129.396211, 35.992428], //포항남구보건소
+[129.354906, 36.034891], //포항의료원
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#5fb9eb'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //포항c 확진자
+[129.360372, 36.025222], //어림지
+[129.345033, 35.999782], //매직PC방
+[129.345871, 35.996375], //맘터 연일점
+[129.396211, 35.992428], //포항남구보건소
+
+
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#ac696b'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //포항d 확진자
+[129.374110, 36.060095], //바디라인 피트니스
+[129.349156, 36.011109], //포항우체국
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#b014ad'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //포항e 확진자
+[129.364912, 36.031666], //김밥나라
+[129.372315, 36.066697], //라라코스트
+[129.347175, 36.011452], //호텔팰리스
+[129.366402, 36.032990], //홍성철성형외과
+[129.366832, 36.033008], //독일 약국
+[129.347175, 36.011452], //호텔팰리스
+]
+}
+},
+
+  {
+'type': 'Feature',
+'properties': {
+'color': '#9d4adc'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //포항f 확진자
+[129.380461, 36.070717], //포항북구보건소근무
+[129.392358, 36.080566], //cu포항인성점
+[129.392485, 36.079387], //진할인마트 장성동
+]
+}
+},
+
+
 
 
 ]
