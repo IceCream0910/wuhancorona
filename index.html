@@ -42,7 +42,7 @@
 
 <div class="container">
 
-  <div id='map' style="width: 103%; height: 1000px;"></div>
+  <div id='map' style="width: 105%; height: 1000px;"></div>
 <div id="geocoder" class="geocoder"></div>
 
 
@@ -54,11 +54,7 @@
      <h5 style="margin-top:20px; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">여러분이 실천이 필요합니다</h5>
      <h1 style="margin-left:20px;  margin-top:0px;">#예방수칙</h1>
      <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:300px; height:169px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-     <br><br><br>
-
-
-
-      <br>
+     <br><br>
       <div id="frontier" ng-app="myApp">
 
   <div ng-controller="angelCtrl">
@@ -217,7 +213,7 @@
            <h2>국가별 확진자 현황</h2>
                      <ul style="color:black;">
                        <li><a href="#">중국 : 77,658 (사망 2,663)</a></li>
-                       <li><a href="#">대한민국 : 893 (사망 8)</a></li>
+                       <li><a href="#">대한민국 : 977 (사망 10)</a></li>
                        <li><a href="#">일본 : 868 (사망 3, 크루즈 695)</a></li>
                        <li><a href="#">이탈리아 : 229 (사망 6)</a></li> 
                        <li><a href="#">싱가포르 : 90</a></li>
@@ -271,7 +267,7 @@
 
     <div id="footer--contact" style="color:white; text-align:center; margin-top:50px; margin-left:20px; margin-right:20px;">
     <br><br><br><br>
-    <span style="color:gray; margin-top:50px;">출처 : 질병관리본부, JHU CSSE</span><br>
+    <span style="color:transparent; margin-top:50px;">출처 : 질병관리본부, JHU CSSE</span><br>
     <span style="color:gray;">정보제공 : <a href="http://ncov.mohw.go.kr" style="text-decoration:none; color:gray;">질병관리본부</a>, <a href="https://systems.jhu.edu/" style="text-decoration:none; color:gray;">JHU CSSE</a></span><br>
     <span style="color:gray;">지도제공 : <a href="https://mapbox.com" style="text-decoration:none; color:gray;">Mapbox</a>, OpenstreetMap</span><br>
     <span style="color:gray;">뉴스제공 : <a href="https://newsapi.org" style="text-decoration:none; color:gray;">newsapi.org</a></span><br><br>
@@ -289,8 +285,12 @@
 <div class="modal-place">
       <!-- 여기에 팝업 콘텐츠-->
     <a onclick="closeplacepopup()" class="closeplace" style="position:fixed; text-align:center; width:100%; background:rgb(240, 240, 240, 1); border-radius:20px;"><h3>닫기</h3></a>
+        
+
 
       <div class="placelist" style="margin-left:20px; padding-right:20px; text-align:left; color:black;">
+
+
 
         <script>
 window.onload = function () {
@@ -341,36 +341,7 @@ chart.render();
 }
 </script>
 
-    <!--
-        <div id="patientInfo">
-          <a class="btn" href="#">1</a>
-          <a class="btn" href="#">2</a>
-          <a class="btn" href="#">2</a>
-          <a class="btn" href="#">2</a>
-          <a class="btn" href="#">2</a>
-          <a class="btn" href="#">2</a>
-          <a class="btn" href="#">2</a>
 
-
-        </div>
-<style>
-  #patientInfo .btn {
-        display: inline-block; height: 50px; width: 40px; border-radius: 50%;
-        margin-right:10px;
-        padding-left:-10px;
-        text-decoration: none;
-  }
-
-  #patientInfo {
-    white-space: nowrap;
-    overflow-y: hidden;
-    overflow-x: scroll;
-    padding: 20px
-    width: 100%;
-    padding-top:50px;
-  }
-</style>
--->
 
                 <ul>
                   <br>
@@ -911,9 +882,79 @@ chart.render();
 <li id="fly" onclick="flyTarget(this)" data-lat="129.216997" data-long="35.867395"><span style="color:#56cc0b; margin-right:20px;">경주C</span>사랑의소아과</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="129.216997" data-long="35.867395"><span style="color:#56cc0b; margin-right:20px;">경주C</span>예송약국</li>
 
+<li id="fly" onclick="flyTarget(this)" data-lat="129.199296" data-long="35.875179"><span style="color:#cd12fe; margin-right:20px;">경주D</span>수억상사</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.157147" data-long="35.901069"><span style="color:#cd12fe; margin-right:20px;">경주D</span>용담매운탕</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.199296" data-long="35.875179"><span style="color:#cd12fe; margin-right:20px;">경주D</span>수억상사</li>
+<li id="fly"><span style="color:#cd12fe; margin-right:20px;">경주D</span>범진자원, 성호기업</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.196749" data-long="35.858329"><span style="color:#cd12fe; margin-right:20px;">경주D</span>동국대학교 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.199296" data-long="35.875179"><span style="color:#cd12fe; margin-right:20px;">경주D</span>수억상사</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.204997" data-long="35.871671"><span style="color:#cd12fe; margin-right:20px;">경주D</span>경원홈마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.186150" data-long="35.843034"><span style="color:#cd12fe; margin-right:20px;">경주D</span>청송얼음골막걸리</li>
 
+<li id="fly" onclick="flyTarget(this)" data-lat="129.226257" data-long="35.883035"><span style="color:#a16729; margin-right:20px;">경주E</span>새천년떡집</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#a16729; margin-right:20px;">경주E</span>웅진북클럽 경주지역국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.211502" data-long="35.886967"><span style="color:#a16729; margin-right:20px;">경주E</span>자매미나리밭</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.176738" data-long="35.881423"><span style="color:#a16729; margin-right:20px;">경주E</span>커피명가</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#a16729; margin-right:20px;">경주E</span>웅진북클럽 경주지역국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.210411" data-long="35.842192"><span style="color:#a16729; margin-right:20px;">경주E</span>스틸룸</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.231065" data-long="35.877436"><span style="color:#a16729; margin-right:20px;">경주E</span>용강국밥</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.232113" data-long="35.880608"><span style="color:#a16729; margin-right:20px;">경주E</span>테이크5</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#a16729; margin-right:20px;">경주E</span>웅진북클럽 경주지역국</li>
 
-<li id="fly"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중 입니다.<br>최근 확진자가 급증하면서 중학생 혼자서 업데이트하기에는 어려움이 있습니다. 열심히 업데이트 중이니 조금만 기다려주세요ㅠ</span></li>
+<li id="fly"><span style="color:#d49fc5; margin-right:20px;">전주</span>청주 처가</li>
+<li id="fly"><span style="color:#d49fc5; margin-right:20px;">전주</span>태안 여행 후 전주 귀가</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#d49fc5; margin-right:20px;">전주</span>다솔아동병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#d49fc5; margin-right:20px;">전주</span>다솜약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#d49fc5; margin-right:20px;">전주</span>홈플러스 전주효자점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.227952" data-long="35.883077"><span style="color:#d49fc5; margin-right:20px;">전주</span>지리산 한방병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.959568" data-long="35.964991"><span style="color:#d49fc5; margin-right:20px;">전주</span>원광대학교병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.831248" data-long="37.642304"><span style="color:#c86d07; margin-right:20px;">김포A,B</span>명지병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.597594" data-long="35.866242"><span style="color:#244e41; margin-right:20px;">구미A</span>끌리다</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.382737" data-long="36.102904"><span style="color:#244e41; margin-right:20px;">구미A</span>순천향대구미병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.428964" data-long="35.519956"><span style="color:#7a3e0d; margin-right:20px;">울산A</span>울산대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.717370" data-long="37.864481"><span style="color:#649a6f; margin-right:20px;">춘천A</span>춘천고속버스터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#649a6f; margin-right:20px;">춘천A</span>신천지예수교회다대오지성전</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.555959" data-long="35.889882"><span style="color:#649a6f; margin-right:20px;">춘천A</span>이마트 트레이더스 비산점</li>
+<li id="fly"><span style="color:#649a6f; margin-right:20px;">춘천A</span>세명동 소재 신천지 부속기관</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.555959" data-long="35.889882"><span style="color:#06c9d0; margin-right:20px;">춘천A</span>이마트 트레이더스 비산점</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.488369" data-long="36.629023"><span style="color:#164027; margin-right:20px;">청주</span>육거리시장</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.507674" data-long="36.628334"><span style="color:#164027; margin-right:20px;">청주</span>금천동 종합문구</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.516125" data-long="36.620369"><span style="color:#164027; margin-right:20px;">청주</span>롯데마트 상당점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.568680" data-long="36.778026"><span style="color:#164027; margin-right:20px;">청주</span>송원칼국수</li>
+<li id="fly"><span style="color:#164027; margin-right:20px;">청주</span>충북 식자재마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.504915" data-long="36.633924"><span style="color:#164027; margin-right:20px;">청주</span>델리퀸 금천점</li>
+<li id="fly"><span style="color:#164027; margin-right:20px;">청주</span>GS편의점(주공9단지)</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.167432" data-long="37.440048"><span style="color:#510f3a; margin-right:20px;">삼척A</span>삼척볼링센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.167222" data-long="37.439958"><span style="color:#510f3a; margin-right:20px;">삼척A</span>세븐일레븐 삼척삼원점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164271" data-long="37.443038"><span style="color:#510f3a; margin-right:20px;">삼척A</span>오션PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.163697" data-long="37.443576"><span style="color:#510f3a; margin-right:20px;">삼척A</span>만치만치</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.116410" data-long="37.521121"><span style="color:#510f3a; margin-right:20px;">삼척A</span>역전할머니맥주 동해천곡점<br>세븐일레븐 동해중앙점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164271" data-long="37.443038"><span style="color:#510f3a; margin-right:20px;">삼척A</span>오션PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.114024" data-long="37.520772"><span style="color:#510f3a; margin-right:20px;">삼척A</span>맥도날드 동해DT점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164741" data-long="37.447259"><span style="color:#510f3a; margin-right:20px;">삼척A</span>데일리커피숍</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.163447" data-long="37.443831"><span style="color:#510f3a; margin-right:20px;">삼척A</span>CU삼척대학로점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.116410" data-long="37.521121"><span style="color:#510f3a; margin-right:20px;">삼척A</span>세븐일레븐 동해중앙점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164591" data-long="37.442641"><span style="color:#510f3a; margin-right:20px;">삼척A</span>모닝캄</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164243" data-long="37.442586"><span style="color:#510f3a; margin-right:20px;">삼척A</span>김밥천국 삼척점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.162887" data-long="37.446209"><span style="color:#510f3a; margin-right:20px;">삼척A</span>성내동사무소</li>
+<li id="fly"><span style="color:#510f3a; margin-right:20px;">삼척A</span>가고파사진관(주소확인중)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164239" data-long="37.442894"><span style="color:#510f3a; margin-right:20px;">삼척A</span>GS25 삼척남양점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.163512" data-long="37.442969"><span style="color:#510f3a; margin-right:20px;">삼척A</span>아이비스PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.116410" data-long="37.521121"><span style="color:#510f3a; margin-right:20px;">삼척A</span>역전할머니맥주 동해천곡점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164271" data-long="37.443038"><span style="color:#510f3a; margin-right:20px;">삼척A</span>오션PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.152185" data-long="37.439478"><span style="color:#510f3a; margin-right:20px;">삼척A</span>GS25 삼척원당점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.163448" data-long="37.444148"><span style="color:#510f3a; margin-right:20px;">삼척A</span>놀부부대찌개 삼척점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164271" data-long="37.443038"><span style="color:#510f3a; margin-right:20px;">삼척A</span>오션PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.164290" data-long="37.443036"><span style="color:#510f3a; margin-right:20px;">삼척A</span>그랑프리당구장</li>
+
+<li id="bottomOflist"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중 입니다.<br>최근 확진자가 급증하면서 중학생 혼자서 업데이트하기에는 어려움이 있습니다. 열심히 업데이트 중이니 조금만 기다려주세요ㅠ</span></li>
 
 
 
