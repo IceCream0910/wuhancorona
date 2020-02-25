@@ -21,7 +21,7 @@ angular.module("myApp", [])
 
 .service('getAngelNewsArticles', function($http){
    this.getNewsArticles = function(callback){
-  $http.get('https://newsapi.org/v2/everything?q=마스크 기부&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=10&sortBy=publishedAt')
+  $http.get('https://newsapi.org/v2/everything?q=마스크 기부&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=6&sortBy=publishedAt')
      .then(callback);
      
    };
