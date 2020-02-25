@@ -55,7 +55,33 @@
      <h1 style="margin-left:20px;  margin-top:0px;">#예방수칙</h1>
      <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:300px; height:169px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
      <br><br><br>
-     <div id="frontier" ng-app="myApp">
+
+
+
+      <br>
+      <div id="frontier" ng-app="myApp">
+
+  <div ng-controller="angelCtrl">
+               <h5 style="margin-top:20px; text-align:left; width:100%; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">#세상은_아직_살만하다 #선행모음</h5>
+      <h2 style="margin-left:20px; text-align:left; width:100%; margin-top:0px;">힘내세요! 힘낼게요!</h2>
+    <div class="flexCont_angel">
+
+
+      <div class="article_angel" ng-repeat="item in articles">
+         
+        
+        <a href="{{item.url}}" id="infotainer_angel" target="_blank">
+          <img class="imageCover_angel" src="{{item.urlToImage}}" alt="{{articles.title}}" />
+          <h2 class="itemName">{{item.title}}</h2>
+        </a>
+        <!--         infotainer end -->
+      </div>
+      <!--     end ng-repeat div -->
+    </div>
+    <!--     end flexCont -->
+  </div>
+  <!-- end main controller div -->
+
 
   <div ng-controller="mainCtrl">
    
@@ -231,7 +257,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="imgBanner">
     <a href="http://www.mohw.go.kr/react/popup_200128.html" target="_blank" style="text-decoration:none;"><img  width="100%" style="margin-top:20px;" src="https://i.imgur.com/mj5Omgi.png " alt="선별진료소 목록"></a>
-<h1 style="margin:20px; color:white;">예방수칙</h1>
+<h1 style="margin:20px;">예방수칙</h1>
      <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:90%; height:290px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     <br><br>
 
