@@ -64,19 +64,19 @@ border-radius: 20px;
 }
  .card .stat {
    border-top: 1px solid rgba(255, 255, 255, 0.3);
-   font-size: 8px;
+   font-size: 14px;
    margin-top: 25px;
    padding: 10px 10px 0;
    text-transform: uppercase;
 }
  .card .title {
    display: inline-block;
-   font-size: 8px;
+   font-size: 16px;
    padding: 10px 10px 0;
    text-transform: uppercase;
 }
  .card .value {
-   font-size: 28px;
+   font-size: 35px;
    padding: 0 10px;
 }
  .card.blue {
@@ -536,7 +536,9 @@ white-space: nowrap;
   opacity: 0.8;
   height: 200px;
   width: 150px;
+  margin-top:10px;
           margin-left:20px;
+          margin-right: 10px;
         margin-bottom:30px;
         text-decoration: none;
   }
