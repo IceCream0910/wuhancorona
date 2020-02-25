@@ -1,3 +1,5 @@
+
+
 $( document ).ready( function() {
     /*toastr.options = {
                       closeButton: true,
@@ -9,14 +11,33 @@ $( document ).ready( function() {
 */
 angular.module("myApp", [])
 
-.controller('mainCtrl', function($scope, getCryptoNewsArticles){
+
+.controller('angelCtrl', function($scope, getAngelNewsArticles){
   
-  getCryptoNewsArticles.getNewsArticles(function(response){
+  getAngelNewsArticles.getNewsArticles(function(response){
     $scope.articles = response.data.articles;   
   });  
 })
 
-.service('getCryptoNewsArticles', function($http){
+.service('getAngelNewsArticles', function($http){
+   this.getNewsArticles = function(callback){
+  $http.get('https://newsapi.org/v2/everything?q=마스크 기부&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=10&sortBy=publishedAt')
+     .then(callback);
+     
+   };
+  
+})
+
+
+
+.controller('mainCtrl', function($scope, getCoronaNewsArticles){
+  
+  getCoronaNewsArticles.getNewsArticles(function(response){
+    $scope.articles = response.data.articles;   
+  });  
+})
+
+.service('getCoronaNewsArticles', function($http){
    this.getNewsArticles = function(callback){
   $http.get('https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=100&sortBy=publishedAt')
      .then(callback);
@@ -24,6 +45,7 @@ angular.module("myApp", [])
    };
   
 })
+
 
     document.getElementById("map").style.display = 'block';
     $('.container').removeClass('modal-open');
@@ -4760,3 +4782,4 @@ map.addLayer({
 }
 });
 });
+
