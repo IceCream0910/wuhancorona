@@ -151,8 +151,8 @@ var geojson_hospital = {
       coordinates: [126.831248, 37.642304]
     },
     properties: {
-      title: '명지병원(5)',
-      description: '(20-01-26 세번째 확진자) 54세 한국인 남성 격리 병원<br>(20-02-05 17번/28번/김포A, B 확진자) 본 병원에 격리 조치.'
+      title: '명지병원(6)',
+      description: '(20-01-26 세번째 확진자) 54세 한국인 남성 격리 병원<br>(20-02-05 17번/28번/김포A, B/성남 확진자) 본 병원에 격리 조치.'
     }
   },
   {
@@ -162,8 +162,8 @@ var geojson_hospital = {
       coordinates: [127.098167, 37.613044]
     },
     properties: {
-      title: '서울의료원(5)',
-      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번 확진자/20-01-30 5번 확진자) 해당 병원에 격리 조치.'
+      title: '서울의료원(7)',
+      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -4119,6 +4119,210 @@ var geojson_place = {
     }
   },
 
+      {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.1692608, 37.431306]
+    },
+    properties: {
+      title: '신한은행 성남공단금융센터',
+      description: '(송파A 확진자) [2월 18~21일] 오전 8시경 출근.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.124506, 37.485603]
+    },
+    properties: {
+      title: '배스킨라빈스 파크하비오점',
+      description: '(송파A 확진자) [2월 18~22일] 오전 9시 20분경 개인사업장 출근.<br>(송파B 확진자) [2월 18일] 오전 11시 30분경 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.122422, 37.480743]
+    },
+    properties: {
+      title: '미아리우동',
+      description: '(송파A 확진자) [2월 18일] 오후 3시 37분경 미아리우동 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.049840, 37.524841]
+    },
+    properties: {
+      title: '르피에드 분양사무소',
+      description: '(송파A 확진자) [2월 18일] 오후 4시부터 1시간동안 청담동 오피스텔 분양사무소 르피에드 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.124498, 37.485621]
+    },
+    properties: {
+      title: '하나약국',
+      description: '(송파A 확진자) [2월 18일] 오후 6시 12분 문정2동 소재 하나약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.127030, 37.483404]
+    },
+    properties: {
+      title: '문정 계경순대국',
+      description: '(송파A 확진자) [2월 19일] 오후 5시 46분경 문정2동 계경순대국에서 저녁식사 후 자차로 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.125964, 37.484685]
+    },
+    properties: {
+      title: '문정 교동짬뽕',
+      description: '(송파A 확진자) [2월 20일] 오후 7시 20분경 문정2동 소재 교동짬뽕에서 자차로 8시 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.106552, 37.514532]
+    },
+    properties: {
+      title: '송파구보건소',
+      description: '(송파A 확진자) [2월 23일] 오후 5시 20분경 선별진료소에서 코로나19 검사 실시.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.127145, 37.412913]
+    },
+    properties: {
+      title: '성남종합버스터미널',
+      description: '(성남 확진자) 버스 타고 대구 방문.<br>* 현재 역학조사 진행중으로 더 자세한 동선은 추후 업데이트 예정.'
+    }
+  },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.125261, 36.802361]
+    },
+    properties: {
+      title: '쌍용주공7단지',
+      description: '(천안 확진자) [2월 23일] 오전 10시 30분부터 오후 1시까지 어머니집 체류.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.111540, 36.805665]
+    },
+    properties: {
+      title: '불당동 대동다숲 아파트 ',
+      description: '(천안 확진자) 본인 자택.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.109630, 36.805495]
+    },
+    properties: {
+      title: '찰스리헤어테크 불당점',
+      description: '(천안 확진자) [2월 23일] 오후 3시부터 4시까지 불당동 대동다숲 내 찰스리 미용실 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.085442, 36.797187]
+    },
+    properties: {
+      title: '상도종합건설',
+      description: '(천안 확진자) [2월 24일] 오전 8시 30분부터 11까지 회사 출근.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.125700, 36.799779]
+    },
+    properties: {
+      title: '본정형외과',
+      description: '(천안 확진자) [2월 24일] 오전 11시부터 1시간동안 쌍용2동 소재 정형외과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.119157, 36.802545]
+    },
+    properties: {
+      title: '삼성라온내과',
+      description: '(천안 확진자) [2월 24일] 오후 12시부터 20분간 쌍용3동 소재 내과 의원 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.119231, 36.802662]
+    },
+    properties: {
+      title: '얌샘김밥',
+      description: '(천안 확진자) [2월 24일] 오후 12시 40분부터 20분간 쌍용3동 소재 김밥집 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.131150, 36.797270]
+    },
+    properties: {
+      title: '천안충무병원 선별진료소',
+      description: '(천안 확진자) [2월 24일] 오후 2시부터 4시 30분까지 천안충무병원 선별진료소 방문.'
+    }
+  },
+
 
 
   ]
@@ -5530,7 +5734,88 @@ map.addSource('lines', {
 }
 },
 
+{
+'type': 'Feature',
+'properties': {
+'color': '#ac8284'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //송파A 확진자
+[127.1692608, 37.431306], //신한은행 성남공단금융센터
+[127.124506, 37.485603], //배라 송파파크하비오
+[127.122422, 37.480743], //미아리우동(포장)
+[127.049840, 37.524841], //르피에드 분양사무소
+[127.124506, 37.485603], //배라 송파파크하비오
+[127.124498, 37.485621], //문정 하나약국
+[127.1692608, 37.431306], //신한은행 성남공단금융센터
+[127.124506, 37.485603], //배라 송파파크하비오
+[127.127030, 37.483404], //문정 계경순대국
+[127.1692608, 37.431306], //신한은행 성남공단금융센터
+[127.125964, 37.484685], //문정 교동짬뽕
+[127.1692608, 37.431306], //신한은행 성남공단금융센터
+[127.124506, 37.485603], //배라 송파파크하비오
+[127.106552, 37.514532], //송파구보건소
+[127.098167, 37.613044], //서울의료원
+]
+}
+},
 
+{
+'type': 'Feature',
+'properties': {
+'color': '#052d3e'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //성남 확진자
+[127.127145, 37.412913],
+[126.831248, 37.642304], 
+
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#a72601'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //송파B 확진자
+[127.124506, 37.485603],
+[127.098167, 37.613044], 
+
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#03b679'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //천안 확진자
+[127.125261, 36.802361], //천안주공7단지
+[127.111540, 36.805665], //불당동 대동다숲
+[127.109630, 36.805495], //찰스리헤어테크불당
+//정원부동산 개업
+[127.085442, 36.797187], //상도종합건설
+[127.125700, 36.799779], //본정형외과
+[127.119157, 36.802545], //삼성라온내과
+[127.119231, 36.802662], //얌샘김밥
+[127.125261, 36.802361], //천안주공7단지
+[127.131150, 36.797270], //천안충무병원 선별
+]
+}
+},
 
 ]
 }
