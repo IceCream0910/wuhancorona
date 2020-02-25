@@ -531,15 +531,15 @@ white-space: nowrap;
 
 .article_angel {
   display: inline-block;
-  background-color:#2298f1;
+  background-color:#0f0f0f;
   border-radius: 15px;
   opacity: 0.8;
   height: 200px;
-  width: 150px;
+  width: 250px;
   margin-top:10px;
           margin-left:20px;
           margin-right: 10px;
-        margin-bottom:30px;
+          margin-bottom: 30px;
         text-decoration: none;
   }
 
