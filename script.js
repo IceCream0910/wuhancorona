@@ -303,8 +303,8 @@ var geojson_hospital = {
       coordinates: [129.196749, 35.858329]
     },
     properties: {
-      title: '동국대학교경주병원(2)',
-      description: '(20-02-18 39번 확진자/20-02-19 41번 확진자) 검사 결과 양성 확인 후 해당 병원에서 격리 치료.'
+      title: '동국대학교경주병원(3)',
+      description: '(20-02-18 39번 확진자/20-02-19 41번 확진자/경주A) 검사 결과 양성 확인 후 해당 병원에서 격리 치료.'
     }
   },            
    {
@@ -1378,7 +1378,7 @@ var geojson_place = {
                 },
                 properties: {
                   title: '동대구역',
-                  description: '(20-02-05 17번 확진자) <br>[1월 24일 오후 2시 22분] KTX로 동대구역 도착해 수성구 소재의 본가 방문. <br>[1월 25일] 북구 소재의 처갓집 방문 후 동대구역에서 SRT로 귀경.'
+                  description: '(20-02-05 17번 확진자) <br>[1월 24일 오후 2시 22분] KTX로 동대구역 도착해 수성구 소재의 본가 방문. <br>[1월 25일] 북구 소재의 처갓집 방문 후 동대구역에서 SRT로 귀경.<br>(경주 확진자A) [2월 19일] 오후 7시경 동대구역에서 서경주역(1791, 3호차 21,22번)으로 이동.<br>(경주C 확진자) [2월 14일] 오후 7시 서경주역(무궁화 1791 2호차 39번)으로 이동.'
                 }
               },
               {
@@ -3535,7 +3535,115 @@ var geojson_place = {
        title: '장성동 진할인마트',
        description: '(포항F 확진자) [2월 21일] 진할인마트 방문.'
        }
-        },   
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.594805, 35.868168]
+       },
+       properties: {
+       title: '인플라워',
+       description: '(경주A 확진자) [2월 19일] 오후 6시 10분경 대구 동성로 소재 꽃집 방문.'
+       }
+        },
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [128.598189, 35.868411]
+       },
+       properties: {
+       title: '스시라스또',
+       description: '(경주A 확진자) [2월 19일] 오후 6시 20분경 대구 동성로 소재 식당 방문.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.201189, 35.868795]
+       },
+       properties: {
+       title: '스시라스또',
+       description: '(경주A 확진자) [2월 19일] 오후 8시 15분경 대구에서 도착 후 도보로 귀가.'
+       }
+        },  
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.202268, 35.866639]
+       },
+       properties: {
+       title: '현곡 준PC방',
+       description: '(경주A 확진자) [2월 20일] 오전 10시부터 오후 2시까지 현곡면 소재 PC방 이용.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.324179, 35.714609]
+       },
+       properties: {
+       title: '외동 경북의원',
+       description: '(경주B 확진자) [2월 12일] 오후 3시경 외동 경북의원 내원.<br>[2월 14일] 오후 4시 2차 내원.'
+       }
+        },
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.324555, 35.714574]
+       },
+       properties: {
+       title: '입실약국',
+       description: '(경주B 확진자) [2월 12일] 오후 3시 16분경 약 처방.<br>[2월 14일] 오후 4시 30분경 약 처방.'
+       }
+        }, 
+
+      {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.290838, 35.696094]
+       },
+       properties: {
+       title: '서진산업',
+       description: '(경주B 확진자) [2월 12~14일, 17~19일] 서진산업 출근.'
+       }
+        }, 
+
+        {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.201189, 35.868795]
+       },
+       properties: {
+       title: '서경주역',
+       description: '(경주A, C 확진자) [2월 19일 20:15 A확진자 도착]<br>[2월 14일 20:15 C확진자 도착).'
+       }
+        }, 
+
+       {
+       type: 'Feature',
+       geometry: {
+       type: 'Point',
+       coordinates: [129.216997, 35.867395]
+       },
+       properties: {
+       title: '사랑의소아과, 예송약국',
+       description: '(경주C 확진자) [2월 21일] 오전 10시 30분경 사랑의소아과 진료 후 같은 건물 예송약국에서 약 처방.'
+       }
+        },           
 
 
 
@@ -4762,7 +4870,82 @@ map.addSource('lines', {
 }
 },
 
+  {
+'type': 'Feature',
+'properties': {
+'color': '#3c1ca9'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //경주A 확진자
+//대구 동성로 KB ATM
+[128.594805, 35.868168], //인플라워
+[128.598189, 35.868411], //스시라스또
+[128.62847585231066,35.87966704616757], //동대구
+[129.201189, 35.868795], //서경주역
+[129.202268, 35.866639], //현곡 준PC방
+[129.196749, 35.858329], //동국대 선별,음압
+]
+}
+},
 
+ {
+'type': 'Feature',
+'properties': {
+'color': '#1addac'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //경주B 확진자
+[129.324179, 35.714609], //외동 경북의원
+[129.324555, 35.714574], //입실약국
+[129.290838, 35.696094], //서진산업 출근
+
+]
+}
+},
+
+ {
+'type': 'Feature',
+'properties': {
+'color': '#56cc0b'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //경주C 확진자
+[128.62847585231066,35.87966704616757], //동대구
+[129.201189, 35.868795], //서경주역
+//신천지 경주교회
+[129.216997, 35.867395], //사랑의소아과,예송약국
+]
+}
+},
+
+/*
+{
+'type': 'Feature',
+'properties': {
+'color': '#cd12fe'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //경주D 확진자
+[129.199296, 35.875179], //수억상사
+[129.157147, 35.901069], //용담매운탕
+[129.199296, 35.875179], //수억상사
+//범진자원, 성호기업
+[129.196749, 35.858329], //동국대 선별(아들데려다줌)
+[129.199296, 35.875179], //수억상사
+[129.204997, 35.871671], //경원홈마트
+[35.843034, 129.186150], //청송얼음골막걸리
+]
+}
+},
+*/
 
 
 ]
