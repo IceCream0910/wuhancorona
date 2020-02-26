@@ -1,4 +1,57 @@
 
+var apiKey = 'AIzaSyCcx6V_hKT9RRHINxUib0sxNdGax3_s9-k';
+var url = 'https://www.googleapis.com/youtube/v3/search';
+
+function search() {
+
+    // Clear the DOM
+    $('#results').html('');
+    $('#buttons').html('');
+
+    // Get form input
+
+    var query = $('#query').val();
+
+    // GET REQUEST
+
+    $.get(
+        url, {
+            part: 'snippet, id',
+            q: "#힘내라대구",
+            type: 'video',
+            maxResults: 10,
+            key: apiKey
+        },
+        function (data) {
+            console.log(data);
+            var nextPageToken = data.nextPageToken;
+            var prevPageToken = data.prevPageToken;
+
+            $.each(data.items, function (index, item) {
+                var output = buildOutput(item);
+                // Display Results
+                $('#results').append(output);
+            });
+        }
+    )
+}
+
+function buildOutput(item) {
+
+    var videoId = item.id.videoId;
+
+    return `<iframe style="display: inline-block;
+  border-radius: 15px;
+  height: 139px;
+  width: 250px;
+  margin-top:10px;
+          margin-left:20px;
+          margin-right: 10px;
+          margin-bottom: 30px;
+        text-decoration: none;" src="https://www.youtube.com/embed/${videoId}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+`;
+}
+
 
 $( document ).ready( function() {
     /*toastr.options = {
@@ -80,6 +133,7 @@ $('.js-click-prevent').click(function(){
   $('.container').removeClass('modal-place-open');
   document.getElementById("placePopupBtn").style.display = 'none';
 document.getElementById("geocoder").style.display = 'none';
+search();
 
 
 });
@@ -1948,7 +2002,7 @@ var geojson_place = {
        },
        properties: {
        title: '동대구 터미널',
-       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(포항B 확진자) [2월 16일] 포항으로 출발.'
+       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(포항B 확진자) [2월 16일] 포항으로 출발.<br>(성남 확진자) [2월 20일] 오후 6시경 성남으로 출발.'
        }
         },
         
@@ -4223,7 +4277,7 @@ var geojson_place = {
     },
     properties: {
       title: '성남종합버스터미널',
-      description: '(성남 확진자) 버스 타고 대구 방문.<br>* 현재 역학조사 진행중으로 더 자세한 동선은 추후 업데이트 예정.'
+      description: '(성남 확진자) [2월 20일] 오후 9시 45분경 동대구터미널에서 출발한 버스를 타고 성남종합버스터미널 도착 후 마을 8-1번 승차.'
     }
   },
 
@@ -4320,6 +4374,18 @@ var geojson_place = {
     properties: {
       title: '천안충무병원 선별진료소',
       description: '(천안 확진자) [2월 24일] 오후 2시부터 4시 30분까지 천안충무병원 선별진료소 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.146591, 37.406956]
+    },
+    properties: {
+      title: '파리바게트 분당상탑점',
+      description: '(천안 확진자) [2월 20일] 밤에 파리바게트 분당상탑점에서 빵 구입 후 도보로 야탑3동 소재 자택으로 귀가.'
     }
   },
 
@@ -5771,7 +5837,9 @@ map.addSource('lines', {
 'type': 'LineString',
 'coordinates': [
   //성남 확진자
+[128.630224, 35.878282],
 [127.127145, 37.412913],
+[127.146591, 37.406956],
 [126.831248, 37.642304], 
 
 ]
