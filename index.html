@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <head>
+
+ <link rel="stylesheet" href="style.css">
   <title>코로나맵 - COVID-19(코로나19) 확진자 이동경로</title>
 <meta name="naver-site-verification" content="8f27f18ca940f5911cb370fe9e8bf51cb94b961d"/>
-<link rel="icon" type="image/ico" href="https://www.gstatic.com/mapspro/images/favicon-001.ico" />
 <link rel="canonical" href="http://coronamap.coo.kr" />
 <meta name="description" content="우한코로나(코로나19) 국내 확진자의 이동경로 및 확산 정보를 제공합니다">
 <meta property="og:type" content="website">
@@ -25,15 +26,56 @@
      gtag('js', new Date());
 
      gtag('config', 'UA-156991281-1');
+
+window.onload = function () {
+
+var chart = new CanvasJS.Chart("chartContainer", {
+  animationEnabled: true,
+  backgroundColor:"",
+  fontColor:"#ffffff",
+
+  title:{
+    text: ""
+  },
+  axisX:{
+    valueFormatString: "MM-DD",
+      labelFontColor:"#a9a9a9",
+  },
+  axisY: {
+    title: "",
+    includeZero: false,
+      labelFontColor:"#a9a9a9",
+  },
+  data: [{
+    type: "line",
+    xValueFormatString: "MM월 DD일",
+    color: "#ca3433",
+    dataPoints: [
+     { x: new Date(2020, 1, 10), y: 40536},
+     { x: new Date(2020, 1, 11), y: 43065},
+     { x: new Date(2020, 1, 12), y: 45097},
+     { x: new Date(2020, 1, 13), y: 60239},
+     { x: new Date(2020, 1, 14), y: 64893},
+     { x: new Date(2020, 1, 16), y: 69125},
+     { x: new Date(2020, 1, 17), y: 71309},
+     { x: new Date(2020, 1, 18), y: 73295},
+     { x: new Date(2020, 1, 19), y: 75196},
+     { x: new Date(2020, 1, 20), y: 75662},
+     { x: new Date(2020, 1, 21), y: 76081},
+     { x: new Date(2020, 1, 22), y: 77432},
+     { x: new Date(2020, 1, 23), y: 78118},
+     { x: new Date(2020, 1, 24), y: 78377},
+     { x: new Date(2020, 1, 25), y: 79220},
+     { x: new Date(2020, 1, 26), y: 79773},
+    ]
+  }]
+});
+chart.render();
+
+}
+     
    </script>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-
-
-<!-- 팝업시작
-<div id="light-main" class="white_content_main"><h4 style="color:white;"></h4><a style="text-decoration: none; color:white;" href = "javascript:void(0)" onclick = "document.getElementById('light-main').style.display='none';document.getElementById('fade-main').style.display='none'">닫기</a></div>
-<div id="fade-main" class="black_overlay_main" onclick = "document.getElementById('light-main').style.display='none';document.getElementById('fade-main').style.display='none'"></div>
-팝업 끝 -->
   </head>
   <body>
 
@@ -58,7 +100,7 @@
     overflow-x: scroll;
     padding: 20px
     width: 100%;">
-     <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+     <iframe id="first" style=" display: inline-block;
   border-radius: 15px;
   height: 139px;
   width: 250px;
@@ -67,7 +109,7 @@
           margin-right: 10px;
           margin-bottom: 30px;
         text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/1LpaRylW6LM?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+        <iframe id="second" style=" display: inline-block;
   border-radius: 15px;
   height: 139px;
   width: 250px;
@@ -75,7 +117,7 @@
           margin-right: 10px;
           margin-bottom: 30px;
         text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/EBrtOAAkEcE?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+        <iframe id="third" style=" display: inline-block;
   border-radius: 15px;
   height: 139px;
   width: 250px;
@@ -83,7 +125,7 @@
           margin-right: 10px;
           margin-bottom: 30px;
         text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        <iframe src="https://youtube.com/embed/4ufdg6v4Jh4?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+        <iframe id="forth" style=" display: inline-block;
   border-radius: 15px;
   height: 139px;
   width: 250px;
@@ -150,7 +192,6 @@
          
         
         <a href="{{item.url}}" id="infotainer" target="_blank">
-           <img class="imageCover" src="{{item.urlToImage}}" alt="{{articles.title}}" />
           <h2 class="itemName">{{item.title}}</h2>
 
           <h4 class="itemAuthorName">{{item.author}}</h4>
@@ -350,58 +391,6 @@
 
 
       <div class="placelist" style="margin-left:20px; padding-right:20px; text-align:left; color:black;">
-
-
-
-        <script>
-window.onload = function () {
-
-var chart = new CanvasJS.Chart("chartContainer", {
-  animationEnabled: true,
-  backgroundColor:"",
-  fontColor:"#ffffff",
-
-  title:{
-    text: ""
-  },
-  axisX:{
-    valueFormatString: "MM-DD",
-      labelFontColor:"#a9a9a9",
-  },
-  axisY: {
-    title: "",
-    includeZero: false,
-      labelFontColor:"#a9a9a9",
-  },
-  data: [{
-    type: "line",
-    xValueFormatString: "MM월 DD일",
-    color: "#ca3433",
-    dataPoints: [
-     { x: new Date(2020, 1, 10), y: 40536},
-     { x: new Date(2020, 1, 11), y: 43065},
-     { x: new Date(2020, 1, 12), y: 45097},
-     { x: new Date(2020, 1, 13), y: 60239},
-     { x: new Date(2020, 1, 14), y: 64893},
-     { x: new Date(2020, 1, 16), y: 69125},
-     { x: new Date(2020, 1, 17), y: 71309},
-     { x: new Date(2020, 1, 18), y: 73295},
-     { x: new Date(2020, 1, 19), y: 75196},
-     { x: new Date(2020, 1, 20), y: 75662},
-     { x: new Date(2020, 1, 21), y: 76081},
-     { x: new Date(2020, 1, 22), y: 77432},
-     { x: new Date(2020, 1, 23), y: 78118},
-     { x: new Date(2020, 1, 24), y: 78377},
-     { x: new Date(2020, 1, 25), y: 79220},
-     { x: new Date(2020, 1, 26), y: 79773},
-    ]
-  }]
-});
-chart.render();
-
-}
-</script>
-
 
 
 
@@ -789,63 +778,81 @@ chart.render();
 <li id="fly" onclick="flyTarget(this)" data-lat="126.565406" data-long="33.254428"><span style="color:#da5b2e; margin-right:20px;">제주B</span>서귀포 열린병원</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="126.545227" data-long="33.467085"><span style="color:#da5b2e; margin-right:20px;">제주B</span>제주대병원</li>
 
-<li id="fly" onclick="flyTarget(this)" data-lat="127.101298" data-long="37.487466"><span style="color:#4c7e55; margin-right:20px;">부산A</span>수서역</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.042229" data-long="35.115229"><span style="color:#4c7e55; margin-right:20px;">부산A</span>부산역</li>
-<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자택 기거</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.125558" data-long="35.205756"><span style="color:#4c7e55; margin-right:20px;">부산A</span>장산 성당</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.119137" data-long="35.199104"><span style="color:#4c7e55; margin-right:20px;">부산A</span>반여동 장산명가</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.116698" data-long="35.199541"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자연드림 반여점</li>
-<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자택 기거</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.119941" data-long="35.202698"><span style="color:#4c7e55; margin-right:20px;">부산A</span>센텀내과의원</li>
-<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산A</span>자택 기거</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.181970" data-long="35.173503"><span style="color:#4c7e55; margin-right:20px;">부산A</span>부산해운대백병원</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#4c7e55; margin-right:20px;">부산A</span>부산의료원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.101298" data-long="37.487466"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>수서역</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.042229" data-long="35.115229"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>부산역</li>
+<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.125558" data-long="35.205756"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>장산 성당</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119137" data-long="35.199104"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>반여동 장산명가</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.116698" data-long="35.199541"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>자연드림 반여점</li>
+<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119941" data-long="35.202698"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>센텀내과의원</li>
+<li id="fly"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>자택 기거</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.181970" data-long="35.173503"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>부산해운대백병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#4c7e55; margin-right:20px;">부산-1</span>부산의료원</li>
 
 
-<li id="fly" onclick="flyTarget(this)" data-lat="129.073828" data-long="35.215220"><span style="color:#e551fe; margin-right:20px;">부산B</span>전자공고</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.081204" data-long="35.219545"><span style="color:#e551fe; margin-right:20px;">부산B</span>대성탕</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.084164" data-long="35.198336"><span style="color:#e551fe; margin-right:20px;">부산B</span>동래밀면 본점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.086084" data-long="35.205803"><span style="color:#e551fe; margin-right:20px;">부산B</span>복산동 행정복지센터</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.083637" data-long="35.204852"><span style="color:#e551fe; margin-right:20px;">부산B</span>동래구청(복지정책과)</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="35.187235"><span style="color:#e551fe; margin-right:20px;">부산B</span>부산의료원</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.215985"><span style="color:#e551fe; margin-right:20px;">부산B</span>온천교회</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.119051" data-long="35.154387"><span style="color:#e551fe; margin-right:20px;">부산B</span>피자몰 광안리점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.120726" data-long="35.198026"><span style="color:#e551fe; margin-right:20px;">부산B</span>GS25 꿈에그린점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.080164" data-long="35.204381"><span style="color:#e551fe; margin-right:20px;">부산B</span>대동병원 선별진료소</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.079803" data-long="35.204549"><span style="color:#e551fe; margin-right:20px;">부산B</span>가까운약국</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.081163" data-long="35.204297"><span style="color:#e551fe; margin-right:20px;">부산B</span>메가마트 동래점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.098633" data-long="35.199459"><span style="color:#e551fe; margin-right:20px;">부산B</span>얼쑤대박터지는집 동래점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.079854" data-long="35.211385"><span style="color:#e551fe; margin-right:20px;">부산B</span>동래구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.073828" data-long="35.215220"><span style="color:#e551fe; margin-right:20px;">부산-2</span>전자공고</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.081204" data-long="35.219545"><span style="color:#e551fe; margin-right:20px;">부산-2</span>대성탕</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.084164" data-long="35.198336"><span style="color:#e551fe; margin-right:20px;">부산-2</span>동래밀면 본점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.086084" data-long="35.205803"><span style="color:#e551fe; margin-right:20px;">부산-2</span>복산동 행정복지센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.083637" data-long="35.204852"><span style="color:#e551fe; margin-right:20px;">부산-2</span>동래구청(복지정책과)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="35.187235"><span style="color:#e551fe; margin-right:20px;">부산-2</span>부산의료원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.215985"><span style="color:#e551fe; margin-right:20px;">부산-2</span>온천교회</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119051" data-long="35.154387"><span style="color:#e551fe; margin-right:20px;">부산-2</span>피자몰 광안리점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.120726" data-long="35.198026"><span style="color:#e551fe; margin-right:20px;">부산-2</span>GS25 꿈에그린점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.080164" data-long="35.204381"><span style="color:#e551fe; margin-right:20px;">부산-2</span>대동병원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.079803" data-long="35.204549"><span style="color:#e551fe; margin-right:20px;">부산-2</span>가까운약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.081163" data-long="35.204297"><span style="color:#e551fe; margin-right:20px;">부산-2</span>메가마트 동래점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.098633" data-long="35.199459"><span style="color:#e551fe; margin-right:20px;">부산-2</span>얼쑤대박터지는집 동래점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.079854" data-long="35.211385"><span style="color:#e551fe; margin-right:20px;">부산-2</span>동래구보건소</li>
 
-<li id="fly" onclick="flyTarget(this)" data-lat="129.064809" data-long="35.176295"><span style="color:#3476c3; margin-right:20px;">부산C</span>부산시교육청</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.115170" data-long="35.160697"><span style="color:#3476c3; margin-right:20px;">부산C</span>슈가스팟</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.113196" data-long="35.160835"><span style="color:#3476c3; margin-right:20px;">부산C</span>부산 한서병원 선별진료소</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.019032" data-long="35.100541"><span style="color:#3476c3; margin-right:20px;">부산C</span>부산대병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.064809" data-long="35.176295"><span style="color:#3476c3; margin-right:20px;">부산-3</span>부산시교육청</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.115170" data-long="35.160697"><span style="color:#3476c3; margin-right:20px;">부산-3</span>슈가스팟</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.113196" data-long="35.160835"><span style="color:#3476c3; margin-right:20px;">부산-3</span>부산 한서병원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.019032" data-long="35.100541"><span style="color:#3476c3; margin-right:20px;">부산-3</span>부산대병원</li>
 
-<li id="fly" onclick="flyTarget(this)" data-lat="128.630224" data-long="35.878282"><span style="color:#60b015; margin-right:20px;">부산D</span>동대구시외버스터미널</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.160547" data-long="35.164793"><span style="color:#60b015; margin-right:20px;">부산D</span>해운대시외버스터미널</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.203441" data-long="35.186468"><span style="color:#60b015; margin-right:20px;">부산D</span>신선지국밥</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.175792" data-long="35.173830"><span style="color:#60b015; margin-right:20px;">부산D</span>베스킨라빈스 해운대좌동점</li>
-<li id="fly"><span style="color:#60b015; margin-right:20px;">부산D</span>CU경남선경점, 경남선경자이마트</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.178640" data-long="35.164109"><span style="color:#60b015; margin-right:20px;">부산D</span>해운대보건소 선별진료소</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.019032" data-long="35.100541"><span style="color:#60b015; margin-right:20px;">부산D</span>부산대병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.630224" data-long="35.878282"><span style="color:#60b015; margin-right:20px;">부산-4</span>동대구시외버스터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.160547" data-long="35.164793"><span style="color:#60b015; margin-right:20px;">부산-4</span>해운대시외버스터미널</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.203441" data-long="35.186468"><span style="color:#60b015; margin-right:20px;">부산-4</span>신선지국밥</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.175792" data-long="35.173830"><span style="color:#60b015; margin-right:20px;">부산-4</span>베스킨라빈스 해운대좌동점</li>
+<li id="fly"><span style="color:#60b015; margin-right:20px;">부산-4</span>CU경남선경점, 경남선경자이마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.178640" data-long="35.164109"><span style="color:#60b015; margin-right:20px;">부산-4</span>해운대보건소 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.019032" data-long="35.100541"><span style="color:#60b015; margin-right:20px;">부산-4</span>부산대병원</li>
 
-<li id="fly" onclick="flyTarget(this)" data-lat="129.119805" data-long="35.201312"><span style="color:#4442f1; margin-right:20px;">부산E</span>청산곱창</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.119353" data-long="35.203818"><span style="color:#4442f1; margin-right:20px;">부산E</span>스타벅스 수영강변점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.121797" data-long="35.202014"><span style="color:#4442f1; margin-right:20px;">부산E</span>세븐일레븐 반여선수촌</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.123605" data-long="35.203456"><span style="color:#4442f1; margin-right:20px;">부산E</span>CU 반여선수촌점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.178640" data-long="35.164109"><span style="color:#4442f1; margin-right:20px;">부산E</span>해운대보건소 선별진료소</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#4442f1; margin-right:20px;">부산E</span>부산의료원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119805" data-long="35.201312"><span style="color:#4442f1; margin-right:20px;">부산-5</span>청산곱창</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.119353" data-long="35.203818"><span style="color:#4442f1; margin-right:20px;">부산-5</span>스타벅스 수영강변점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.121797" data-long="35.202014"><span style="color:#4442f1; margin-right:20px;">부산-5</span>세븐일레븐 반여선수촌</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.123605" data-long="35.203456"><span style="color:#4442f1; margin-right:20px;">부산-5</span>CU 반여선수촌점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.178640" data-long="35.164109"><span style="color:#4442f1; margin-right:20px;">부산-5</span>해운대보건소 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#4442f1; margin-right:20px;">부산-5</span>부산의료원</li>
 
-<li id="fly" onclick="flyTarget(this)" data-lat="129.085868" data-long="35.230794"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>터줏집돼지국밥</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.086654" data-long="35.230605"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>스타벅스 부산대점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="129.077126"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>온천교회</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.086278" data-long="35.233004"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>시골통돼지볶음</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.087161" data-long="35.229605"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>이솝페이블</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.078332" data-long="35.212664"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>동래봄산부인과</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.074256" data-long="35.206302"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>맥도날드 부산온천SKDT점</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="35.215985"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>온천교회</li>
-<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#5f4b6d; margin-right:20px;">부산H</span>부산의료원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.085868" data-long="35.230794"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>터줏집돼지국밥</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.086654" data-long="35.230605"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>스타벅스 부산대점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="129.077126"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>온천교회</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.086278" data-long="35.233004"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>시골통돼지볶음</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.087161" data-long="35.229605"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>이솝페이블</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.078332" data-long="35.212664"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>동래봄산부인과</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.074256" data-long="35.206302"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>맥도날드 부산온천SKDT점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="35.215985"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>온천교회</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#5f4b6d; margin-right:20px;">부산-8</span>부산의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.078781" data-long="35.213079"><span style="color:#ed0791; margin-right:20px;">부산-9</span>OX PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.077126" data-long="35.215985"><span style="color:#ed0791; margin-right:20px;">부산-9</span>온천교회</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.072256" data-long="35.211755"><span style="color:#ed0791; margin-right:20px;">부산-9</span>동심가마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.079854" data-long="35.211385"><span style="color:#ed0791; margin-right:20px;">부산-9</span>동래구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#ed0791; margin-right:20px;">부산-9</span>부산의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.791531" data-long="35.020448"><span style="color:#ddb756; margin-right:20px;">부산-10</span>미풍해장국 나주혁신점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.79578" data-long="35.018121"><span style="color:#ddb756; margin-right:20px;">부산-10</span>한국인터넷진흥원</li>
+<li id="fly"><span style="color:#ddb756; margin-right:20px;">부산-10</span>메가MGC커피 나주혁신도시점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.039868" data-long="35.113493"><span style="color:#ddb756; margin-right:20px;">부산-10</span>밀양돼지국밥 부산역점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.125087" data-long="35.175108"><span style="color:#ddb756; margin-right:20px;">부산-10</span>센텀스카이비즈(직장)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#ddb756; margin-right:20px;">부산-10</span>삼촌밥런치펍</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.131682" data-long="35.172959"><span style="color:#ddb756; margin-right:20px;">부산-10</span>센텀가야밀면</li>
+<li id="fly"><span style="color:#ddb756; margin-right:20px;">부산-10</span>예림유치원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.079854" data-long="35.211385"><span style="color:#ddb756; margin-right:20px;">부산-10</span>동래구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.059186" data-long="35.187235"><span style="color:#ddb756; margin-right:20px;">부산-10</span>부산의료원</li>
+
 
 <li id="fly" onclick="flyTarget(this)" data-lat="128.582389" data-long="35.838970"><span style="color:#213a97; margin-right:20px;">진주A,B</span>신천지예수교회다대오지성전</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="128.566484" data-long="35.198809"><span style="color:#213a97; margin-right:20px;">진주A,B</span>마산의료원</li>
@@ -1099,7 +1106,7 @@ chart.render();
 <li id="fly" onclick="flyTarget(this)" data-lat="126.870897" data-long="37.893683"><span style="color:#b87e1c; margin-right:20px;">파주C</span>풍작플랜지</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="126.874575" data-long="37.848622"><span style="color:#b87e1c; margin-right:20px;">파주C</span>천현농협 하나로마트</li>
 
-<li id="devComment"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중<br>최근 확진자가 급증하고 있어서 혼자서 업데이트하기에 한계가 있습니다. 열심히 업데이트중이니 조금만 기다려주세요ㅠ</span></li>
+<li id="devComment"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중</span></li>
 
 
 
@@ -1111,14 +1118,6 @@ chart.render();
   </div>
 
 
-<link
-rel="stylesheet"
-href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
-type="text/css"
-/>
-<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
 <!-- 팝업시작 -->
 <a href="https://www.cdc.go.kr/gallery.es?mid=a20503020000&bid=0003" target="_blank">
@@ -1138,18 +1137,24 @@ type="text/css"
 
 
 
+<link
+rel="stylesheet"
+href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+type="text/css"
+/>
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
 
 <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-</li>
-</ul>
-
- <!-- Toastr -->
+ <!-- css -->
  <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
 
  <script src="script.js"></script>
- <link rel="stylesheet" href="style.css">
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
  <!--
 <script src="script.js"></script>
 <link rel="stylesheet" href="style.css">
