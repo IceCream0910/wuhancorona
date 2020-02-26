@@ -133,7 +133,11 @@ $('.js-click-prevent').click(function(){
   $('.container').removeClass('modal-place-open');
   document.getElementById("placePopupBtn").style.display = 'none';
 document.getElementById("geocoder").style.display = 'none';
-search();
+document.getElementById('first').src = "https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1";
+document.getElementById('second').src = "https://youtube.com/embed/1LpaRylW6LM?loop=1&showinfo=0&controls=1";
+document.getElementById('third').src = "https://youtube.com/embed/EBrtOAAkEcE?loop=1&showinfo=0&controls=1";
+document.getElementById('forth').src = "https://youtube.com/embed/4ufdg6v4Jh4?loop=1&showinfo=0&controls=1";
+
 
 
 });
@@ -453,7 +457,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '부산의료원',
-      description: '(부산A,B,E 확진자) 해당 병원에서 격리치료.'
+      description: '(부산-1,2,5,8,9,10,11,12,13,14,16 확진자) 해당 병원에서 격리치료.'
     }
   },  
 
@@ -489,7 +493,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '부산대병원',
-      description: '(부산C,D 확진자) 해당 병원에서 격리치료.'
+      description: '(부산-3,D 확진자) 해당 병원에서 격리치료.'
     }
   }, 
 
@@ -2002,7 +2006,7 @@ var geojson_place = {
        },
        properties: {
        title: '동대구 터미널',
-       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(포항B 확진자) [2월 16일] 포항으로 출발.'
+       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(포항B 확진자) [2월 16일] 포항으로 출발.<br>(성남 확진자) [2월 20일] 오후 6시경 성남으로 출발.'
        }
         },
         
@@ -2640,7 +2644,7 @@ var geojson_place = {
        },
        properties: {
        title: '수서역',
-       description: '(20-02-21 부산A 확진자) [2월 18일] 수서역에서 SRT타고 부산역으로 출발.(14:00~17:00)'
+       description: '(20-02-21 부산-1 확진자) [2월 18일] 수서역에서 SRT타고 부산역으로 출발.(14:00~17:00)'
        }
         },
 
@@ -2652,7 +2656,7 @@ var geojson_place = {
        },
        properties: {
        title: '부산역',
-       description: '(20-02-21 부산A 확진자) [2월 18일] 부산역 도착.'
+       description: '(20-02-21 부산-1 확진자) [2월 18일] 부산역 도착.'
        }
         },
 
@@ -2664,7 +2668,7 @@ var geojson_place = {
        },
        properties: {
        title: '반여동 장산명가',
-       description: '(20-02-21 부산A 확진자) [2월 19일] 오전 11시~12시 40분경 반여동 소재 장산명가 방문.'
+       description: '(20-02-21 부산-1 확진자) [2월 19일] 오전 11시~12시 40분경 반여동 소재 장산명가 방문.'
        }
         },   
 
@@ -2676,7 +2680,7 @@ var geojson_place = {
        },
        properties: {
        title: '장산 성당',
-       description: '(20-02-21 부산A 확진자) [2월 19일] 오전 10시~11시 장산 성당 방문.'
+       description: '(20-02-21 부산-1 확진자) [2월 19일] 오전 10시~11시 장산 성당 방문.'
        }
         }, 
 
@@ -2689,7 +2693,7 @@ var geojson_place = {
        },
        properties: {
        title: '자연드림 반여점',
-       description: '(20-02-21 부산A 확진자) [2월 19일] 오후 12시 53분~1시 30분, 유기농 식품 전문점 방문.'
+       description: '(20-02-21 부산-1 확진자) [2월 19일] 오후 12시 53분~1시 30분, 유기농 식품 전문점 방문.'
        }
         },  
 
@@ -2701,7 +2705,7 @@ var geojson_place = {
        },
        properties: {
        title: '센텀 내과의원',
-       description: '(20-02-21 부산A 확진자) [2월 20일] 오전 11시 20분 ~ 11시 50분, 센텀 내과의원 방문.'
+       description: '(20-02-21 부산-1 확진자) [2월 20일] 오전 11시 20분 ~ 11시 50분, 센텀 내과의원 방문.'
        }
         },  
 
@@ -2713,7 +2717,7 @@ var geojson_place = {
        },
        properties: {
        title: '부산해운대백병원',
-       description: '(20-02-21 부산A 확진자) [2월 21일] 부산해운대백병원 방문 후 자택 기거.'
+       description: '(20-02-21 부산-1 확진자) [2월 21일] 부산해운대백병원 방문 후 자택 기거.<br>(부산-11 확진자) [2월 18일] 오후 3시 45분부터 4시 40분까지 방문.'
        }
         }, 
 
@@ -2725,7 +2729,7 @@ var geojson_place = {
        },
        properties: {
        title: '전자공고',
-       description: '(20-02-21 부산B 확진자) [2월 18일] 오전 11시 50분~오후 12시 40분 전자공고 운동장 이용.'
+       description: '(20-02-21 부산-2 확진자) [2월 18일] 오전 11시 50분~오후 12시 40분 전자공고 운동장 이용.'
        }
         }, 
 
@@ -2737,7 +2741,7 @@ var geojson_place = {
        },
        properties: {
        title: '대성탕',
-       description: '(20-02-21 부산B 확진자) [2월 18일] 오후 1시부터 2시 40분까지 대성탕(목욕탕) 이용.'
+       description: '(20-02-21 부산-2 확진자) [2월 18일] 오후 1시부터 2시 40분까지 대성탕(목욕탕) 이용.'
        }
         },
 
@@ -2749,7 +2753,7 @@ var geojson_place = {
        },
        properties: {
        title: '동래밀면 본점',
-       description: '(20-02-21 부산B 확진자) [2월 18일] 오후 3시 10분~4시 40분, 동래밀면 본점 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 18일] 오후 3시 10분~4시 40분, 동래밀면 본점 방문.'
        }
         },
 
@@ -2761,7 +2765,7 @@ var geojson_place = {
        },
        properties: {
        title: '복산동 행정복지센터',
-       description: '(20-02-21 부산B 확진자) [2월 18일] 오후  4시 20분부터 10분간 복산동 주민센터 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 18일] 오후  4시 20분부터 10분간 복산동 주민센터 방문.'
        }
         },  
 
@@ -2773,7 +2777,7 @@ var geojson_place = {
        },
        properties: {
        title: '동래구청 복지정책과',
-       description: '(20-02-21 부산B 확진자) [2월 18일] 오후 5시부터 20분까지 동래구청 복지정책과 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 18일] 오후 5시부터 20분까지 동래구청 복지정책과 방문.'
        }
         }, 
 
@@ -2785,7 +2789,7 @@ var geojson_place = {
        },
        properties: {
        title: '온천교회',
-       description: '(20-02-21 부산B 확진자) [2월 19일] 오전 10시~오후 1시/오후 6시 30분~9시, 온천교회 1층카페 이용, 2층서 예배.'
+       description: '부산 확진자 다수 방문.'
        }
         }, 
 
@@ -2797,7 +2801,7 @@ var geojson_place = {
        },
        properties: {
        title: '피자몰 광안리점',
-       description: '(20-02-21 부산B 확진자) [2월 20일] 오후 1시 40분 ~ 3시, 광안리 소재 피자몰 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 20일] 오후 1시 40분 ~ 3시, 광안리 소재 피자몰 방문.'
        }
         }, 
 
@@ -2809,7 +2813,7 @@ var geojson_place = {
        },
        properties: {
        title: 'GS25 꿈에그린점',
-       description: '(20-02-21 부산B 확진자) [2월 20일] GS25 동래꿈에그린점 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 20일] GS25 동래꿈에그린점 방문.'
        }
         }, 
 
@@ -2821,7 +2825,7 @@ var geojson_place = {
        },
        properties: {
        title: '대동병원 선별진료소',
-       description: '(20-02-21 부산B 확진자) [2월 21일] 대동병원 선별진료소 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 21일] 대동병원 선별진료소 방문.'
        }
         }, 
 
@@ -2834,7 +2838,7 @@ var geojson_place = {
        },
        properties: {
        title: '가까운약국',
-       description: '(20-02-21 부산B 확진자) [2월 21일] <가까운약국> 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 21일] <가까운약국> 방문.'
        }
         },
 
@@ -2846,7 +2850,7 @@ var geojson_place = {
        },
        properties: {
        title: '메가마트 동래점',
-       description: '(20-02-21 부산B 확진자) [2월 21일] 메가마트 동래점 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 21일] 메가마트 동래점 방문.'
        }
         }, 
 
@@ -2858,7 +2862,7 @@ var geojson_place = {
        },
        properties: {
        title: '얼쑤대박터지는집 동래점',
-       description: '(20-02-21 부산B 확진자) [2월 21일] 음식점 방문.'
+       description: '(20-02-21 부산-2 확진자) [2월 21일] 음식점 방문.'
        }
         }, 
 
@@ -2870,7 +2874,7 @@ var geojson_place = {
        },
        properties: {
        title: '동래구 보건소',
-       description: '(20-02-21 부산B 확진자) [2월 21일] 동래구보건소 방문.'
+       description: '부산 내 확진자 다수 방문.'
        }
         }, 
 
@@ -4277,7 +4281,7 @@ var geojson_place = {
     },
     properties: {
       title: '성남종합버스터미널',
-      description: '(성남 확진자) 버스 타고 대구 방문.<br>* 현재 역학조사 진행중으로 더 자세한 동선은 추후 업데이트 예정.'
+      description: '(성남 확진자) [2월 20일] 오후 9시 45분경 동대구터미널에서 출발한 버스를 타고 성남종합버스터미널 도착 후 마을 8-1번 승차.'
     }
   },
 
@@ -4377,6 +4381,463 @@ var geojson_place = {
     }
   },
 
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.146591, 37.406956]
+    },
+    properties: {
+      title: '파리바게트 분당상탑점',
+      description: '(성남 확진자) [2월 20일] 밤에 파리바게트 분당상탑점에서 빵 구입 후 도보로 야탑3동 소재 자택으로 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.045880, 37.738727]
+    },
+    properties: {
+      title: '의정부역',
+      description: '(포천 확진자) [2월 16일] 오후 10시 50분경 의정부역에서 소요산역 향하는 지하철 탑승'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.061085, 37.948045]
+    },
+    properties: {
+      title: '소요산역',
+      description: '(포천 확진자) [2월 16일] 의정부역에서 도착.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.061857, 37.947427]
+    },
+    properties: {
+      title: 'CU 소요산점',
+      description: '(포천 확진자) [2월 16일] 오후 11시 40분경 편의점에서 물품 구매.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.068071, 38.024960]
+    },
+    properties: {
+      title: '전곡 블루가이미용실',
+      description: '(포천 확진자) [2월 17일] 오후 6시 30분경 부대 퇴근 후 전곡 블루가이미용실에서 이발.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.068397, 38.026214]
+    },
+    properties: {
+      title: '메가커피 전곡점',
+      description: '(포천 확진자) [2월 17일] 오후 7시 7분경 커피구입.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.067724, 38.025312]
+    },
+    properties: {
+      title: '롯데리아 전곡점',
+      description: '(포천 확진자) [2월 17일] 오후 7시 57분경 햄버거 구매.'
+    }
+  },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.079831, 38.101124]
+    },
+    properties: {
+      title: 'GS25 연천전곡점',
+      description: '(포천 확진자) [2월 17일] 오후 8시 13분경 물품 구매.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.052970, 37.892037]
+    },
+    properties: {
+      title: '생고기제작소 동두천점',
+      description: '(포천 확진자) [2월 18일] 오후 8시 3분경 동두천 소재 음식점에서 식사 후 하사 자차로 숙소도착.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.068642, 38.024919]
+    },
+    properties: {
+      title: '마왕족발 전곡점',
+      description: '(포천 확진자) [2월 21일] 오후 3시 40분경 마왕족발 전곡점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.068013, 38.026795]
+    },
+    properties: {
+      title: '전곡대륙정육점',
+      description: '(포천 확진자) [2월 21일] 오후 4시경 전곡대륙정육점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.066891, 38.028039]
+    },
+    properties: {
+      title: '전곡국민마트',
+      description: '(포천 확진자) [2월 21일] 오후 4시 15분경 전곡국민마트 방문.'
+    }
+  },
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.068197, 38.025619]
+    },
+    properties: {
+      title: '할매순대국 전곡점',
+      description: '(포천 확진자) [2월 22일] 오전 10시 15분경 연천 소재 할매순대국 식당에서 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.533327, 35.836858]
+    },
+    properties: {
+      title: '대구 파라다이스 컨벤션',
+      description: '(파주A 확진자) [2월 16일] 오전 11시 30분부터 오후 12시 50분까지 파라다이스 컨벤션 웨딩홀 및 뷔페 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.134300, 37.463389]
+    },
+    properties: {
+      title: '횡성휴게소(강릉방향)',
+      description: '(파주A 확진자) [2월 16일] 자차로 강릉집으로 이동 중 횡성휴게소 경유.'
+    }
+  },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.773326, 37.654422]
+    },
+    properties: {
+      title: '일산화이트치과',
+      description: '(파주A 확진자) [2월 17일] 오전 11시 46분경 일산 화이트 치과 방문.'
+    }
+  },
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.792036, 37.645147]
+    },
+    properties: {
+      title: '고양조은약국',
+      description: '(파주A 확진자) [2월 17일] 오후 12시 57분경 고양조은약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.716265, 37.773948]
+    },
+    properties: {
+      title: '탄현면 일굼터',
+      description: '(파주A 확진자) [2월 17일] 오후 1시부터 6시까지 회사 오후근무<br>(파주B 확진자) [2월 17~21일] 오전 9시부터 오전 6시까지 회사 근무.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.888717, 37.749280]
+    },
+    properties: {
+      title: '강릉의료원 선별진료소',
+      description: '(파주A 확진자) [2월 22일] 오후 1시부터 오후 9시 30분까지 강릉시의료원 선별진료소 방문해 1차 검사결과 양성 판정.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.785100, 37.869658]
+    },
+    properties: {
+      title: '홈플러스 파주문산점',
+      description: '(파주B 확진자) [2월 22일] 오전 10시경 홈플러스 파주문산점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.783947, 37.856334]
+    },
+    properties: {
+      title: 'GS25 문산점',
+      description: '(파주B 확진자) [2월 22일] 오후 12시경 GS25 문산점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.872481, 37.849523]
+    },
+    properties: {
+      title: '천하약국(법원읍)',
+      description: '(파주B 확진자) [2월 22일] 오후 3시 11분경 법원읍 소재 천하약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.780296, 37.838297]
+    },
+    properties: {
+      title: '문산 플러스마트',
+      description: '(파주B 확진자) [2월 22일] 오후 4시 38분부터 4시 49분까지 문산 플러스마트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.870897, 37.893683]
+    },
+    properties: {
+      title: '풍작플랜지',
+      description: '(파주C 확진자) [2월 17~21일] 구내식당에서 중식, 석식 조리 및 준비, 식수인원 20명.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.874575, 37.848622]
+    },
+    properties: {
+      title: '천현농협 하나로마트',
+      description: '(파주C 확진자) [2월 21일] 오후 1시 23분경 천현농협 하나로마트에서 쓰레기봉투 구입.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.085868, 35.230794]
+    },
+    properties: {
+      title: '터줏집돼지국밥',
+      description: '(부산-8 확진자) [2월 19일] 오후 1시경 부산대학앞 돼지국밥집 방문.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.086654, 35.230605]
+    },
+    properties: {
+      title: '스타벅스 부산대점',
+      description: '(부산-8 확진자) [2월 19일] 오후 1시 40분경 도보로 스타벅스 부산대점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.086278, 35.233004]
+    },
+    properties: {
+      title: '시골통돼지볶음',
+      description: '(부산-8 확진자) [2월 20일] 오후 1시 10분경 시골통돼지볶음 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.087161, 35.229605]
+    },
+    properties: {
+      title: '이솝페이블',
+      description: '(부산-8 확진자) [2월 20일] 오후 2시 15분경 이솝페이블 방문.'
+    }
+  },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.078332, 35.212664]
+    },
+    properties: {
+      title: '동래봄산부인과',
+      description: '(부산-8 확진자) [2월 20일] 오후 4시 20분경 동래구 소재 산부인과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.074256, 35.206302]
+    },
+    properties: {
+      title: '맥도날드 부산온천SKDT점',
+      description: '(부산-8 확진자) [2월 20일] 자차로 오후 9시 20분경 맥도날드 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.078781, 35.213079]
+    },
+    properties: {
+      title: 'OX PC방',
+      description: '(부산-9 확진자) [2월 20일] 오전 8시 40분부터 9시 5분까지 PC방 이용.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.072256, 35.211755]
+    },
+    properties: {
+      title: '동심가마트',
+      description: '(부산-9 확진자) [2월 21일] 오후 10시 15분경 동심가마트 이용.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.791531, 35.020448]
+    },
+    properties: {
+      title: '미풍해장국 나주혁신점',
+      description: '(부산-10 확진자) [2월 18일] 오후 1시경 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.795787, 35.018121]
+    },
+    properties: {
+      title: '한국인터넷진흥원',
+      description: '(부산-10 확진자) [2월 18일] 오후 1시 30분경 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.039868, 35.113493]
+    },
+    properties: {
+      title: '밀양돼지국밥 부산역점',
+      description: '(부산-10 확진자) [2월 18일] 오후 7시 42분경 밀양돼지국밥 부산역점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.125087, 35.175108]
+    },
+    properties: {
+      title: '센텀스카이비즈&삼촌밥런치펍',
+      description: '(부산-10 확진자) [2월 19,20일] 사무실 출근(선템중학교 정류장 하차) [2월 20일] 점심은 같은 건물 1층 식당 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.131682, 35.172959]
+    },
+    properties: {
+      title: '센텀가야밀면',
+      description: '(부산-10 확진자) [2월 20일] 오후 6시 30분경 식당 방문.'
+    }
+  },
 
 
   ]
@@ -5247,7 +5708,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //부산A 확진자
+  //부산-1 확진자
 [127.101298, 37.487466], //수서역
 [129.042229, 35.115229], //부산역
 //자택 기거
@@ -5271,7 +5732,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //부산B 확진자
+  //부산-2 확진자
 [129.073828, 35.215220], //전자공고운동장
 [129.081204, 35.219545], //대성탕
 [129.084164, 35.198336], //동래밀면 본점
@@ -5391,7 +5852,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //부산C 확진자
+  //부산-3 확진자
 [129.064809, 35.176295], //부산교육청
 [129.115170, 35.160697], //수영구 슈가스팟
 [129.113196, 35.160835], //부산한서병원 선별
@@ -5408,7 +5869,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //부산C 확진자
+  //부산-3 확진자
 [128.630224, 35.878282], //동대구시외터미널
 [129.160547, 35.164793], //해운대시외터미널
 [129.203441, 35.186468], //신선지국밥
@@ -5428,7 +5889,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //부산C 확진자
+  //부산-3 확진자
 [128.630224, 35.878282], //동대구시외터미널
 [129.160547, 35.164793], //해운대시외터미널
 [129.203441, 35.186468], //신선지국밥
@@ -5448,7 +5909,7 @@ map.addSource('lines', {
 'geometry': {
 'type': 'LineString',
 'coordinates': [
-  //부산E 확진자
+  //부산-7 확진자
 [129.119805, 35.201312], //청산곱창
 [129.119353, 35.203818], //스타벅스수영강변
 [129.121797, 35.202014], //세븐일레븐 반여선수촌 
@@ -5825,7 +6286,9 @@ map.addSource('lines', {
 'type': 'LineString',
 'coordinates': [
   //성남 확진자
+[128.630224, 35.878282],
 [127.127145, 37.412913],
+[127.146591, 37.406956],
 [126.831248, 37.642304], 
 
 ]
@@ -5870,6 +6333,152 @@ map.addSource('lines', {
 ]
 }
 },
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#d1a4ba'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //포천 확진자
+[127.045880, 37.738727], //의정부역
+[127.061085, 37.948045], //소요산역
+[127.061857, 37.947427], //CU소요산점
+[127.068071, 38.024960], //전곡 블루가이미용실
+[127.068397, 38.026214], //메가커피 전곡점
+[127.067724, 38.025312], //롯데리아 전곡점
+[127.079831, 38.101124], //gs25 연천전곡점
+//육군5사단 영외마트
+[127.052970, 37.892037], //생고기제작소 동두천점
+[127.068642, 38.024919], //마왕족발 전곡점
+[127.068013, 38.026795], //전곡대륙정육점
+[127.066891, 38.028039], //전곡국민마트
+[127.068197, 38.025619], //할매순대국 전곡점
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#69f3b5'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //파주A 확진자
+[128.533327, 35.836858], //대구파라다이스컨벤션
+[128.134300, 37.463389], //횡성휴게소(강릉방향)
+[126.773326, 37.654422], //일산화이트치과
+[126.792036, 37.645147], //고양조은약국
+[126.716265, 37.773948], //탄현면 일굼터
+[128.888717, 37.749280], //강릉의료원
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#0d0c67'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //파주B 확진자
+[126.716265, 37.773948], //탄현면 일굼터
+[126.785100, 37.869658], //홈플러스 파주문산점
+//코끼리약국
+//메가MGC커피
+[126.783947, 37.856334], //gs25문산점
+[126.872481, 37.849523], //천하약국(법원읍)
+[126.780296, 37.838297], //문산 플러스마트
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#b87e1c'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //파주C 확진자
+[126.870897, 37.893683], //풍작플랜지
+[126.874575, 37.848622], //천현농협 하나로마트
+]
+}
+},
+
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#5f4b6d'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산-8 확진자
+[129.085868, 35.230794], //터줏집돼지국밥
+[129.086654, 35.230605], //스타벅스 부산대점
+[129.077126, 35.215985], //온천교회
+[129.086278, 35.233004], //시골통돼지볶음
+[129.087161, 35.229605], //이솝페이블
+[129.078332, 35.212664], //동래봄산부인과
+[129.074256, 35.206302], //맥도날드부산온천SKDT점
+[129.077126, 35.215985], //온천교회
+[129.059186, 35.187235], //부산의료원
+]
+}
+},
+
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#ed0791'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산-9 확진자
+[129.078781, 35.213079], //OX PC방
+[129.077126, 35.215985], //온천교회
+[129.072256, 35.211755], //동심가마트
+[129.079854, 35.211385], //동래구보건소
+[129.059186, 35.187235], //부산의료원
+]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'color': '#ddb756'
+},
+'geometry': {
+'type': 'LineString',
+'coordinates': [
+  //부산-10 확진자
+[126.791531, 35.020448], //미풍해장국 나주혁신점
+[126.795787, 35.018121], //한국인터넷진흥원
+//메가mgc커피 나주혁신도시점
+[129.039868, 35.113493], //밀양돼지국밥 부산역점
+[129.125087, 35.175108], //센텀스카이비즈&삼촌밥런치펍
+[129.131682, 35.172959], //센텀가야밀면
+//예림유치원
+[129.079854, 35.211385], //동래구보건소
+[129.059186, 35.187235], //부산의료원
+]
+}
+},
+
+
 
 ]
 }
