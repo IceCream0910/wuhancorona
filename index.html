@@ -51,16 +51,86 @@
 
    <div id="listcontainer" style="position:fixed; height:93%; overflow:scroll;">
      <!-- 예방수칙 -->
-     <h5 style="margin-top:20px; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">여러분이 실천이 필요합니다</h5>
-     <h1 style="margin-left:20px;  margin-top:0px;">#예방수칙</h1>
-     <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style="border-radius:20px; width:300px; height:169px; margin-left:20px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+     <h5 style="margin-top:20px; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">예방수칙 부터 팩트체크까지</h5>
+     <h1 style="margin-left:20px;  margin-top:0px;">#알아보기</h1>
+     <div style="white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px
+    width: 100%;">
+     <iframe src="https://youtube.com/embed/rTfY1xB-Drc?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+  border-radius: 15px;
+  height: 139px;
+  width: 250px;
+  margin-top:10px;
+          margin-left:20px;
+          margin-right: 10px;
+          margin-bottom: 30px;
+        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://youtube.com/embed/1LpaRylW6LM?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+  border-radius: 15px;
+  height: 139px;
+  width: 250px;
+          margin-left:10px;
+          margin-right: 10px;
+          margin-bottom: 30px;
+        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://youtube.com/embed/EBrtOAAkEcE?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+  border-radius: 15px;
+  height: 139px;
+  width: 250px;
+          margin-left:10px;
+          margin-right: 10px;
+          margin-bottom: 30px;
+        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://youtube.com/embed/4ufdg6v4Jh4?loop=1&showinfo=0&controls=1" style=" display: inline-block;
+  border-radius: 15px;
+  height: 139px;
+  width: 250px;
+          margin-left:10px;
+          margin-right: 20px;
+          margin-bottom: 30px;
+        text-decoration: none;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+     </div>
+     <div id="prevent_btn">
+     <a href="http://www.mohw.go.kr/react/popup_200128.html" target="_blank">
+    <svg class="icon-arrow before">
+        <use xlink:href="#arrow"></use>
+    </svg>
+    <span class="label">선별진료소 및 안심병원 현황</span>
+    <svg class="icon-arrow after">
+        <use xlink:href="#arrow"></use>
+    </svg>
+</a>
+</div>
+
      <br><br>
+<svg style="display: none;">
+  <defs>
+    <symbol id="arrow" viewBox="0 0 35 15">
+      <title>Arrow</title>
+      <path d="M27.172 5L25 2.828 27.828 0 34.9 7.071l-7.07 7.071L25 11.314 27.314 9H0V5h27.172z "/>
+    </symbol>
+  </defs>
+</svg>
       <div id="frontier" ng-app="myApp">
 
   <div ng-controller="angelCtrl">
-               <h5 style="margin-top:20px; text-align:left; width:100%; padding-left:20px; font-size:14px; margin-bottom:0; color:gray;">#세상은_아직_살만하다 #선행모음</h5>
-      <h2 style="padding-left:20px; text-align:left; width:100%; margin-top:0px;">힘내세요! 힘낼게요!</h2>
-    <div class="flexCont_angel">
+               <h5 style="margin-top:20px; text-align:left; width:100%; padding-left:20px; font-size:14px; margin-bottom:0; color:gray;">세상은 아직 따뜻합니다</h5>
+      <h2 style="padding-left:20px; text-align:left; width:100%; margin-top:0px;">#힘내라_대한민국!</h2>
+
+    
+    <div class="row">
+        <div id="results" style="white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 20px
+    width: 100%;"></div>
+        <div id="buttons"></div>
+    </div>
+
+
+    <div class="flexCont_angel" style="display:none;">
 
 
       <div class="article_angel" ng-repeat="item in articles">
@@ -144,15 +214,15 @@
 
 
 <h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
- (20-02-26 09:00 기준)</span></h3>
+ (20-02-25 16:00 기준)</span></h3>
 <div class="card-list">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                       <div class="card purple">
                             <div class="title">국내 확진자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">1,146명</div>
-                            <div class="stat"><b>전일 대비 </b>+169</div>
+                            <div class="value">977명</div>
+                            <div class="stat"><b>전일 대비 </b>+144</div>
                         </div>
                         
                     </div>
@@ -168,22 +238,22 @@
                         <div class="card red">
                             <div class="title">국내 사망자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">12명</div>
-                            <div class="stat"><b>전일 대비 </b>+1</div>
+                            <div class="value">11명</div>
+                            <div class="stat"><b>전일 대비 </b>+3</div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">전세계 통계 <span style="font-size:10px; color:gray;">
- (20-02-26 09:00 기준)</span></h3>
+ (20-02-25 09:00 기준)</span></h3>
 <div class="card-list">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                       <div class="card orange">
                             <div class="title">전세계 확진자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">79,773명</div>
+                            <div class="value">79,220명</div>
                         </div>
                         
                     </div>
@@ -192,8 +262,8 @@
                         <div class="card darkred">
                             <div class="title">전세계 사망자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">2,746명</div>
-                            <div class="stat"><b>단순계산 치명율 </b>3.4%</div>
+                            <div class="value">2,686명</div>
+                            <div class="stat"><b>단순계산 치명율 </b>3.3%</div>
                         </div>
                     </div>
                 </div>
@@ -212,14 +282,14 @@
            <div class="bycountry" style="margin-left:20px; padding-right:20px;">
            <h2>국가별 확진자 현황</h2>
                      <ul style="color:black;">
-                       <li><a href="#">중국 : 78,064 (사망 2,663)</a></li>
-                       <li><a href="#">대한민국 : 1,146 (사망 11)</a></li>
-                       <li><a href="#">일본 : 855 (사망 4, 크루즈 695)</a></li>
-                       <li><a href="#">이탈리아 : 322 (사망 10)</a></li> 
-                       <li><a href="#">싱가포르 : 91</a></li>
-                       <li><a href="#">홍콩 : 85 (사망 2)</a></li>
-                       <li><a href="#">이란 : 61 (사망 12)</a></li>
-                       <li><a href="#">미국 : 53</a></li>
+                       <li><a href="#">중국 : 77,658 (사망 2,663)</a></li>
+                       <li><a href="#">대한민국 : 977 (사망 11)</a></li>
+                       <li><a href="#">일본 : 868 (사망 3, 크루즈 695)</a></li>
+                       <li><a href="#">이탈리아 : 229 (사망 6)</a></li> 
+                       <li><a href="#">싱가포르 : 90</a></li>
+                       <li><a href="#">홍콩 : 81 (사망 2)</a></li>
+                       <li><a href="#">이란 : 43 (사망 8)</a></li>
+                       <li><a href="#">미국 : 35</a></li>
                        <li><a href="#">태국 : 35</a></li>
                        <li><a href="#">대만 : 30 (사망 1)</a></li>
                        <li><a href="#">말레이시아 : 22</a></li>
@@ -332,7 +402,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
      { x: new Date(2020, 1, 23), y: 78118},
      { x: new Date(2020, 1, 24), y: 78377},
      { x: new Date(2020, 1, 25), y: 79220},
-     { x: new Date(2020, 1, 26), y: 79773},
+
     ]
   }]
 });
@@ -345,7 +415,7 @@ chart.render();
 
                 <ul>
                   <br>
-                  <a href="#bottomOflist"><li id="gotoBottom">맨 아래로 가기</span></li></a>
+                  <a href="#bottomOflist"><li id="fly">맨 아래로 가기</span></li></a>
                   <a href="#bottomOflist" style="text-decoration: none; text-align:center;"><li id="fly">맨 아래로 가기</span></li></a>
                   <li id="fly" onclick="flyTarget(this)" data-lat="114.21853322535755" data-long="30.77093202627814"><span style="color:#960823; margin-right:20px;">1번째</span>중국남방항공 CZ6079</li>
                   <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#960823; margin-right:20px;">1번째</span>인천국제공항</li>
