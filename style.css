@@ -8,7 +8,7 @@ border-radius: 20px;
 }
 
 .marker_hospital {
-  background-image: url('https://cdn4.iconfinder.com/data/icons/keynote-and-powerpoint-icons/256/Plus-512.png');
+  background-image: url('hospital.png');
   background-size:cover;
   width: 28px;
   height: 28px;
@@ -17,7 +17,8 @@ border-radius: 20px;
 }
 
 .marker_place {
-  background-image: url('https://www.freeiconspng.com/uploads/exercise-icon-1.png');
+  background-image: url('place.png');
+    opacity:0.95;
   background-size: cover;
   width: 28px;
   height: 28px;
@@ -686,7 +687,6 @@ white-space: nowrap;
 
 
 
-@import url(https://fonts.googleapis.com/css?family=Lato);
  *, *:before, *:after {
 	 -moz-box-sizing: border-box;
 	 -webkit-box-sizing: border-box;
@@ -955,8 +955,6 @@ float:left;
   content: "";
   top: 5px;
 }
-
-@import url('https://use.fontawesome.com/releases/v5.0.9/css/all.css');
 
 .tab-nav-container{
 	position:fixed;
