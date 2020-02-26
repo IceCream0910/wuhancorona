@@ -35,7 +35,9 @@ border-radius: 20px;
   font-family: 'Open Sans', sans-serif;
 }
 
-
+gotobottom {
+	display:block;
+}
 
 .card-list {
    width: 100%;
@@ -1086,6 +1088,9 @@ height:25%;
   display: none;
 }
 
+	gotobottom {
+	display:none;
+}
 	
 }
 /* 여기까지 pc 반응형 css코드 */
