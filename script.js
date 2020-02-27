@@ -2328,8 +2328,8 @@ var geojson_place = {
        coordinates: [126.902415, 35.132998]
        },
        properties: {
-       title: '남구보건소',
-       description: '(20-02-20 126번째 확진자) [2월 19일] 남구보건소 방문.'
+       title: '광주남구보건소',
+       description: '(20-02-20 126번째 확진자) [2월 19일] 남구보건소 방문.<br>(489번 확진자) [2월 22일] 오후 12시 30분경 선별진료소 방문.'
        }
         }, 
 
@@ -4990,6 +4990,66 @@ var geojson_place = {
     properties: {
       title: '하프플로어 카페',
       description: '(388번 확진자) [2월 20일] 오후 8시경 옥동 소재 카페에서 차마심.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.906285, 35.133221]
+    },
+    properties: {
+      title: '뚜에이오',
+      description: '(489번 확진자) [2월 19일] 오전 11시 30분경 주월동 소재 카페 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.857286, 35.142389]
+    },
+    properties: {
+      title: '파파샤브',
+      description: '(489번 확진자) [2월 19일] 오후 7시 50분경 쌍촌동 소재 식당 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.858193, 35.138979]
+    },
+    properties: {
+      title: '엔탑PC방',
+      description: '(489번 확진자) [2월 19일] 오후 9시경 금호동 소재 피시방 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.891520, 35.223732]
+    },
+    properties: {
+      title: '우치공원&동물원',
+      description: '(489번 확진자) [2월 20일] 오후 3시 30분경 지인 차량으로 우치공원 및 동물원에서 2시간 머무름.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.874563, 35.179629]
+    },
+    properties: {
+      title: '만랩커피 광주운암점',
+      description: '(489번 확진자) [2월 20일] 오후 8시 10분경 운암동 소재 카페 방문.'
     }
   },
 
