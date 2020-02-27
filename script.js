@@ -358,7 +358,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '포항의료원(4)',
-      description: '(20-02-19 54, 55번 확진자/20-02-20 85번/포항B 확진자) 해당 병원에서 격리치료.'
+      description: '(20-02-19 54, 55번 확진자/20-02-20 85번/207번 확진자) 해당 병원에서 격리치료.'
     }
   },           
          
@@ -469,6 +469,30 @@ var geojson_hospital = {
       description: '(울산A 확진자) 해당 병원에서 격리치료.'
     }
   },  
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.126481, 36.122657]
+    },
+    properties: {
+      title: '김천의료원',
+      description: '(242번, 244번 확진자) 해당 병원에서 격리치료.'
+    }
+  },  
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.700859, 36.547089]
+    },
+    properties: {
+      title: '안동병원',
+      description: '(384번 확진자) 선별진료소 방문 후 격리.'
+    }
+  }, 
 
   
 
@@ -1955,7 +1979,7 @@ var geojson_place = {
        },
        properties: {
        title: '동대구 터미널',
-       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(포항B 확진자) [2월 16일] 포항으로 출발.<br>(성남 확진자) [2월 20일] 오후 6시경 성남으로 출발.'
+       description: '(20-02-20 113번 확진자) [2월 9일] 오전 7시 30분 ~ 10시 30분까지 동대구 터미널 이용.<br>(부산 확진자D) [2월 18일] 동대구시외버스터미널 출발.<br>(207번 확진자) [2월 16일] 포항으로 출발.<br>(성남 확진자) [2월 20일] 오후 6시경 성남으로 출발.'
        }
         },
         
@@ -3363,7 +3387,7 @@ var geojson_place = {
        },
        properties: {
        title: '중앙상가 애슐리',
-       description: '(포항B 확진자) [2월 17일] 중앙상가 애슐리 방문.'
+       description: '(207번 확진자) [2월 17일] 중앙상가 애슐리 방문.'
        }
         },
 
@@ -3375,7 +3399,7 @@ var geojson_place = {
        },
        properties: {
        title: '달콤커피 죽도시장점',
-       description: '(포항B 확진자) [2월 17일] 달콤커피 죽도시장점 방문.'
+       description: '(207번 확진자) [2월 17일] 달콤커피 죽도시장점 방문.'
        }
         },
 
@@ -3387,7 +3411,7 @@ var geojson_place = {
        },
        properties: {
        title: '동원성',
-       description: '(포항B 확진자) [2월 17일] 동원성에서 식사.'
+       description: '(207번 확진자) [2월 17일] 동원성에서 식사.'
        }
         },  
 
@@ -3399,7 +3423,7 @@ var geojson_place = {
        },
        properties: {
        title: '김밥나라(오거리)',
-       description: '(포항B,E 확진자) [2월 18일] 김밥나라에서 식사.'
+       description: '(207번,E 확진자) [2월 18일] 김밥나라에서 식사.'
        }
         }, 
 
@@ -3411,7 +3435,7 @@ var geojson_place = {
        },
        properties: {
        title: '포항남구보건소',
-       description: '(포항B,C 확진자) [2월 20일] 포항남구보건소 방문.'
+       description: '(207번,C 확진자) [2월 20일] 포항남구보건소 방문.'
        }
         },
 
@@ -4787,6 +4811,192 @@ var geojson_place = {
       description: '(부산-10 확진자) [2월 20일] 오후 6시 30분경 식당 방문.'
     }
   },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.996791, 37.480328]
+    },
+    properties: {
+      title: '복돼지네 옛날 생돼지김치찌개',
+      description: '(188번 확진자) [2월 14일] 서초구 방배동 소재 식당 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.028622, 37.488345]
+    },
+    properties: {
+      title: '삼성디지터프라자 서초점',
+      description: '(188번 확진자) [2월 20일] 오전 10시경 서초2동 소재 삼성디지털프라자 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.624034, 35.883977]
+    },
+    properties: {
+      title: '대구파티마병원',
+      description: '(335번 확진자) [2월 20일] 오후 2시부터 3시에 검체 채취 후 3시부터 병원진료.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.941342, 35.960121]
+    },
+    properties: {
+      title: '삼산아파트',
+      description: '(335번 확진자) [2월 16일] 오후 12시부터 4시까지 친구집에서 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.700770, 36.562263]
+    },
+    properties: {
+      title: '굿네이버스 좋은마음센터 경북북부지부',
+      description: '(384번 확진자) [2월 14,17,18,19일] 옥동 소재 회사 근무.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.675810, 36.574171]
+    },
+    properties: {
+      title: '안동터미널',
+      description: '(384번 확진자) [2월 14일] 오후 7시 20분경 동대구터미널행 버스 탑승.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.698801, 36.566061]
+    },
+    properties: {
+      title: '성모이비인후과(옥동)&프라자약국',
+      description: '(384번 확진자) [2월 19일] 오전 9시 10분경 옥동 소재 이비인후과 진료 후 1층 프라자약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.702836, 36.548105]
+    },
+    properties: {
+      title: '안동자동차검사소',
+      description: '(385번 확진자) [2월 18일] 오후 12시 50분경 수상동 소재 안동자동차검사소에서 접수 예약 후 집으로 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.228443, 36.763299]
+    },
+    properties: {
+      title: '무지개식당',
+      description: '(386, 387, 388번 확진자) [2월 16일] 오후 7시 30분경 천안시 소재 무지개식당에서 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.735920, 36.569506]
+    },
+    properties: {
+      title: '가톨릭상지대 구내서점',
+      description: '(386번 확진자) [2월 17~21일] 가톨릭상지대학교 구내서점에서 근무.'
+    }
+  },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.698422, 36.560580]
+    },
+    properties: {
+      title: '안동한우곱창',
+      description: '(386번 확진자) [2월 18일] 오후 6시경 옥동 소재 식당에서 식사 후 대리운전으로 귀가.'
+    }
+  },
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.724431, 36.579213]
+    },
+    properties: {
+      title: '천주교 안동교구청',
+      description: '(388번 확진자) [2월 17~20일] 근무.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.729029, 36.567319]
+    },
+    properties: {
+      title: '영희식당',
+      description: '(388번 확진자) [2월 19일] 점심 목성동 소재 영희식당에서 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.700276, 36.560843]
+    },
+    properties: {
+      title: '착한낙지 옥동점',
+      description: '(388번 확진자) [2월 20일] 오후 6시경 착한낙지 옥동점에서 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.700117, 36.559494]
+    },
+    properties: {
+      title: '하프플로어 카페',
+      description: '(388번 확진자) [2월 20일] 오후 8시경 옥동 소재 카페에서 차마심.'
+    }
+  },
+
+  
+
+
+
 
 
   ]
