@@ -1043,6 +1043,7 @@ float:left;
   display: none;
 }
 
+
 @media (min-width: 1024px) {
   .map-responsive iframe{
   left:0;
@@ -1052,6 +1053,7 @@ float:left;
   position:absolute;
   z-index:0;
 }
+
 
 .imgBanner {
 display:block;
@@ -1169,6 +1171,9 @@ height:25%;
   display: none;
 }
 
+#gotoBottom {
+  display: none;
+}
 	
 }
 /* 여기까지 pc 반응형 css코드 */
