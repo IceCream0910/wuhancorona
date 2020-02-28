@@ -501,7 +501,7 @@ var geojson_hospital = {
       coordinates: [127.139075, 37.445169]
     },
     properties: {
-      title: ',
+      title: '성남시의료원',
       description: '(성남-2,3 확진자) 양성판정 받아 격리 조치.'
     }
   },           
