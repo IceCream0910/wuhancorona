@@ -265,8 +265,8 @@ var geojson_hospital = {
       coordinates: [126.926592, 35.138675]
     },
     properties: {
-      title: '조선대학교병원(3)',
-      description: '(20-02-06 22번/02-21 126번째/02-21 164번째 확진자) 해당 병원에 격리 조치.'
+      title: '조선대학교병원(4)',
+      description: '(22,126,164,589번 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -506,7 +506,17 @@ var geojson_hospital = {
     }
   },           
 
-  
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.744754, 37.874939]
+    },
+    properties: {
+      title: '강원대병원',
+      description: '(512번 확진자) 양성판정 받아 격리 조치.'
+    }
+  },   
 
 ]
 };
@@ -2376,8 +2386,8 @@ var geojson_place = {
        coordinates: [126.889886, 35.152299]
        },
        properties: {
-       title: '서구보건소',
-       description: '(20-02-20 126번째 확진자) [2월 20일] 서구보건소 진료.'
+       title: '광주서구보건소',
+       description: '(20-02-20 126, 589번째 확진자) [2월 20일] 광주서구보건소 진료(589번 확진자 동행)'
        }
         },  
 
@@ -4590,7 +4600,7 @@ var geojson_place = {
     },
     properties: {
       title: '강릉의료원 선별진료소',
-      description: '(파주A 확진자) [2월 22일] 오후 1시부터 오후 9시 30분까지 강릉시의료원 선별진료소 방문해 1차 검사결과 양성 판정.'
+      description: '(파주A 확진자) [2월 22일] 오후 1시부터 오후 9시 30분까지 강릉시의료원 선별진료소 방문해 1차 검사결과 양성 판정.<br>(512번 확진자) [2월 22일] 오전 9시 50분경 강릉의료원 선별진료소 방문.'
     }
   },
 
@@ -5065,7 +5075,342 @@ var geojson_place = {
     }
   },
 
-  
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.124611, 37.411018]
+    },
+    properties: {
+      title: '분당구보건소',
+      description: '(성남-2,3 확진자) 보건소 진료.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.338134, 36.029867]
+    },
+    properties: {
+      title: '동해 해물찜',
+      description: '(506,507번 확진자) [2월 16일] 오후 6시 16분경 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.349520, 36.012644]
+    },
+    properties: {
+      title: '그랜드에비뉴',
+      description: '(506번 확진자) [2월 17일] 오후 12시 30분경 6층 왕돈까스 식사 후 1시 30분경 홈플러스 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.364374, 36.034020]
+    },
+    properties: {
+      title: '농협은행 포항시지부',
+      description: '(506번 확진자) [2월 18일] 오후 12시 27분경 죽도동 소재 농협은행 포항시지부 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.366083, 36.034821]
+    },
+    properties: {
+      title: '다이소 죽도시장점',
+      description: '(506번 확진자) [2월 18일] 오후 12시 40분경부터 1시간동안 다이소 죽도시장점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.323124, 36.019101]
+    },
+    properties: {
+      title: 'GS25 포항지곡점',
+      description: '(506,507번 확진자) 각각 [2월 19일] [2월 18일] GS25 편의점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.317002, 36.032633]
+    },
+    properties: {
+      title: '지곡그린의원&그린약국',
+      description: '(506번 확진자) [2월 20일] 오전 9시 20분경 지곡그린의원과 같은 건물의 그린약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.339819, 36.015793]
+    },
+    properties: {
+      title: '포항성모병원 선별진료소',
+      description: '(506,507번 확진자) [2월 22일] 택시로 오전 8시 40분경부터 11시 50분까지 성모병원 선별진료소 검사 후 자가격리.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.322317, 36.012086]
+    },
+    properties: {
+      title: 'APCTP',
+      description: '(507번 확진자) [2월 17일] 오전 8시 30분 도보로 지곡동 소재의 APCTP(Asia Pacific Center for Theoretical Physics) 출근, 오후 6시 30분 공대 물리관 제3공학관 친구 만난 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.339822, 36.027532]
+    },
+    properties: {
+      title: '등촌샤브칼국수 포항이동점',
+      description: '(507번 확진자) [2월 18일] 오후 12시 15분경 이동 소재 등촌샤브칼국수 점심식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.416144, 35.971020]
+    },
+    properties: {
+      title: '참뼈해장국',
+      description: '(507번 확진자) [2월 18일] 오후 12시 15분경 이동 소재 등촌샤브칼국수 점심식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.934636, 37.781270]
+    },
+    properties: {
+      title: '송정공군휴양소 WA마트',
+      description: '(512번 확진자) [2월 22일] 오전 11시 5분경 국군복지단 송정콘도 내 WA마트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.721716, 35.822965]
+    },
+    properties: {
+      title: '최용식이비인후과의원&명보온누리약국',
+      description: '(548번 확진자) [2월 15일] 오후 3시경 옥산동 소재 이비인후과 방문 후 같은 건물 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.723134, 35.819132]
+    },
+    properties: {
+      title: '홈마트 옥산점',
+      description: '(548번 확진자) [2월 18일] 오후 4시경 홈마트 옥산점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.734929, 35.821881]
+    },
+    properties: {
+      title: '스카이탁구교실',
+      description: '(532번 확진자) [2월 19일] 오후 3시부터 8시까지 중방동 소재 탁구교실 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.740708, 35.819018]
+    },
+    properties: {
+      title: '두레장터',
+      description: '(532번 확진자) [2월 21일] 오후 1시경 상방동 소재 두레장터 방문.'
+    }
+  },
+
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.819159, 35.913568]
+    },
+    properties: {
+      title: '참조은이비인후과의원&국민약국',
+      description: '(571번 확진자) [2월 17일] 오전 9시 45분경 하양읍 소재 이비인후과 방문 후 같은건물 국민약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.893324, 35.120827]
+    },
+    properties: {
+      title: '광주 진월초등학교',
+      description: '(589번 확진자) [2월 19일] 오전 10시경 진월동 소재 진월초등학교 이동.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.910437, 35.132803]
+    },
+    properties: {
+      title: '르시엘블루',
+      description: '(589번 확진자) [2월 19일] 오후 12시경 주월동 소재 음식점에서 식사 후 진월초등학교로 복귀.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.889888, 35.152274]
+    },
+    properties: {
+      title: '사과나무카페',
+      description: '(589번 확진자) [2월 20일] 오후 12시 30분경 서구청 내 카페 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.880240, 35.125657]
+    },
+    properties: {
+      title: '메디팜큰사랑약국',
+      description: '(589번 확진자) [2월 20일] 오후 1시 20분경 자차로 풍암동 소재 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.880143, 35.125522]
+    },
+    properties: {
+      title: '이삭토스트 광주풍암점',
+      description: '(589번 확진자) [2월 20일] 메디팜큰사랑약국 방문 후 같은 건물 이삭토스트 광주풍암점 방문해 포장 수령 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.833923, 35.954196]
+    },
+    properties: {
+      title: '옹심이칼국수 와촌점',
+      description: '(615번 확진자) [2월 20일] 오전 11시 50분경 옹심이칼국수 와촌점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.827104, 35.932428]
+    },
+    properties: {
+      title: 'GS25 하양공단점',
+      description: '(615번 확진자) [2월 21일] 오전 8시 21분경 GS25 하양공단점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.835985, 35.945076]
+    },
+    properties: {
+      title: '대동반점',
+      description: '(615번 확진자) [2월 21일] 오전 11시 50분경 와촌면 소재 대동반점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.819338, 35.913354]
+    },
+    properties: {
+      title: '하양보건지소',
+      description: '(626번 확진자) [2월 19일] 오후 3시 30분 하양보건지소 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.816081, 35.911502]
+    },
+    properties: {
+      title: '앤유PC방',
+      description: '(626번 확진자) [2월 19일] 오후 4시부터 8시까지 하양읍 소재 앤유PC방 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.815369, 35.911589]
+    },
+    properties: {
+      title: 'CU 하양센트럴파크점',
+      description: '(626번 확진자) [2월 20,21일] 각각 오후 7시, 8시경 방문.'
+    }
+  },
 
 
 
@@ -5103,3 +5448,5 @@ geojson_place.features.forEach(function(marker) {
     .addTo(map);
 
 });
+
+
