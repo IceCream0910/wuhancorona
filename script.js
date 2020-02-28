@@ -493,6 +493,18 @@ var geojson_hospital = {
       description: '(384번 확진자) 선별진료소 방문 후 격리.'
     }
   }, 
+             
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.139075, 37.445169]
+    },
+    properties: {
+      title: ',
+      description: '(성남-2,3 확진자) 양성판정 받아 격리 조치.'
+    }
+  },           
 
   
 
