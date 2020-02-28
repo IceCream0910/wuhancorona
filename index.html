@@ -247,15 +247,15 @@ chart.render();
 
 
 <h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
- (20-02-28 09:00 기준)</span></h3>
+ (20-02-28 16:00 기준)</span></h3>
 <div class="card-list">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                       <div class="card purple">
                             <div class="title">국내 확진자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">2,022명</div>
-                            <div class="stat"><b>전일 대비 </b>+256</div>
+                            <div class="value">2,337명</div>
+                            <div class="stat"><b>전일 대비 </b>+571</div>
                         </div>
                         
                     </div>
@@ -263,8 +263,8 @@ chart.render();
                         <div class="card blue">
                             <div class="title">국내 완치자</div>
                             <i class="zmdi zmdi-upload"></i>
-                            <div class="value">26명</div>
-                            <div class="stat"><b>전일 대비 </b>+0</div>
+                            <div class="value">27명</div>
+                            <div class="stat"><b>전일 대비 </b>+1</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
@@ -316,7 +316,7 @@ chart.render();
            <h2>국가별 확진자 현황 (발생국 51)</h2>
                      <ul style="color:black;">
                        <li><a href="#">중국 : 78,818 (사망 2,788)</a></li>
-                       <li><a href="#">대한민국 : 2,022 (사망 13)</a></li>
+                       <li><a href="#">대한민국 : 2,337 (사망 13)</a></li>
                        <li><a href="#">일본 : 919 (사망 7, 크루즈 705)</a></li>
                        <li><a href="#">이탈리아 :655 (사망 17)</a></li> 
                        <li><a href="#">이란 : 245 (사망 22)</a></li>
@@ -411,7 +411,7 @@ chart.render();
 
                 <ul>
                   <br>
-                  <a href="#bottomOflist"><li id="fly">맨 아래로 가기</span></li></a>
+                  <a href="#bottomOflist"><li id="gotoBottom">맨 아래로 가기</span></li></a>
                   <a href="#bottomOflist" style="text-decoration: none; text-align:center;"><li id="fly">맨 아래로 가기</span></li></a>
                   <li id="fly" onclick="flyTarget(this)" data-lat="114.21853322535755" data-long="30.77093202627814"><span style="color:#960823; margin-right:20px;">1번째</span>중국남방항공 CZ6079</li>
                   <li id="fly" onclick="flyTarget(this)" data-lat="126.44069569999999" data-long="37.4601908"><span style="color:#960823; margin-right:20px;">1번째</span>인천국제공항</li>
@@ -1120,7 +1120,10 @@ chart.render();
 <li id="fly"><span style="color:#052d3e; margin-right:20px;">성남-1</span>충북 청주(남동생 졸업식)에서 점심 식사 후 귀가.</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="126.831248" data-long="37.642304"><span style="color:#052d3e; margin-right:20px;">성남-1</span>명지병원</li>
 
+<li id="fly" onclick="flyTarget(this)" data-lat="127.124611" data-long="37.411018"><span style="color:#3edd97; margin-right:20px;">성남-2</span>분당구보건소</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.139075" data-long="37.445169"><span style="color:#3edd97; margin-right:20px;">성남-2</span>성남시의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.124611" data-long="37.411018"><span style="color:#fd1f19; margin-right:20px;">성남-3</span>분당구보건소</li>
  <li id="fly" onclick="flyTarget(this)" data-lat="127.139075" data-long="37.445169"><span style="color:#fd1f19; margin-right:20px;">성남-3</span>성남시의료원</li>
 
  
@@ -1134,7 +1137,6 @@ chart.render();
 <li id="fly" onclick="flyTarget(this)" data-lat="127.119231" data-long="36.802662"><span style="color:#03b679; margin-right:20px;">천안</span>얌샘김밥</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.125261" data-long="36.802361"><span style="color:#03b679; margin-right:20px;">천안</span>어머니 자택(주공7단지)</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.131150" data-long="36.797270"><span style="color:#03b679; margin-right:20px;">천안</span>천안충무병원 선별진료소</li>
-<a id="bottomOflist"></a>
 
 <li id="fly" onclick="flyTarget(this)" data-lat="127.045880" data-long="37.738727"><span style="color:#d1a4ba; margin-right:20px;">포천</span>의정부역</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.061085" data-long="37.948045"><span style="color:#d1a4ba; margin-right:20px;">포천</span>소요산역</li>
@@ -1167,6 +1169,52 @@ chart.render();
 
 <li id="fly" onclick="flyTarget(this)" data-lat="126.870897" data-long="37.893683"><span style="color:#b87e1c; margin-right:20px;">파주C</span>풍작플랜지</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="126.874575" data-long="37.848622"><span style="color:#b87e1c; margin-right:20px;">파주C</span>천현농협 하나로마트</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.338134" data-long="36.029867"><span style="color:#e94f59; margin-right:20px;">506번째</span>동해 해물찜</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.349520" data-long="36.012644"><span style="color:#e94f59; margin-right:20px;">506번째</span>그랜드에비뉴(왕돈까스, 홈플러스)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.364374" data-long="36.034020"><span style="color:#e94f59; margin-right:20px;">506번째</span>농협은행 포항시지부</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.366083" data-long="36.034821"><span style="color:#e94f59; margin-right:20px;">506번째</span>다이소 죽도시장점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.323124" data-long="36.019101"><span style="color:#e94f59; margin-right:20px;">506번째</span>GS25 포항지곡점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.317002" data-long="36.032633"><span style="color:#e94f59; margin-right:20px;">506번째</span>지곡그린의원&그린약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.339819" data-long="36.015793"><span style="color:#e94f59; margin-right:20px;">506번째</span>포항성모병원 선별진료소</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="129.338134" data-long="36.029867"><span style="color:#52dc99; margin-right:20px;">507번째</span>동해 해물찜</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.322317" data-long="36.012086"><span style="color:#52dc99; margin-right:20px;">507번째</span>APCTP</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.339822" data-long="36.027532"><span style="color:#52dc99; margin-right:20px;">507번째</span>등촌샤브칼국수 포항이동점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.323124" data-long="36.019101"><span style="color:#52dc99; margin-right:20px;">507번째</span>GS25 포항지곡점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.416144" data-long="35.971020"><span style="color:#52dc99; margin-right:20px;">507번째</span>참뼈해장국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="129.339819" data-long="36.015793"><span style="color:#52dc99; margin-right:20px;">507번째</span>포항성모병원 선별진료소</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.888717" data-long="37.749280"><span style="color:#52dc99; margin-right:20px;">512번째</span>강릉의료원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.934636" data-long="37.781270"><span style="color:#52dc99; margin-right:20px;">512번째</span>송정공군휴양소 WA마트</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.744754" data-long="37.874939"><span style="color:#52dc99; margin-right:20px;">512번째</span>강원대병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.734929" data-long="35.821881"><span style="color:#4493a9; margin-right:20px;">532번째</span>스카이탁구교실</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.740708" data-long="35.819018"><span style="color:#4493a9; margin-right:20px;">532번째</span>두레장터</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.721716" data-long="35.822965"><span style="color:#fe20dc; margin-right:20px;">548번째</span>최용식이비인후과의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.721716" data-long="35.822965"><span style="color:#fe20dc; margin-right:20px;">548번째</span>명보온누리약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.723134" data-long="35.819132"><span style="color:#fe20dc; margin-right:20px;">548번째</span>홈마트 옥산점</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.819159" data-long="35.913568"><span style="color:#efca15; margin-right:20px;">571번째</span>참조은이비인후과의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.819159" data-long="35.913568"><span style="color:#efca15; margin-right:20px;">571번째</span>국민약국</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.893324" data-long="35.120827"><span style="color:#238d53; margin-right:20px;">589번째</span>광주진월초등학교</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.910437" data-long="35.132803"><span style="color:#238d53; margin-right:20px;">589번째</span>르시엘블루</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.893324" data-long="35.120827"><span style="color:#238d53; margin-right:20px;">589번째</span>광주진월초등학교</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.889886" data-long="35.152299"><span style="color:#238d53; margin-right:20px;">589번째</span>광주서구보건소 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.889888" data-long="35.152274"><span style="color:#238d53; margin-right:20px;">589번째</span>사과나무카페</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.880240" data-long="35.125657"><span style="color:#238d53; margin-right:20px;">589번째</span>메디팜큰사랑약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.880143" data-long="35.125522"><span style="color:#238d53; margin-right:20px;">589번째</span>이삭토스트풍암점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.926592" data-long="35.138675"><span style="color:#238d53; margin-right:20px;">589번째</span>조선대학교병원</li>
+<a id="bottomOflist"></a>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.833923" data-long="35.954196"><span style="color:#238d53; margin-right:20px;">615번째</span>옹심이칼국수 와촌점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.827104" data-long="35.932428"><span style="color:#238d53; margin-right:20px;">615번째</span>GS25 하양공단점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.835985" data-long="35.945076"><span style="color:#238d53; margin-right:20px;">615번째</span>대동반점</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="128.819338" data-long="35.9133546"><span style="color:#c98d5c; margin-right:20px;">626번째</span>하양보건지소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.816081" data-long="35.911502"><span style="color:#c98d5c; margin-right:20px;">626번째</span>앤유PC방</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="128.815369" data-long="35.911589"><span style="color:#c98d5c; margin-right:20px;">626번째</span>CU 하양센트럴파크점</li>
 
 <li id="devComment"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중</span></li>
 
