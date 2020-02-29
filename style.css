@@ -49,7 +49,7 @@
   }
   
 .popTit{height:50px;line-height:50px;margin-left:20px;text-align:left; color:#ff7573;border-bottom:2px solid #ff7573;font-size:1.1em;}
-.popCont{height:150px; overflow:scroll;margin:20px;text-align:left;color:#7e7e7e;line-height: 1.2;}
+.popCont{height:200px; overflow:scroll;margin:20px;text-align:left;color:#7e7e7e;line-height: 1.2;}
 .popCont p{white-space:pre-line;}
 .popCont.type02{text-align:left}
 .popBtn{text-align:center;background-color:#eceef1;overflow:hidden}
