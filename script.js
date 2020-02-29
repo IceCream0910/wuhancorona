@@ -542,6 +542,30 @@ var geojson_hospital = {
     }
   },   
 
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.065290, 37.587893]
+    },
+    properties: {
+      title: '삼육서울병원',
+      description: '(935번 확진자) 양성판정 받아 격리 조치.'
+    }
+  },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.924528, 37.493332]
+    },
+    properties: {
+      title: '보라매병원',
+      description: '(996번 확진자) 양성판정 받아 격리 조치.'
+    }
+  },   
+
   
 
 ]
@@ -5482,7 +5506,7 @@ var geojson_place = {
       coordinates: [126.928775, 37.610717]
     },
     properties: {
-      title: '밝은약국',
+      title: '밝은약국(은평)',
       description: '(627번 확진자) [2월 14일] 연세큰숲내과 진료 후 밝은약국 방문.'
     }
   },
@@ -5777,6 +5801,416 @@ var geojson_place = {
       description: '(924번 확진자) [2월 24일] 오전 선별진료소 방문.'
     }
   },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.057208, 37.665305]
+    },
+    properties: {
+      title: '김재면내과',
+      description: '(996번 확진자) [2월 24일] 오전 9시경 마들역 김재면내과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.057356, 37.665354]
+    },
+    properties: {
+      title: '미션약국',
+      description: '(996번 확진자) [2월 24일] 오전 10시 30분경 미션약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.056991, 37.654564]
+    },
+    properties: {
+      title: '노원구보건소',
+      description: '(996번 확진자) [2월 24일] 오후 1시경 노원구보건소 선별진료소에서 검사 후 자가격리.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.114582, 37.511817]
+    },
+    properties: {
+      title: '현대그린마트',
+      description: '(1118번 확진자) [2월 24일] 오후 8시 15분경 방이동 소재 현대그린마트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.732564, 35.812048]
+    },
+    properties: {
+      title: 'GS25 옥곡동화점',
+      description: '(1188번 확진자) [2월 20일] 오후 3시 20분부터 15분간 편의점 이용.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.734446, 35.812593]
+    },
+    properties: {
+      title: '피자마루 경산옥곡점',
+      description: '(1188번 확진자) [2월 20일] 오후 10시 5분경 피자마루 경산옥곡점 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.732654, 35.812942]
+    },
+    properties: {
+      title: '파리바게트 경산서부점',
+      description: '(1188번 확진자) [2월 22일] 오후 4시 5분경 옥곡동 소재 파리바게트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.735323, 35.810857]
+    },
+    properties: {
+      title: '미니스톱 경산옥곡대로점',
+      description: '(1188번 확진자) [2월 23일] 오후 1시 5분경 편의점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.735041, 35.823230]
+    },
+    properties: {
+      title: '혈통샵',
+      description: '(1189번 확진자) [2월 14,15일] 각각 오후 4시부터 5시, 12시부터 4시까지 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.727349, 35.832746]
+    },
+    properties: {
+      title: '청호목욕탕',
+      description: '(1189번 확진자) [2월 15일] 오후 5시부터 2시간동안 청호목욕탕 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.730556, 35.834391]
+    },
+    properties: {
+      title: '연세속시원연합내과의원',
+      description: '(1189번 확진자) [2월 17일] 오후 2시 30분경부터 4시간동안 정평동 소재 내과의원 진료 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.726232, 35.824230]
+    },
+    properties: {
+      title: '봉현이네봉평메밀',
+      description: '(1192번 확진자) [2월 13일] 오후 3시경 옥산동 소재 식당 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.717566, 35.820038]
+    },
+    properties: {
+      title: '하스커피',
+      description: '(1192번 확진자) [2월 15일] 오후 5시 30분경 옥산동 소재 카페 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.715568, 35.824152]
+    },
+    properties: {
+      title: '춘하추동',
+      description: '(1192번 확진자) [2월 15일] 오후 7시경 옥산동 소재 식당, 봄여름가을겨울(춘하추동) 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.758900, 35.804446]
+    },
+    properties: {
+      title: '우즈베이커리포레스트',
+      description: '(1192번 확진자) [2월 16일] 오후 2시 30분경 우즈베이커리포레스트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.768625, 35.816406]
+    },
+    properties: {
+      title: '장난감백화점 아이토이',
+      description: '(1192번 확진자) [2월 16일] 오후 4시경 갑제동 소재 완구점 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.734736, 35.822942]
+    },
+    properties: {
+      title: '정이비인후과의원',
+      description: '(1192번 확진자) [2월 21일] 오후 5시경 사동 소재 이비인후과의원 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.754771, 35.811459]
+    },
+    properties: {
+      title: '밝은약국(경산)&스마일명품찹쌀꽈배기',
+      description: '(1192번 확진자) [2월 21일] 오후 5시 10분경 사동 소재 약국 방문 후 같은 건물 꽈배기집 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.755035, 35.811716]
+    },
+    properties: {
+      title: '대백마트 사동점',
+      description: '(1192번 확진자) [2월 21일] 오후 5시 30분경 대백마트 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.721713, 35.822981]
+    },
+    properties: {
+      title: '윤종수내과의원&명보온누리약국',
+      description: '(1196번 확진자) [2월 17일] 오전 9시 10분경 옥산동 소재 내과의원 진료 후 같은건물 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.742530, 35.805984]
+    },
+    properties: {
+      title: '유스파유마트(백천)',
+      description: '(1197번 확진자) [2월 19일] 오후 4시경 백천동 소재 마트 방문 후 귀가.'
+    }
+  },
+
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.738647, 35.804166]
+    },
+    properties: {
+      title: '백천평안내과의원&푸른솔약국',
+      description: '(1197번 확진자) [2월 22일] 오전 11시 30분경 백천동 소재 내과의원 방문 후 귀가.<br>(1197번 확진자) [2월 14일] 1198번 확진자 오전 9시 30분경 진료 후 같은 건물 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.734657, 35.822539]
+    },
+    properties: {
+      title: '3H스마트지압침대',
+      description: '(1198번 확진자) [2월 12일] 오전 11시 30분경 중방동 소재 3H스마트침대 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.736738, 35.823946]
+    },
+    properties: {
+      title: '나비엘경산갤러리',
+      description: '(1198번 확진자) [2월 12, 13일] 각각 오후 2시, 오전 10시 30분경 중방동 소재 갤러리 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.742445, 35.801511]
+    },
+    properties: {
+      title: '드림마트 백천점',
+      description: '(1198번 확진자) [2월 14일] 오후 2시경 드림마트 백천점 방문 후 귀가.'
+    }
+  },
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.737346, 35.830270]
+    },
+    properties: {
+      title: 'CU 경산중방대로점',
+      description: '(1199번 확진자) [2월 23일] 오후 4시 3분경 편의점 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.736152, 35.823922]
+    },
+    properties: {
+      title: '경북신경외과의원',
+      description: '(1200번 확진자) [2월 19일] 오후 2시 34분경 진료.<br>[2월 20일] 오후 3시 19분경 진료.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.737150, 35.825724]
+    },
+    properties: {
+      title: '경산대경영상의학과의원',
+      description: '(1200번 확진자) [2월 20일] 오후 4시경 진료.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.755912, 35.813502]
+    },
+    properties: {
+      title: '오케이마트 사동점',
+      description: '(1208번 확진자) [2월 21일] 오후 1시경 오케이마트 사동점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.758080, 35.816111]
+    },
+    properties: {
+      title: '나들가게코사마트 대구경북본점',
+      description: '(1208번 확진자) [2월 23일] 오후 4시경 사동소재 나들가게코사마트 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.124954, 37.540483]
+    },
+    properties: {
+      title: '교보문고 천호점',
+      description: '(1246번 확진자) [2월 19일] 오후 1시경 천호동 소재 교보문고 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.124954, 37.540483]
+    },
+    properties: {
+      title: '교보문고 천호점',
+      description: '(1246번 확진자) [2월 19일] 오후 1시경 천호동 소재 교보문고 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.143748, 37.552553]
+    },
+    properties: {
+      title: '스타벅스 명일역점',
+      description: '(1246번 확진자) [2월 21일] 오후 2시경 스타벅스 명일역점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.125534, 37.529237]
+    },
+    properties: {
+      title: '강동구보건소',
+      description: '(1246번 확진자) [2월 24일] 오전 11시경 강동구보건소 검사.'
+    }
+  },
+
 
 
 
