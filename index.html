@@ -82,6 +82,24 @@ chart.render();
 
   </head>
   <body>
+    <div class="wrap">
+<div id="openModal01" class="modalDialog">
+    <div class="popWrap">
+        <h2 class="popTit">공지사항</h2>
+        <div class="popCont">
+          <p>최근 확진자가 연일 급증하면서 동선 업데이트가 지연되고 있습니다. 최선을 다해 업데이트중이니 양해부탁드리며, 사이트 우측 하단 채팅을 통해 많은 제보 부탁드립니다.<br><br>
+            [최근 업데이트 내역]<br>
+          - 확진자 동선 추가<br>
+          - 공지사항 및 업데이트 내역 추가<br>
+          - UI 개선</p>
+        </div>
+        <div class="popBtn type01"> 
+          <a href="#close" title="Close" class="cmnBtn">닫기</a>
+            </div>
+        </div>
+</div>
+
+     <a a href="#openModal01" class="pop-btn" id="float"><i class="fa fa-bell" style="margin-top:13px; color:orange;"></i></a>
 
     <div class="map-responsive" id="map-pc">
     </div>
@@ -97,7 +115,7 @@ chart.render();
 
    <div id="listcontainer" style="position:fixed; height:93%; overflow:scroll;">
      <!-- 예방수칙 -->
-     <h5 style="margin-top:20px; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">예방수칙 부터 팩트체크까지</h5>
+     <h5 style="margin-top:30px; margin-left:20px; font-size:14px; margin-bottom:0; color:gray;">예방수칙 부터 팩트체크까지</h5>
      <h1 style="margin-left:20px;  margin-top:0px;">#알아보기</h1>
      <div style="white-space: nowrap;
     overflow-y: hidden;
@@ -249,7 +267,7 @@ chart.render();
       <div id="listcontainer"> <!-- 정보 패널 -->
 
 
-<h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
+<h3 style="margin-left:20px; margin-top:30px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
  (20-02-29 09:00 기준)</span></h3>
 <div class="card-list">
                 <div class="row">
@@ -1136,9 +1154,16 @@ chart.render();
 <li id="fly"><span style="color:#052d3e; margin-right:20px;">성남-1</span>충북 청주(남동생 졸업식)에서 점심 식사 후 귀가.</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="126.831248" data-long="37.642304"><span style="color:#052d3e; margin-right:20px;">성남-1</span>명지병원</li>
 
+<li id="fly" onclick="flyTarget(this)" data-lat="127.126926" data-long="37.466000"><span style="color:#3edd97; margin-right:20px;">성남-2</span>양관모의원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.125193" data-long="37.418553"><span style="color:#3edd97; margin-right:20px;">성남-2</span>대박집</li>
+<li id="fly"><span style="color:#3edd97; margin-right:20px;">성남-2</span>성남동 카페(확인중)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.128593" data-long="37.461220"><span style="color:#3edd97; margin-right:20px;">성남-2</span>블루핸즈</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.127197" data-long="37.462062"><span style="color:#3edd97; margin-right:20px;">성남-2</span>선굼터 복정점</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.124611" data-long="37.411018"><span style="color:#3edd97; margin-right:20px;">성남-2</span>분당구보건소</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.139075" data-long="37.445169"><span style="color:#3edd97; margin-right:20px;">성남-2</span>성남시의료원</li>
 
+<li id="fly"><span style="color:#fd1f19; margin-right:20px;">성남-3</span>성남동 카페(확인중)</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.127197" data-long="37.462062"><span style="color:#fd1f19; margin-right:20px;">성남-3</span>선굼터 복정점</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.124611" data-long="37.411018"><span style="color:#fd1f19; margin-right:20px;">성남-3</span>분당구보건소</li>
  <li id="fly" onclick="flyTarget(this)" data-lat="127.139075" data-long="37.445169"><span style="color:#fd1f19; margin-right:20px;">성남-3</span>성남시의료원</li>
 
@@ -1354,6 +1379,38 @@ chart.render();
 <li id="fly" onclick="flyTarget(this)" data-lat="126.928852" data-long="37.602452"><span style="color:#7797e9; margin-right:20px;">1254번째</span>은평구보건소</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.065290" data-long="37.587893"><span style="color:#7797e9; margin-right:20px;">1254번째</span>삼육서울병원</li>
 
+<li id="fly" onclick="flyTarget(this)" data-lat="126.924528" data-long="37.493332"><span style="color:#63805b; margin-right:20px;">1295번째</span>보라매병원 선별진료소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.988756" data-long="37.564925"><span style="color:#63805b; margin-right:20px;">1295번째</span>서울백병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.123439" data-long="37.496311"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>서울경찰병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.081912" data-long="37.510819"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>요리하는 남자</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.081116" data-long="37.511467"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>스타벅스 잠실새내역점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.082410" data-long="37.510898"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>샤크VR</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.117705" data-long="37.491684"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>롯데마트 송파점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.123439" data-long="37.496311"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>서울경찰병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.121394" data-long="37.494313"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>스타벅스 가락시장역점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.118382" data-long="37.494854"><span style="color:#f4ab85; margin-right:20px;">1370번째</span>화포식당 가락점</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.916556" data-long="37.633896"><span style="color:#a55f46; margin-right:20px;">1532번째</span>은평성모병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.905103" data-long="37.604290"><span style="color:#a55f46; margin-right:20px;">1532번째</span>서울서북병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.924528" data-long="37.493332"><span style="color:#a55f46; margin-right:20px;">1532번째</span>보라매병원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.916556" data-long="37.633896"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>은평성모병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.870758" data-long="37.548034"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>서울중앙혈액원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.870079" data-long="37.548294"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>GS25 염창E편한점</li>
+<li id="fly"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>영등포경찰서</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.962347" data-long="37.563755"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>GS25 한국청소년활동진흥원</li>
+<li id="fly"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>헌혈버스</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.920275" data-long="37.619062"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>GS25 헌혈의집 연신내센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.828488" data-long="37.539710"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>이마트 신월점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.829994" data-long="37.539787"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>강서경찰서</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.832160" data-long="37.539740"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>금화왕돈까스</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.829782" data-long="37.628642"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>고양경찰서</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.865862" data-long="37.517548"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>양천구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.839150" data-long="37.541793"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>자메이카휘트니스</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.840308" data-long="37.541034"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>크린토피아 화곡역점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.840308" data-long="37.541034"><span style="color:#fa5f53; margin-right:20px;">1567번째</span>서울대병원</li>
+
 <li id="devComment"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중</span></li>
 
 
@@ -1362,7 +1419,6 @@ chart.render();
                 </ul>
                 </div>
 <!-- 여기까지 팝업 콘텐츠-->
-
   </div>
 
 
