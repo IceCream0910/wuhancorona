@@ -181,8 +181,8 @@ var geojson_hospital = {
       coordinates: [126.999714,37.578241]
     },
     properties: {
-      title: '서울대병원(7)',
-      description: '(20-01-30 여섯번째 확진자) 56세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 10, 11번 확진자) 6번 환자의 가족으로 서울대병원에 격리 조치<br>(20-02-05 21번 확진자) 해당 병원에 격리 조치.<br>(20-02-16 29번 확진자) [2월 16일] 해당병원에 격리 조치.<br>(20-02-16 30번 확진자) 29번 환자의 아내로 해당 병원에 격리 조치.<br>(627번 확진자) 격리 치료.'
+      title: '서울대병원(8)',
+      description: '(20-01-30 여섯번째 확진자) 56세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 10, 11번 확진자) 6번 환자의 가족으로 서울대병원에 격리 조치<br>(20-02-05 21번 확진자) 해당 병원에 격리 조치.<br>(20-02-16 29번 확진자) [2월 16일] 해당병원에 격리 조치.<br>(20-02-16 30번 확진자) 29번 환자의 아내로 해당 병원에 격리 조치.<br>(627번,1567번 확진자) 격리 치료.'
     }
   },
 
@@ -562,7 +562,19 @@ var geojson_hospital = {
     },
     properties: {
       title: '보라매병원',
-      description: '(996번 확진자) 양성판정 받아 격리 조치.'
+      description: '(996번 확진자) 양성판정 받아 격리 조치.<br>(1295번 확진자) [2월 24일] 오후 1시 선별진료소 방문 검사.<br>(1532번 확진자) [2월 26일] 격리.'
+    }
+  },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.988756, 37.564925]
+    },
+    properties: {
+      title: '서울백병원',
+      description: '(1295번 확진자) 양성판정 받아 격리 조치'
     }
   },   
 
@@ -5470,7 +5482,7 @@ var geojson_place = {
     },
     properties: {
       title: '은평성모병원',
-      description: '(627번 확진자) [2월 11, 13, 14일] 폐렴소견으로 입원한 남편(754번 확진자) 간병.<br>(1254번 확진자) [2월 9~17일] 입원.'
+      description: '(627번 확진자) [2월 11, 13, 14일] 폐렴소견으로 입원한 남편(754번 확진자) 간병.<br>(1254번 확진자) [2월 9~17일] 입원.<br>(1532번 확진자) [2월 6~14일] 입원.<br>(1567번 확진자) [2월 11일] 방문.'
     }
   },
 
@@ -5738,7 +5750,7 @@ var geojson_place = {
     },
     properties: {
       title: '서울경찰병원',
-      description: '(907번 확진자) [2월 21일] 오전 7시 20분 서울경찰병원 정기검진.'
+      description: '(907번 확진자) [2월 21일] 오전 7시 20분 서울경찰병원 정기검진.<br>(1370번 확진자) [2월 19일] 오전 7시 30분 경찰병원근무.'
     }
   },
 
@@ -6266,8 +6278,8 @@ var geojson_place = {
       coordinates: [126.905103, 37.604290]
     },
     properties: {
-      title: '서울서북병원 선별진료소',
-      description: '(1253번 확진자) [2월 24일] 오후 2시경 서북병원 선별진료소 방문 후 기숙사 복귀.'
+      title: '서울서북병원',
+      description: '(1253번 확진자) [2월 24일] 오후 2시경 서북병원 선별진료소 방문 후 기숙사 복귀.<br>(1532번 확진자) [2월 25일] 코로나19 검사 실시.'
     }
   },
 
@@ -6294,6 +6306,259 @@ var geojson_place = {
       description: '(1254번 확진자) [2월 25일] 오후 2시 보건소 방문해 검사 시행(구급차로 이동)'
     }
   },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.081912, 37.510819]
+    },
+    properties: {
+      title: '요리하는 남자',
+      description: '(1370번 확진자) [2월 20일] 오후 4시 50분 잠실동 소재 레스토랑에 물건만 두고 나온 후 5시 30분 다시 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.081116, 37.511467]
+    },
+    properties: {
+      title: '스타벅스 잠실새내역점',
+      description: '(1370번 확진자) [2월 20일] 오후 5시경 스타벅스 잠실새내역점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.082410, 37.510898]
+    },
+    properties: {
+      title: '샤크VR',
+      description: '(1370번 확진자) [2월 20일] 오후 7시 50분경 잠실동 소재 VR카페 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.117705, 37.491684]
+    },
+    properties: {
+      title: '롯데마트 송파점',
+      description: '(1370번 확진자) [2월 22일] 오후 5시 20분경 버스로 롯데마트(1층 입구 화장품코너) 이용.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.118382, 37.494854]
+    },
+    properties: {
+      title: '화포식당 가락점',
+      description: '(1370번 확진자) [2월 23일] 오후 11시 50분경 동료차로 식당 방문 후 밤 12시 30분 자택 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.121394, 37.494313]
+    },
+    properties: {
+      title: '스타벅스 가락시장역점',
+      description: '(1370번 확진자) [2월 24일] 오후 2시 22분경 택시로 스타벅스 가락시장역점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.870758, 37.548034]
+    },
+    properties: {
+      title: '서울중앙혈액원',
+      description: '(1567번 확진자) [2월 19일] 오전 7시 20분, 버스로 출근.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.870079, 37.548294]
+    },
+    properties: {
+      title: 'GS25 염창E편한점',
+      description: '(1567번 확진자) [2월 19,20,24,25일] 도보로 편의점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.962347, 37.563755]
+    },
+    properties: {
+      title: '한국청소년활동진흥원',
+      description: '(1567번 확진자) [2월 19일] 출장.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.920275, 37.619062]
+    },
+    properties: {
+      title: '헌혈의집 연신내센터',
+      description: '(1567번 확진자) [2월 23일] 오전 9시 출장.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.828488, 37.539710]
+    },
+    properties: {
+      title: '이마트 신월점',
+      description: '(1567번 확진자) [2월 24일] 오후 6시 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.829994, 37.539787]
+    },
+    properties: {
+      title: '강서경찰서',
+      description: '(1567번 확진자) [2월 25일] 출장.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.832160, 37.539740]
+    },
+    properties: {
+      title: '금화왕돈까스',
+      description: '(1567번 확진자) [2월 25일] 도보로 신월동 소재 돈까스 집 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.829782, 37.628642]
+    },
+    properties: {
+      title: '고양경찰서',
+      description: '(1567번 확진자) [2월 25일] 출장.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.865862, 37.517548]
+    },
+    properties: {
+      title: '양천구보건소',
+      description: '(1567번 확진자) [2월 25일] 오후 7시 40분경 양천구보건소 방문해 검사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.839150, 37.541793]
+    },
+    properties: {
+      title: '자메이카휘트니스',
+      description: '(1567번 확진자) [2월 26일] 오후 4시경 자전거로 화곡동 소재 휘트니스 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.840308, 37.541034]
+    },
+    properties: {
+      title: '크린토피아 화곡역점',
+      description: '(1567번 확진자) [2월 26일] 자전거로 신월초 부근 크린토피아 방문해 세탁물 수령.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.126926, 37.466000]
+    },
+    properties: {
+      title: '양관모의원',
+      description: '(성남-2 확진자) [2월 24일] 오전 9시 57분경 자차로 복정동 소재 양관모의원에서 치료.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.125193, 37.418553]
+    },
+    properties: {
+      title: '대박집',
+      description: '(성남-2,3 확진자) [2월 24일] 성남-3과 함께 성남시청 후문앞 식당에서 식사 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.128593, 37.461220]
+    },
+    properties: {
+      title: '블루핸즈',
+      description: '(성남-2 확진자) [2월 26일] 블루핸즈에서 자차정비.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.127197, 37.462062]
+    },
+    properties: {
+      title: '선굼터 복정점',
+      description: '(성남-2 확진자) [2월 26일] 오후 7시 45분경 복정동 식당에서 음식포장 후 귀가.'
+    }
+  },
+
 
 
 
