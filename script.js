@@ -169,8 +169,8 @@ var geojson_hospital = {
       coordinates: [127.098167, 37.613044]
     },
     properties: {
-      title: '서울의료원(7)',
-      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번 확진자) 해당 병원에 격리 조치.'
+      title: '서울의료원',
+      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번/787번/794번/797번 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -181,8 +181,8 @@ var geojson_hospital = {
       coordinates: [126.999714,37.578241]
     },
     properties: {
-      title: '서울대병원(6)',
-      description: '(20-01-30 여섯번째 확진자) 56세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 10, 11번 확진자) 6번 환자의 가족으로 서울대병원에 격리 조치<br>(20-02-05 21번 확진자) 해당 병원에 격리 조치.<br>(20-02-16 29번 확진자) [2월 16일] 해당병원에 격리 조치.<br>(20-02-16 30번 확진자) 29번 환자의 아내로 해당 병원에 격리 조치.'
+      title: '서울대병원(7)',
+      description: '(20-01-30 여섯번째 확진자) 56세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 10, 11번 확진자) 6번 환자의 가족으로 서울대병원에 격리 조치<br>(20-02-05 21번 확진자) 해당 병원에 격리 조치.<br>(20-02-16 29번 확진자) [2월 16일] 해당병원에 격리 조치.<br>(20-02-16 30번 확진자) 29번 환자의 아내로 해당 병원에 격리 조치.<br>(627번 확진자) 격리 치료.'
     }
   },
 
@@ -205,7 +205,7 @@ var geojson_hospital = {
       coordinates: [127.123389, 37.351563]
     },
     properties: {
-      title: '분당서울대병원(5)',
+      title: '분당서울대병원(6)',
       description: '(20-01-27 네번째 확진자) 1월 26일 분당 서울대 병원으로 격리되어 코로나 바이러스 검사 실시 후 확진 판정.(퇴원)<br>(20-02-01 12번 확진자) 본 병원으로 격리.<br>(20-02-02 14번 확진자) 본 병원으로 격리.<br>(20-02-07 25번 확진자) 본 병원으로 격리.<br>(20-02-18 32번 확진자) [2월 18일] 자가 격리 중 양성 확인되어 격리 입원.'
     }
   },
@@ -218,7 +218,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '국립중앙의료원(5)',
-      description: '(20-01-24 두번째 확진자) 격리 병원(퇴원)<br>(20-02-02 13번/02-06 23번/02-19 40번/02-21 서울 서초구 확진자) 검사 결과 양성 확인되어 격리 입원치료.'
+      description: '(20-01-24 두번째 확진자) 격리 병원(퇴원)<br>(20-02-02 13번/02-06 23번/02-19 40번/02-21 서울 서초구/924번 확진자) 검사 결과 양성 확인되어 격리 입원치료.'
     }
   },
 
@@ -517,6 +517,32 @@ var geojson_hospital = {
       description: '(512번 확진자) 양성판정 받아 격리 조치.'
     }
   },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.432747, 37.282582]
+    },
+    properties: {
+      title: '이천의료원',
+      description: '(847번 확진자) 양성판정 받아 격리 조치.'
+    }
+  },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.779701, 37.754836]
+    },
+    properties: {
+      title: '경기도립의료원 파주병원',
+      description: '(907번 확진자) 양성판정 받아 격리 조치.'
+    }
+  },   
+
+  
 
 ]
 };
@@ -4264,7 +4290,7 @@ var geojson_place = {
     },
     properties: {
       title: '송파구보건소',
-      description: '(송파A 확진자) [2월 23일] 오후 5시 20분경 선별진료소에서 코로나19 검사 실시.'
+      description: '(송파A/794번/797번 확진자) 코로나 19 검사 실시.'
     }
   },
 
@@ -4853,7 +4879,7 @@ var geojson_place = {
       coordinates: [127.028622, 37.488345]
     },
     properties: {
-      title: '삼성디지터프라자 서초점',
+      title: '삼성디지털프라자 서초점',
       description: '(188번 확진자) [2월 20일] 오전 10시경 서초2동 소재 삼성디지털프라자 방문.'
     }
   },
@@ -5409,6 +5435,346 @@ var geojson_place = {
     properties: {
       title: 'CU 하양센트럴파크점',
       description: '(626번 확진자) [2월 20,21일] 각각 오후 7시, 8시경 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.916556, 37.633896]
+    },
+    properties: {
+      title: '은평성모병원',
+      description: '(627번 확진자) [2월 11, 13, 14일] 폐렴소견으로 입원한 남편(754번 확진자) 간병.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.918552, 37.632884]
+    },
+    properties: {
+      title: '은평G마트',
+      description: '(627번 확진자) [2월 13일] 오전 11시 16분경 은평구 소재 마트 방문.'
+    }
+  },
+
+    {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.928830, 37.610874]
+    },
+    properties: {
+      title: '연세큰숲내과',
+      description: '(627번 확진자) [2월 14일] 오전 9시 41분경 은평구 대조동 소재 내과 방문.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.928775, 37.610717]
+    },
+    properties: {
+      title: '밝은약국',
+      description: '(627번 확진자) [2월 14일] 연세큰숲내과 진료 후 밝은약국 방문.'
+    }
+  },
+
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.929440, 37.611389]
+    },
+    properties: {
+      title: '나이비인후과',
+      description: '(627번 확진자) [2월 17일] 오후 7시 17분경 은평구 불광동 소재 이비인후과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.929440, 37.611389]
+    },
+    properties: {
+      title: '파리바게트 구기점',
+      description: '(627번 확진자) [2월 18일] 오후 1시경 파리바게트 종로구기점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.967491, 37.568359]
+    },
+    properties: {
+      title: '강북삼성병원',
+      description: '(627번 확진자) [2월 21일] 오전 10시 57분 음압격리실 진료 후 5시 입원.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.764557, 35.840461]
+    },
+    properties: {
+      title: '새하나마트',
+      description: '(730번 확진자) [2월 20일] 오후 5시 10분경 압량읍 소재 새하나마트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.774108, 35.835819]
+    },
+    properties: {
+      title: '파리바게트 신대부적점',
+      description: '(730번 확진자) [2월 20일] 오후 5시 18분경 압량읍 소재 파리바게트 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.914120, 37.531768]
+    },
+    properties: {
+      title: '국회의사당',
+      description: '(787번 확진자) [2월 19일] 국회 토론회 참석.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.914120, 37.531768]
+    },
+    properties: {
+      title: '한국교원단체총연합회',
+      description: '(787번 확진자) [2월 21일] 오후 6시경 한국교총연합회 출근.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.013767, 37.481169]
+    },
+    properties: {
+      title: '백년옥(본관)',
+      description: '(787번 확진자) [2월 21일] 오후 12시경 서초동 소재 백년옥 본관'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.727616, 35.832078]
+    },
+    properties: {
+      title: '365소비센터',
+      description: '(837번 확진자) [2월 21일] 오후 8시경 정평동 소재 365소비센터 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.727714, 35.832024]
+    },
+    properties: {
+      title: '류앤강이비인후과의원',
+      description: '(837번 확진자) [2월 22일] 오전 9시 17분경 정평동 소재 이비인후과 방문.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [128.727615, 35.832227]
+    },
+    properties: {
+      title: '정다운약국',
+      description: '(837번 확진자) [2월 22일] 오전 9시 25분경 정평동 소재 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.967618, 37.527891]
+    },
+    properties: {
+      title: 'LS용산타워',
+      description: '(847번 확진자) [2월 20일] 직장 출근 후 증상 악화.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.967618, 37.527891]
+    },
+    properties: {
+      title: 'LS용산타워',
+      description: '(847번 확진자) [2월 20일] 직장 출근 후 증상 악화되어 근처 이비인후과에서 독감 검사.'
+    }
+  },
+
+
+{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.902075, 37.566323]
+    },
+    properties: {
+      title: '마포구보건소',
+      description: '(847번 확진자) [2월 24일] 마포구보건소에서 코로나19 검사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.902075, 37.566323]
+    },
+    properties: {
+      title: '노브랜드 경산사동점',
+      description: '(851번 확진자) [2월 21일] 오후 2시경 노브랜드 경산사동점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [129.340186, 35.660826]
+    },
+    properties: {
+      title: 'OK포인트마트 펜타힐즈로점',
+      description: '(852번 확진자) [2월 15~22일] 오후 11시부터 오전 9시까지 근무.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.091995, 36.993726]
+    },
+    properties: {
+      title: '사랑외과의원',
+      description: '(907번 확진자) [2월 20일] 오후 4시경 사랑외과의원 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.092135, 36.993721]
+    },
+    properties: {
+      title: '평택프라자약국',
+      description: '(907번 확진자) [2월 20일] 오후 4시 10분경 평택프라자약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.123439, 37.496311]
+    },
+    properties: {
+      title: '서울경찰병원',
+      description: '(907번 확진자) [2월 21일] 오전 7시 20분 서울경찰병원 정기검진.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.056546, 37.083023]
+    },
+    properties: {
+      title: '송탄보건소',
+      description: '(907번 확진자) [2월 21일] 오전 10시 송탄보건소 출근 및 금인지도 관내 출장(34개소).'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.897891, 37.475907]
+    },
+    properties: {
+      title: '성내과',
+      description: '(924번 확진자) [2월 21일] 오후 2시 53분경 독산동 소재 내과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.908807, 37.492738]
+    },
+    properties: {
+      title: '강남성심병원',
+      description: '(924번 확진자) [2월 21일] 오후 5시경 선별진료소 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.895924, 37.457056]
+    },
+    properties: {
+      title: '희명병원',
+      description: '(924번 확진자) [2월 24일] 오전 9시 50분경 희명병원 방문 후 보건소 검사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.900560, 37.455705]
+    },
+    properties: {
+      title: '금천구보건소',
+      description: '(924번 확진자) [2월 24일] 오전 선별진료소 방문.'
     }
   },
 
