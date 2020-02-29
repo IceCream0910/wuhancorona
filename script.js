@@ -550,7 +550,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '삼육서울병원',
-      description: '(935번 확진자) 양성판정 받아 격리 조치.'
+      description: '(935번/1254번 확진자) 양성판정 받아 격리 조치.'
     }
   },   
 
@@ -5470,7 +5470,7 @@ var geojson_place = {
     },
     properties: {
       title: '은평성모병원',
-      description: '(627번 확진자) [2월 11, 13, 14일] 폐렴소견으로 입원한 남편(754번 확진자) 간병.'
+      description: '(627번 확진자) [2월 11, 13, 14일] 폐렴소견으로 입원한 남편(754번 확진자) 간병.<br>(1254번 확진자) [2월 9~17일] 입원.'
     }
   },
 
@@ -6210,6 +6210,91 @@ var geojson_place = {
       description: '(1246번 확진자) [2월 24일] 오전 11시경 강동구보건소 검사.'
     }
   },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.907540, 37.605143]
+    },
+    properties: {
+      title: '서울재활병원',
+      description: '(1253번 확진자) [2월 20~21일] 오전 8시 30분경 서울재활병원 출근해 작업치료 업무. '
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.917327, 37.619726]
+    },
+    properties: {
+      title: '별난제과점',
+      description: '(1253번 확진자) [2월 22일] 오후 7시 30분경 갈현동 소재 별난제과점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.916463, 37.611252]
+    },
+    properties: {
+      title: '홈플러스익스프레스 구산역점',
+      description: '(1253번 확진자) [2월 22일] 오후 8시경 홈플러스익스프레스 구산역점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.910347, 37.605687]
+    },
+    properties: {
+      title: '메디팜새경약국',
+      description: '(1253번 확진자) [2월 23일] 오전 11시경 역촌동 소재 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.905103, 37.604290]
+    },
+    properties: {
+      title: '서울서북병원 선별진료소',
+      description: '(1253번 확진자) [2월 24일] 오후 2시경 서북병원 선별진료소 방문 후 기숙사 복귀.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.921863, 37.611224]
+    },
+    properties: {
+      title: '모아가정의학과',
+      description: '(1254번 확진자) [2월 8일] 오전 10시경 대조동 소재 가정의학과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.928852, 37.602452]
+    },
+    properties: {
+      title: '은평구보건소',
+      description: '(1254번 확진자) [2월 25일] 오후 2시 보건소 방문해 검사 시행(구급차로 이동)'
+    }
+  },
+
 
 
 
