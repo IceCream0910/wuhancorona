@@ -10,25 +10,8 @@ $( document ).ready( function() {
                   };
                   toastr.info('최근 국내 확진자가 다수 발생함에 따라 보건당국의 역학조사가 일부 지연되고 있습니다. 정보가 공개되는 대로 업데이트하고 있으니 양해 부탁드리며 개인 위생 수칙을 준수하여 지역사회 확산 저지에 기여하여 주시기 바랍니다.', '확진자 급증에 따른 업데이트 지연');
 */
+
 angular.module("myApp", [])
-
-
-.controller('angelCtrl', function($scope, getAngelNewsArticles){
-  
-  getAngelNewsArticles.getNewsArticles(function(response){
-    $scope.articles = response.data.articles;   
-  });  
-})
-
-.service('getAngelNewsArticles', function($http){
-   this.getNewsArticles = function(callback){
-  $http.get('https://newsapi.org/v2/everything?q=%EB%A7%88%EC%8A%A4%ED%81%AC%20%EA%B8%B0%EB%B6%80&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=6')
-     .then(callback);
-     
-   };
-  
-})
-
 
 
 .controller('mainCtrl', function($scope, getCoronaNewsArticles){
@@ -40,12 +23,13 @@ angular.module("myApp", [])
 
 .service('getCoronaNewsArticles', function($http){
    this.getNewsArticles = function(callback){
-  $http.get('https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=100&sortBy=publishedAt')
+  $http.get('https://newsapi.org/v2/everything?q=코로나19&apiKey=d60ec4ccad4e46678ce633f1b4dfa2b1&pageSize=50&sortBy=publishedAt')
      .then(callback);
      
    };
   
 })
+
 
 
     document.getElementById("map").style.display = 'block';
@@ -88,7 +72,47 @@ document.getElementById('forth').src = "https://youtube.com/embed/4ufdg6v4Jh4?lo
 
 
 
+
+
 });
+
+// Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'categories');
+        data.addColumn('number', 'people');
+        data.addRows([
+          ['기타', 1198],
+          ['대남병원', 119],
+          ['신천지대구교회', 2113],
+          ['온천교회', 32],
+          ['이스라엘성지순례', 31],
+          ['해외유입', 33]
+        ]);
+
+        // Set chart options
+        var options = {'backgroundColor': 'transparent','is3D':true};
+
+
+
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+      }
+
+      //여기까지 구글차트
 
 function openplacepopup() {
   $('.container').addClass('modal-place-open');
@@ -6559,7 +6583,19 @@ var geojson_place = {
     }
   },
 
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.148420, 37.479895]
+    },
+    properties: {
+      title: '스타필드 위례점',
+      description: '(성남-2 확진자) [2월 22일] 오후 4시 22분경 위례 소재 스타필드에서 스무디킹, 영풍문고, 일렉트로마트 방문'
+    }
+  },
 
+//Undefine17부터 업데이트 해야됨
 
 
 
