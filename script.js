@@ -92,12 +92,12 @@ document.getElementById('forth').src = "https://youtube.com/embed/4ufdg6v4Jh4?lo
         data.addColumn('string', 'categories');
         data.addColumn('number', 'people');
         data.addRows([
-          ['기타', 1198],
+          ['기타', 1806],
           ['대남병원', 119],
-          ['신천지대구교회', 2113],
-          ['온천교회', 32],
-          ['이스라엘성지순례', 31],
-          ['해외유입', 33]
+          ['신천지대구교회', 2698],
+          ['온천교회', 49],
+          ['천안시운동시설', 55],
+          ['확진자접촉', 85]
         ]);
 
         // Set chart options
