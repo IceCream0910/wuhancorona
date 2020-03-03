@@ -194,7 +194,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '서울의료원',
-      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번/787번/794번/797번 확진자) 해당 병원에 격리 조치.'
+      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번/787번/794번/797번/2470번/2840번 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -205,8 +205,8 @@ var geojson_hospital = {
       coordinates: [126.999714,37.578241]
     },
     properties: {
-      title: '서울대병원(8)',
-      description: '(20-01-30 여섯번째 확진자) 56세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 10, 11번 확진자) 6번 환자의 가족으로 서울대병원에 격리 조치<br>(20-02-05 21번 확진자) 해당 병원에 격리 조치.<br>(20-02-16 29번 확진자) [2월 16일] 해당병원에 격리 조치.<br>(20-02-16 30번 확진자) 29번 환자의 아내로 해당 병원에 격리 조치.<br>(627번,1567번 확진자) 격리 치료.'
+      title: '서울대병원',
+      description: '(20-01-30 여섯번째 확진자) 56세 한국인 남성으로 본 병원에 격리 조치<br>(20-01-31 10, 11번 확진자) 6번 환자의 가족으로 서울대병원에 격리 조치<br>(20-02-05 21번 확진자) 해당 병원에 격리 조치.<br>(20-02-16 29번 확진자) [2월 16일] 해당병원에 격리 조치.<br>(20-02-16 30번 확진자) 29번 환자의 아내로 해당 병원에 격리 조치.<br>(627번,1567번,1675번,2666번 확진자) 격리 치료.'
     }
   },
 
@@ -241,8 +241,8 @@ var geojson_hospital = {
       coordinates: [127.005580, 37.567226]
     },
     properties: {
-      title: '국립중앙의료원(5)',
-      description: '(20-01-24 두번째 확진자) 격리 병원(퇴원)<br>(20-02-02 13번/02-06 23번/02-19 40번/02-21 서울 서초구/924번 확진자) 검사 결과 양성 확인되어 격리 입원치료.'
+      title: '국립중앙의료원',
+      description: '(20-01-24 두번째 확진자) 격리 병원(퇴원)<br>(20-02-02 13번/02-06 23번/02-19 40번/02-21 서울 서초구/924번/1788번 확진자) 검사 결과 양성 확인되어 격리 입원치료.'
     }
   },
 
@@ -277,8 +277,8 @@ var geojson_hospital = {
       coordinates: [126.921549, 35.142085]
     },
     properties: {
-      title: '전남대학교병원(4)',
-      description: '(20-02-04 16번 확진자) [1월 27일 오후 6시] 광주21세기병원에서 전원됐으나 중국 방문 이력이 없어 의심환자 미분류 및 21세기 병원으로 재이동. [2월 3일] 증세 악화로 응급실 격리병동으로 이송. [2월 4일] 격리 중 확진 판정.<br>(20-02-05 18번/02-21 210번, 239번 확진자) 본 병원으로 격리 조치.'
+      title: '전남대병원(4)',
+      description: '(20-02-04 16번 확진자) [1월 27일 오후 6시] 광주21세기병원에서 전원됐으나 중국 방문 이력이 없어 의심환자 미분류 및 21세기 병원으로 재이동. [2월 3일] 증세 악화로 응급실 격리병동으로 이송. [2월 4일] 격리 중 확진 판정.<br>(20-02-05 18번/02-21 210번, 239번, 2477번 확진자) 본 병원으로 격리 조치.'
     }
   },
 
@@ -585,8 +585,8 @@ var geojson_hospital = {
       coordinates: [126.924528, 37.493332]
     },
     properties: {
-      title: '보라매병원',
-      description: '(996번 확진자) 양성판정 받아 격리 조치.<br>(1295번 확진자) [2월 24일] 오후 1시 선별진료소 방문 검사.<br>(1532번 확진자) [2월 26일] 격리.'
+      title: '서울보라매병원',
+      description: '(996번 확진자) 양성판정 받아 격리 조치.<br>(1295번 확진자) [2월 24일] 오후 1시 선별진료소 방문 검사.<br>(1532번, 1611번, 1767번 확진자) 격리.'
     }
   },   
 
@@ -601,6 +601,54 @@ var geojson_hospital = {
       description: '(1295번 확진자) 양성판정 받아 격리 조치'
     }
   },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.833216, 37.511965]
+    },
+    properties: {
+      title: '서울시립서남병원',
+      description: '(1710번 확진자) 양성판정 받아 격리 조치'
+    }
+  },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.884947, 37.492224]
+    },
+    properties: {
+      title: '고대구로병원',
+      description: '(1768번 확진자) 양성판정 받아 격리 조치'
+    }
+  },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.884947, 37.492224]
+    },
+    properties: {
+      title: '인천 길병원',
+      description: '(2641번 확진자) 양성판정 받아 격리 조치'
+    }
+  },   
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.772290, 37.655252]
+    },
+    properties: {
+      title: '상계백병원',
+      description: '(1675번 확진자) [2월 17일] 오후 8시 30분경 응급실 방문. [2월 20일] 선별진료소 방문. [2월 23일] 오후 6시 35분경 응급실 방문. [2월 24일] 오후 3시 54분경 선별진료소 검사.<br>(2818번 확진자) [2월 25일] 오후 8시경 선별진료소 방문. <br>(2469번, 2666번, 2818번 확진자) 격리.'
+    }
+  },
 
   
 
@@ -5508,6 +5556,7 @@ var geojson_place = {
       title: '은평성모병원',
       description: '(627번 확진자) [2월 11, 13, 14일] 폐렴소견으로 입원한 남편(754번 확진자) 간병.<br>(1254번 확진자) [2월 9~17일] 입원.<br>(1532번 확진자) [2월 6~14일] 입원.<br>(1567번 확진자) [2월 11일] 방문.'
     }
+
   },
 
   {
@@ -5580,7 +5629,7 @@ var geojson_place = {
     },
     properties: {
       title: '강북삼성병원',
-      description: '(627번 확진자) [2월 21일] 오전 10시 57분 음압격리실 진료 후 5시 입원.'
+      description: '(627번 확진자) [2월 21일] 오전 10시 57분 음압격리실 진료 후 5시 입원.<br>(1611번 확진자) [2월 24일] 방문 검사.'
     }
   },
 
@@ -5870,7 +5919,7 @@ var geojson_place = {
     },
     properties: {
       title: '노원구보건소',
-      description: '(996번 확진자) [2월 24일] 오후 1시경 노원구보건소 선별진료소에서 검사 후 자가격리.'
+      description: '(996번 확진자) [2월 24일] 오후 1시경 노원구보건소 선별진료소에서 검사 후 자가격리.<br>(2740번 확진자) [2월 27일] 오전 8시경 선별진료소 검사.'
     }
   },
 
@@ -6303,7 +6352,7 @@ var geojson_place = {
     },
     properties: {
       title: '서울서북병원',
-      description: '(1253번 확진자) [2월 24일] 오후 2시경 서북병원 선별진료소 방문 후 기숙사 복귀.<br>(1532번 확진자) [2월 25일] 코로나19 검사 실시.'
+      description: '(1253번 확진자) [2월 24일] 오후 2시경 서북병원 선별진료소 방문 후 기숙사 복귀.<br>(1532번 확진자) [2월 25일] 코로나19 검사 실시.<br>(1767, 1768번 확진자) 검사 실시.'
     }
   },
 
@@ -6595,7 +6644,263 @@ var geojson_place = {
     }
   },
 
-//Undefine17부터 업데이트 해야됨
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.773115, 37.656677]
+    },
+    properties: {
+      title: '서울가정의학과&은약국',
+      description: '(1611번 확진자) [2월 17, 19일] 장항동 소재 서울가정의학과 방문 후 같은건물 은약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.775732, 37.656774]
+    },
+    properties: {
+      title: '국민건강보험공단',
+      description: '(1611번 확진자) [2월 21일] 오후 12시경 KT건물 5층 건강보험공단 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.772290, 37.655252]
+    },
+    properties: {
+      title: '웨스턴돔',
+      description: '(1611번 확진자) [2월 24일] 자차로 장항동 웨스턴돔 직장 출근.'
+    }
+  },
+
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.042207, 37.516256]
+    },
+    properties: {
+      title: '강남구보건소',
+      description: '(1710번 확진자) [2월 23,25일] 23일 오후 2시 1차방문해 진단검사 예약 후 25일 선별진료소에서 검사 실시.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.676828, 37.517705]
+    },
+    properties: {
+      title: '가정중앙시장역',
+      description: '(2021번 확진자) [2월 20일] 오전 7시 30분경 인천 2호선에서 공항철도 검암역으로 출발.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.673839, 37.569043]
+    },
+    properties: {
+      title: '검암역',
+      description: '(2021번 확진자) [2월 20일] 검암역 환승해 서울역으로 출발해 하차.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.986176, 37.560964]
+    },
+    properties: {
+      title: '명동역',
+      description: '(2021번 확진자) [2월 20일] 4호선 명동역 인근 회사 출근.'
+    }
+  },
+
+   {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.041000, 37.513677]
+    },
+    properties: {
+      title: 'GS25 논현보람점',
+      description: '(2468번 확진자) [2월 23일] 오후 10시 35분경 집 근처 편의점 방문.'
+    }
+  },
+  
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.520149, 34.951027]
+    },
+    properties: {
+      title: '한빛산부인과&하나로약국',
+      description: '(2477번 확진자) [2월 26일] 오전 9시 50분경 도보로 순천시 연향동 소재 산부인과 방문 후 같은건물 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.519818, 34.951915]
+    },
+    properties: {
+      title: '에뛰드하우스 순천연향점',
+      description: '(2477번 확진자) [2월 26일] 오전 10시 40분경 도보로 연향동 소재 화장품 매장 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.535634, 34.943120]
+    },
+    properties: {
+      title: '뱀부스 카페',
+      description: '(2477번 확진자) [2월 26일] 오후 1시 30분부터 5시 30분까지 자차로 순천시 해룡면 소재 카페 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.749141, 34.736509]
+    },
+    properties: {
+      title: '여수 낭만포차',
+      description: '(2477번 확진자) [2월 26일] 오후 7시경 여수 낭만포차 방문 및 사주팔자 점포 방문 후 오후 9시경 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.525130, 34.961133]
+    },
+    properties: {
+      title: '순천병원 선별진료소',
+      description: '(2477번 확진자) [2월 27일] 오후 12시경 자가용으로 선별진료소 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.700805, 37.445260]
+    },
+    properties: {
+      title: '인천자생한방병원',
+      description: '(2641번 확진자) [2월 24~27일] 24일 오전 진료 후 입원. 입원 중 증상 발현.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.730411, 37.447811]
+    },
+    properties: {
+      title: '인천 남동구보건소',
+      description: '(2641번 확진자) [2월 27일] 선별진료소 방문해 검사 실시.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.073731, 37.617746]
+    },
+    properties: {
+      title: '이마트24 태릉입구역점',
+      description: '(2740번 확진자) [2월 24일] 오후 11시 45분경 편의점 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.934141, 37.522019]
+    },
+    properties: {
+      title: '여의도 대교아파트',
+      description: '(2840번 확진자) 숙소 이용. '
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.930728, 37.526019]
+    },
+    properties: {
+      title: '박선영김밥',
+      description: '(2840번 확진자) [2월 20, 24일 오후 5시 30분] 점심에 식당 방문. '
+    }
+  },
+
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.931026, 37.526212]
+    },
+    properties: {
+      title: '통영굴찜',
+      description: '(2840번 확진자) [2월 21일] 오전 11시 30분경 방문. '
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.927716, 37.524285]
+    },
+    properties: {
+      title: '칠미식당',
+      description: '(2840번 확진자) [2월 21일] 오후 5시 30분경 저녁 식사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [126.936262, 37.517768]
+    },
+    properties: {
+      title: '여의도성모병원',
+      description: '(2840번 확진자) [2월 26일] 오후 1시 30분경 선별진료소 검사.'
+    }
+  },
+
+
+
 
 
 
