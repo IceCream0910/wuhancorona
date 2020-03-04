@@ -194,7 +194,7 @@ var geojson_hospital = {
     },
     properties: {
       title: '서울의료원',
-      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번/787번/794번/797번/2470번/2840번 확진자) 해당 병원에 격리 조치.'
+      description: '(20-01-31 7번/02-05 19번/02-19 56번/02-20 121번/송파A.B 확진자/20-01-30 5번/787번/794번/797번/2470번/2840번/3007번 확진자) 해당 병원에 격리 조치.'
     }
   },
 
@@ -6931,7 +6931,7 @@ var geojson_place = {
     },
     properties: {
       title: '능동꿈맞이어린이집',
-      description: '(2858번 확진자) [2월 26일] 오전 10시경 어린이집 상담'
+      description: '(3007번 확진자) [2월 26일] 오전 10시경 어린이집 상담'
     }
   },
 
@@ -6943,7 +6943,79 @@ var geojson_place = {
     },
     properties: {
       title: '경원유치원',
-      description: '(2858번 확진자) [2월 26일] 오전 11시경 어린이집 상담'
+      description: '(3007번 확진자) [2월 26일] 오전 11시경 어린이집 상담'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.090439, 37.551093]
+    },
+    properties: {
+      title: '바르다김선생 아차산역점',
+      description: '(3007번 확진자) [2월 26일] 오전 11시 30분경 김밥집 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.080260, 37.557167]
+    },
+    properties: {
+      title: '코즈이비인후과',
+      description: '(3007번 확진자) [2월 26일] 오후 5시 30분경 중곡2동 소재 이비인후과 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.080276, 37.557211]
+    },
+    properties: {
+      title: '군자한마음약국',
+      description: '(3007번 확진자) [2월 26일] 오후 5시 30분경 이비인후과 인근 약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.081176, 37.554908]
+    },
+    properties: {
+      title: '능동할인마트',
+      description: '(3007번 확진자) [2월 26일] 오후 5시 50분경 마트 방문 후 귀가.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.089594, 37.552786]
+    },
+    properties: {
+      title: '유앤장이비인후과',
+      description: '(3007번 확진자) [2월 27일] 오전 10시 30분경 중곡4동 소재 이비인후과 방문 후 디딤온누리약국 방문.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.082408, 37.538383]
+    },
+    properties: {
+      title: '광진구보건소',
+      description: '(3007번 확진자) [2월 27일] 오전 11시경 선별진료소에서 검사 실시.'
     }
   },
 
