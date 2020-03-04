@@ -92,16 +92,16 @@ document.getElementById('forth').src = "https://youtube.com/embed/4ufdg6v4Jh4?lo
         data.addColumn('string', 'categories');
         data.addColumn('number', 'people');
         data.addRows([
-          ['기타', 1806],
+          ['기타', 2004],
           ['대남병원', 119],
-          ['신천지대구교회', 2698],
-          ['온천교회', 49],
-          ['천안시운동시설', 55],
-          ['확진자접촉', 85]
+          ['신천지대구교회', 2992],
+          ['이스라엘성지순례', 51],
+          ['천안시운동시설', 80],
+          ['확진자접촉', 82]
         ]);
 
         // Set chart options
-        var options = {'backgroundColor': 'transparent','is3D':true};
+        var options = {'backgroundColor': 'transparent'};
 
 
 
@@ -1430,7 +1430,7 @@ var geojson_place = {
     },
     properties: {
       title: '한양대학교병원',
-      description: '(20-02-05 17번 확진자) [1월 26일] 오후 증상발현되어 한양대 응급실 방문/진료(보호자 대기실, 진료처치룸 이용). 검사결과 단순발열로 택시 타고 밤 9시 귀가. <br>(20-02-19 40번 확진자) [2월 18일] 한양대병원에 내원하여 시행한 영상검사상 폐렴 소견 확인되어 코로나19 검사 실시 결과 양성 판정.'
+      description: '(20-02-05 17번 확진자) [1월 26일] 오후 증상발현되어 한양대 응급실 방문/진료(보호자 대기실, 진료처치룸 이용). 검사결과 단순발열로 택시 타고 밤 9시 귀가. <br>(20-02-19 40번 확진자) [2월 18일] 한양대병원에 내원하여 시행한 영상검사상 폐렴 소견 확인되어 코로나19 검사 실시 결과 양성 판정.<br>(2858번 확진자) 격리조치.'
     }
   },
   {
@@ -6896,6 +6896,54 @@ var geojson_place = {
     properties: {
       title: '여의도성모병원',
       description: '(2840번 확진자) [2월 26일] 오후 1시 30분경 선별진료소 검사.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.007348, 37.509430]
+    },
+    properties: {
+      title: '뉴코아아울렛 강남점',
+      description: '(2858번 확진자) [2월 26일] 오후 6시 40분경 뉴코아아울렛 정문 진입해 무빙워크 타고 나감.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.033411, 37.483596]
+    },
+    properties: {
+      title: '서초구보건소',
+      description: '(2858번 확진자) [2월 26,27일] 26일 오후 8시 6분 검사 실시해 27일 오후 8시 50분 1차 양성판정.'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.085915, 37.552787]
+    },
+    properties: {
+      title: '능동꿈맞이어린이집',
+      description: '(2858번 확진자) [2월 26일] 오전 10시경 어린이집 상담'
+    }
+  },
+
+  {
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [127.096097, 37.554873]
+    },
+    properties: {
+      title: '경원유치원',
+      description: '(2858번 확진자) [2월 26일] 오전 11시경 어린이집 상담'
     }
   },
 
