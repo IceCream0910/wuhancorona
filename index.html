@@ -59,15 +59,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
     xValueFormatString: "MM월 DD일",
     color: "#ca3433",
     dataPoints: [
-     { x: new Date(2020, 1, 10), y: 40649},
-     { x: new Date(2020, 1, 11), y: 43140},
-     { x: new Date(2020, 1, 12), y: 45230},
-     { x: new Date(2020, 1, 13), y: 60404},
-     { x: new Date(2020, 1, 14), y: 64469},
-     { x: new Date(2020, 1, 15), y: 67191},
-     { x: new Date(2020, 1, 16), y: 69286},
-     { x: new Date(2020, 1, 17), y: 71445},
-     { x: new Date(2020, 1, 18), y: 73446},
+    //최근15일만 표시하기
      { x: new Date(2020, 1, 19), y: 75298},
      { x: new Date(2020, 1, 20), y: 75779},
      { x: new Date(2020, 1, 21), y: 76081},
@@ -82,7 +74,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
      { x: new Date(2020, 2, 1), y: 87618},
      { x: new Date(2020, 2, 2), y: 89722},
      { x: new Date(2020, 2, 3), y: 91319},
-     { x: new Date(2020, 2, 3), y: 93155},
+     { x: new Date(2020, 2, 4), y: 93155},
     ]
   }]
 });
@@ -99,8 +91,10 @@ chart.render();
     <div class="popWrap">
         <h2 class="popTit">공지사항</h2>
         <div class="popCont">
-          <p>최근 확진자가 연일 급증하면서 동선 업데이트가 지연되고 있습니다. 최선을 다해 업데이트중이니 양해부탁드리며, 사이트 우측 하단 채팅을 통해 많은 제보 부탁드립니다.<br>
-            업데이트 속도 단축을 위해 확진자별 색깔 구분 없이 검정색으로 통일하였습니다.
+          <p>확진자 동선 공개의 주목적은 무조건적으로 확진자 방문장소를 회피하는 것보다는 확진자의 동선과 본인의 동선이 겹치는 지를 확인하고 이를 통해 감염자를 조기에 발견해 추가확산을 예방하기 위함에 있습니다. 그러나 최근 특정 확진자의 동선을 통한 확인되지 않은 사실유포와 불필요한 인신공격이 발생하는 사례가 발생하고 있습니다. 확진자들이 피해자가 되지 않도록 성숙한 시민의식을 갖고 배려해주시기 바랍니다.<br>
+            또한 일정 시간이 지난 확진자 방문장소를 무조건적으로 회피하여 소상공인이 피해를 입는 경우가 빈번합니다. 본 사이트에서는 장소의 마커를 클릭하면 방문한 일자를 표시하고 있으니 이를 참고해 자영업자분들에게 가는 피해를 최소화할 수 있도록 해주시기 바랍니다.<br>
+
+           최근 확진자가 연일 급증하면서 동선 업데이트가 지연되고 있습니다. 최선을 다해 업데이트중이니 양해부탁드리며, 사이트 우측 하단 채팅을 통해 많은 제보 부탁드립니다.
            <br><br>
            [최근 업데이트 내역]<br>
           - 확진자 동선 추가<br>
@@ -1515,9 +1509,43 @@ chart.render();
 <li id="fly" onclick="flyTarget(this)" data-lat="127.082408" data-long="37.538383"><span style="margin-right:20px;">3007번째</span>광진구보건소</li>
 <li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="margin-right:20px;">3007번째</span>서울의료원</li>
 
-<!--2858번부터 업데이트-->
+<li id="fly" onclick="flyTarget(this)" data-lat="127.050047" data-long="37.538214"><span style="margin-right:20px;">3046번째</span>성동구 소재 직장</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.033167" data-long="37.567035"><span style="margin-right:20px;">3046번째</span>성동구보건소</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.004238" data-long="37.533692"><span style="margin-right:20px;">3046번째</span>순천향대서울병원</li>
 
-<li id="devComment"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중</span></li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.667330" data-long="34.759147"><span style="margin-right:20px;">3047번째</span>조은이비인후과</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.667330" data-long="34.759147"><span style="margin-right:20px;">3047번째</span>푸른약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.666328" data-long="34.760360"><span style="margin-right:20px;">3047번째</span>이바돔감자탕 여수여천점</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.483365" data-long="34.957871"><span style="margin-right:20px;">3047번째</span>순천의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.082408" data-long="37.538383"><span style="margin-right:20px;">3054번째</span>광진구보건소</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.952031" data-long="37.479845"><span style="margin-right:20px;">3491번째</span>긱스타PC</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.941103" data-long="37.471582"><span style="margin-right:20px;">3491번째</span>쉐어원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.941103" data-long="37.471582"><span style="margin-right:20px;">3491번째</span>관악구보건소</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="126.920927" data-long="37.5158372"><span style="margin-right:20px;">3491번째</span>동진카운티스포츠센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.931291" data-long="37.520831"><span style="margin-right:20px;">3491번째</span>장지은내과</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.931291" data-long="37.520831"><span style="margin-right:20px;">3491번째</span>후생약국</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="126.936262" data-long="37.517768"><span style="margin-right:20px;">3491번째</span>여의도성모병원</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.098167" data-long="37.613044"><span style="margin-right:20px;">3491번째</span>서울의료원</li>
+
+<li id="fly"><span style="margin-right:20px;">3684번째</span>청담동 미용실</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>강남역 인근 성형외과</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>압구정로데오역 인근 옷가게</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>논현동 소재 사무실</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>도산공원사거리 인근 음식점 및 카페</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>서초구 염곡동 소재 스튜디오</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>선릉로145길 편의점</li>
+<li id="fly"><span style="margin-right:20px;">3684번째</span>논현동 친구집</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.005580" data-long="37.567226"><span style="margin-right:20px;">3684번째</span>국립중앙의료원</li>
+
+<li id="fly" onclick="flyTarget(this)" data-lat="127.070058" data-long="37.292157"><span style="margin-right:20px;">U17</span>광교2동 행정복지센터</li>
+<li id="fly" onclick="flyTarget(this)" data-lat="127.149085" data-long="37.392769"><span style="margin-right:20px;">U17</span>국군수도병원</li>
+
+<!--U17부터 업데이트-->
+
+<li id="devComment"><span style="color:#a9a9a9; font-size:19px;">나머지는 동선 확인중이거나 업데이트중<br>U는 아직 확인되지 않은 확진자입니다.</span></li>
 
 
 <br><Br><br><br><Br><br>
