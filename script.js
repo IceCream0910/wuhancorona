@@ -7257,10 +7257,20 @@ new Vue({
           //start traversing the responseEl to scrape data
 
           var allResponse = response.body;
-          var targetFirstString = allResponse.indexOf("확진환자수");
-          var tempConfirmed = allResponse.substr(targetFirstString, 78);
+          var confirmedTargetFirstString = allResponse.indexOf("확진환자수");
+          var tempConfirmed = allResponse.substr(confirmedTargetFirstString, 78);
           var confirmedValue = tempConfirmed.replace("확진환자수", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("</span><ahref=/bdBoardList.do?brdId=1&brdGubun=11class=num>", "").replace("<", "").replace(">", "");
           document.getElementById("confirmed").innerHTML = confirmedValue;
+
+          var cureTargetFirstString = allResponse.indexOf("확진환자 격리해제수");
+          var tempCure = allResponse.substr(cureTargetFirstString, 78);
+          var cureValue = tempCure.replace("확진환자 격리해제수", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("</span><ahref=/bdBoardList.do?brdId=1&brdGubun=11class=num>", "").replace("<", "").replace(">", "");
+          document.getElementById("cure").innerHTML = cureValue+"명";
+
+          var deathTargetFirstString = allResponse.indexOf("사망자수");
+          var tempDeath = allResponse.substr(deathTargetFirstString, 78);
+          var deathValue = tempDeath.replace("사망자수", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("</span><ahref=/bdBoardList.doclass=num>", "").replace("<", "").replace("/a", "").replace(">", "");
+          document.getElementById("death").innerHTML = deathValue;
         }
       )
     }
