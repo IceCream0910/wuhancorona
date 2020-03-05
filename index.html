@@ -10,22 +10,18 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="코로나맵">
 <meta property="og:url" content="http://coronamap.coo.kr">
-
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="코로나19 국내 확산 지도">
 <meta name="twitter:description" content="코로나19 국내 확진자의 이동경로 및 확산 정보를 제공합니다">
 <meta name="twitter:domain" content="코로나19 국내 확산 지도">
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet' />
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
-     <script type="text/javascript" src="https://www.google.com/jsapi?autoload={
-            'modules':[{
-              'name':'visualization',
-              'version':'1',
-              'packages':['corechart']
-            }]
-          }"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css' rel='stylesheet'/>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+    
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156991281-1"></script>
    <script>
@@ -219,14 +215,16 @@ chart.render();
 
   <!-- 하단 내비게이션 바-->
   <div class="tab-nav-container">
-  <div class="tab active purple js-click-map">
+  <div class="tab active purple js-click-map" >
     <i class="fa fa-map-marker"></i>
     <p>동선</p>
   </div>
-  <div class="tab pink js-click-dashboard">
+
+    <div class="tab pink js-click-dashboard">
     <i class="fa fa-line-chart"></i>
     <p>확산상황</p>
   </div>
+
   <div class="tab teal js-click-prevent">
     <i class="fa fa-check-circle"></i>
     <p>정보</p>
@@ -249,16 +247,17 @@ chart.render();
       <div id="listcontainer"> <!-- 정보 패널 -->
 
 
+
 <h3 style="margin-left:20px; margin-top:30px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
- (20-03-05 00:00 기준)</span></h3>
+ 질병관리본부 마지막 발표</span></h3>
 <div class="card-list">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                       <div class="card purple">
                             <div class="title">국내 확진자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">5,766명</div>
-                            <div class="stat"><b>전일 증가 </b>+438</div>
+                            <div class="value" id="confirmed">로딩중</div>
+                            <div class="stat"><b>전일 증가 </b>+516</div>
                         </div>
                         
                     </div>
@@ -266,16 +265,16 @@ chart.render();
                         <div class="card blue">
                             <div class="title">국내 완치자(격리해제)</div>
                             <i class="zmdi zmdi-upload"></i>
-                            <div class="value">88명</div>
-                            <div class="stat"><b>전일 대비 </b>+47<br><b>재확진</b> 1명</div>
+                            <div class="value">41명</div>
+                            <div class="stat"><b>전일 대비 </b>+7<br><b>재확진</b> 1명</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                         <div class="card red">
                             <div class="title">국내 사망자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">39명</div>
-                            <div class="stat"><b>전일 대비 </b>+4</div>
+                            <div class="value">32명</div>
+                            <div class="stat"><b>전일 대비 </b>+1</div>
                         </div>
                     </div>
                 </div>
@@ -283,14 +282,14 @@ chart.render();
 
 
             <h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">전세계 통계 <span style="font-size:10px; color:gray;">
- (20-03-05 09:00 기준)</span></h3>
+ (20-03-04 09:00 기준)</span></h3>
 <div class="card-list">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                       <div class="card orange">
                             <div class="title">전세계 확진자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">95,467명</div>
+                            <div class="value">93,155명</div>
                         </div>
                         
                     </div>
@@ -299,7 +298,7 @@ chart.render();
                         <div class="card darkred">
                             <div class="title">전세계 사망자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">3,286명</div>
+                            <div class="value">3,203명</div>
                             <div class="stat"><b>단순계산 치명율 </b>3.44%</div>
                         </div>
                     </div>
@@ -324,7 +323,7 @@ chart.render();
            <h2>국가별 확진자 현황 (발생국 81)</h2>
                      <ul style="color:black;">
                        <li><a href="#">중국 : 80,270 (사망 2,981)</a></li>
-                       <li><a href="#">대한민국 : 5,621 (사망 35)</a></li>
+                       <li><a href="#">대한민국 : 5,621 (사망 33)</a></li>
                        <li><a href="#">이탈리아 : 2,502 (사망 79)</a></li> 
                        <li><a href="#">이란 : 2,336 (사망 67)</a></li>
                        <li><a href="#">일본 : 959 (사망 12, 크루즈 705)</a></li>
@@ -1588,6 +1587,8 @@ type="text/css"
 
  <script src="script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+
 
  <script type="text/javascript">
  (function(w,d,v3){
