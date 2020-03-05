@@ -49,6 +49,7 @@ angular.module("myApp", [])
 });
 
 $('.js-click-dashboard').click(function(){
+
   $('.container').addClass('modal-open');
   document.getElementById("map").style.display = 'none';
   document.getElementById("prevent").style.display = 'none';
@@ -7217,6 +7218,56 @@ geojson_place.features.forEach(function(marker) {
       .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
     .addTo(map);
 
+});
+
+
+
+//질본 홈페이지 크롤링
+
+new Vue({
+  el: "#scraper",
+
+  data() {
+    return {
+      scraperRunning: false,
+      url: "ncov.mohw.go.kr",
+      response: null
+    }
+  },
+
+  methods: {
+    runScraper: function() {
+      this.scraperRunning = true
+
+      if(!this.url.includes("http")) {
+        this.url = "https://cors-anywhere.herokuapp.com/http://ncov.mohw.go.kr";
+
+      } else {
+        this.url = "https://cors-anywhere.herokuapp.com/http://ncov.mohw.go.kr";
+      }
+
+      // GET URL
+      this.$http.get(this.url).then(
+        // success callback
+        response => {
+          this.scraperRunning = false
+
+          let responseEl = document.createElement("div");
+          responseEl.innerHTML = response.body;
+          //start traversing the responseEl to scrape data
+
+          var allResponse = response.body;
+          var targetFirstString = allResponse.indexOf("확진환자수");
+          var tempConfirmed = allResponse.substr(targetFirstString, 78);
+          var confirmedValue = tempConfirmed.replace("확진환자수", "").replace(/(\s*)/g, "").replace(/\"/gi, "").replace("</span><ahref=/bdBoardList.do?brdId=1&brdGubun=11class=num>", "").replace("<", "").replace(">", "");
+          document.getElementById("confirmed").innerHTML = confirmedValue;
+        }
+      )
+    }
+  },
+   beforeMount(){
+    this.runScraper()
+ }
 });
 
 
