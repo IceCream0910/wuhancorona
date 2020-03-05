@@ -56,7 +56,6 @@ var chart = new CanvasJS.Chart("chartContainer", {
     color: "#ca3433",
     dataPoints: [
     //최근15일만 표시하기
-     { x: new Date(2020, 1, 19), y: 75298},
      { x: new Date(2020, 1, 20), y: 75779},
      { x: new Date(2020, 1, 21), y: 76081},
      { x: new Date(2020, 1, 22), y: 77432},
@@ -71,6 +70,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
      { x: new Date(2020, 2, 2), y: 89722},
      { x: new Date(2020, 2, 3), y: 91319},
      { x: new Date(2020, 2, 4), y: 93155},
+     { x: new Date(2020, 2, 5), y: 95593},
     ]
   }]
 });
@@ -87,13 +87,13 @@ chart.render();
     <div class="popWrap">
         <h2 class="popTit">공지사항</h2>
         <div class="popCont">
-          <p>확진자 동선 공개의 주목적은 무조건적으로 확진자 방문장소를 회피하는 것보다는 확진자의 동선과 본인의 동선이 겹치는 지를 확인하고 이를 통해 감염자를 조기에 발견해 추가확산을 예방하기 위함에 있습니다. 그러나 최근 특정 확진자의 동선을 통한 확인되지 않은 사실유포와 불필요한 인신공격이 발생하는 사례가 발생하고 있습니다. 확진자들이 피해자가 되지 않도록 성숙한 시민의식을 갖고 배려해주시기 바랍니다.<br>
+          <br>
+          [최근 업데이트 내역]<br>
+          - 국내 통계수치 질병관리본부 발표 자료 자동 업데이트로 변경.<br><br>
+          <p>확진자 동선 공개의 주목적은 무조건적으로 확진자 방문장소를 회피하는 것보다는 확진자의 동선과 본인의 동선이 겹치는 지를 확인하고 이를 통해 감염자를 조기에 발견해 추가확산을 예방하기 위함에 있습니다. 그러나 최근 특정 확진자의 동선을 통한 확인되지 않은 사실유포와 불필요한 인신공격이 발생하는 사례가 발생하고 있습니다. 확진자들이 피해자가 되지 않도록 성숙한 시민의식을 갖고 배려해주시기 바랍니다.<br><br>
             또한 일정 시간이 지난 확진자 방문장소를 무조건적으로 회피하여 소상공인이 피해를 입는 경우가 빈번합니다. 본 사이트에서는 장소의 마커를 클릭하면 방문한 일자를 표시하고 있으니 이를 참고해 자영업자분들에게 가는 피해를 최소화할 수 있도록 해주시기 바랍니다.<br>
 
-           최근 확진자가 연일 급증하면서 동선 업데이트가 지연되고 있습니다. 최선을 다해 업데이트중이니 양해부탁드리며, 사이트 우측 하단 채팅을 통해 많은 제보 부탁드립니다.
-           <br><br>
-           [최근 업데이트 내역]<br>
-          - 확진자 동선 추가<br>
+           최근 확진자가 연일 급증하면서 동선 업데이트가 지연되고 있습니다. 현재 일부 유사 사이트의 경우 서비스를 종료하고 있습니다. 그럼에도 불구하고, 제가 할 수 있는 데까지 최선을 다해 업데이트중이니 양해부탁드리며, 만약 동선 업데이트가 더 이상 어렵다고 판단되면 UI개편을 통해 상황판 역할을 하는 사이트로 변경할 계획입니다.
         </p>
         </div>
         <div class="popBtn type01"> 
@@ -222,7 +222,7 @@ chart.render();
 
     <div class="tab pink js-click-dashboard">
     <i class="fa fa-line-chart"></i>
-    <p>확산상황</p>
+    <p>상황</p>
   </div>
 
   <div class="tab teal js-click-prevent">
@@ -247,7 +247,6 @@ chart.render();
       <div id="listcontainer"> <!-- 정보 패널 -->
 
 
-
 <h3 style="margin-left:20px; margin-top:30px; font-size:25px; margin-bottom: 5px;">국내 통계 <span style="font-size:10px; color:gray;">
  질병관리본부 마지막 발표</span></h3>
 <div class="card-list">
@@ -257,7 +256,6 @@ chart.render();
                             <div class="title">국내 확진자</div>
                             <i class="zmdi zmdi-download"></i>
                             <div class="value" id="confirmed">로딩중</div>
-                            <div class="stat"><b>전일 증가 </b>+516</div>
                         </div>
                         
                     </div>
@@ -265,16 +263,15 @@ chart.render();
                         <div class="card blue">
                             <div class="title">국내 완치자(격리해제)</div>
                             <i class="zmdi zmdi-upload"></i>
-                            <div class="value">41명</div>
-                            <div class="stat"><b>전일 대비 </b>+7<br><b>재확진</b> 1명</div>
+                            <div class="value" id="cure">로딩중</div>
+                            <div class="stat"><b>재확진</b> 1명</div>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                         <div class="card red">
                             <div class="title">국내 사망자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">32명</div>
-                            <div class="stat"><b>전일 대비 </b>+1</div>
+                            <div class="value" id="death">로딩중</div>
                         </div>
                     </div>
                 </div>
@@ -282,14 +279,14 @@ chart.render();
 
 
             <h3 style="margin-left:20px; margin-top:20px; font-size:25px; margin-bottom: 5px;">전세계 통계 <span style="font-size:10px; color:gray;">
- (20-03-04 09:00 기준)</span></h3>
+ (20-03-05 09:00 기준)</span></h3>
 <div class="card-list">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                       <div class="card orange">
                             <div class="title">전세계 확진자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">93,155명</div>
+                            <div class="value">95,593명</div>
                         </div>
                         
                     </div>
@@ -298,7 +295,7 @@ chart.render();
                         <div class="card darkred">
                             <div class="title">전세계 사망자</div>
                             <i class="zmdi zmdi-download"></i>
-                            <div class="value">3,203명</div>
+                            <div class="value">3,286명</div>
                             <div class="stat"><b>단순계산 치명율 </b>3.44%</div>
                         </div>
                     </div>
@@ -320,74 +317,79 @@ chart.render();
                               <br>
 
            <div class="bycountry" style="margin-left:20px; padding-right:20px;">
-           <h2>국가별 확진자 현황 (발생국 81)</h2>
+           <h2>국가별 확진자 현황 (발생국 86)</h2>
                      <ul style="color:black;">
-                       <li><a href="#">중국 : 80,270 (사망 2,981)</a></li>
-                       <li><a href="#">대한민국 : 5,621 (사망 33)</a></li>
-                       <li><a href="#">이탈리아 : 2,502 (사망 79)</a></li> 
-                       <li><a href="#">이란 : 2,336 (사망 67)</a></li>
-                       <li><a href="#">일본 : 959 (사망 12, 크루즈 705)</a></li>
-                       <li><a href="#">프랑스 : 212 (사망 4)</a></li>
-                       <li><a href="#">독일 : 203</a></li>
-                       <li><a href="#">스페인 : 165</a></li>
-                       <li><a href="#">미국 : 118 (사망 9)</a></li>
-                       <li><a href="#">싱가포르 : 110</a></li>
-                       <li><a href="#">홍콩 : 101 (사망 2)</a></li>
-                       <li><a href="#">스위스 : 58</a></li>
-                       <li><a href="#">쿠웨이트 : 56</a></li>
-                       <li><a href="#">영국 : 51</a></li>
-                       <li><a href="#">바레인 : 49</a></li>
-                       <li><a href="#">태국 : 43</a></li>
+                       <li><a href="#">중국 : 80,411 (사망 3,013)</a></li>
+                       <li><a href="#">대한민국 : 6,088 (사망 40)</a></li>
+                       <li><a href="#">이탈리아 : 3,089 (사망 107)</a></li> 
+                       <li><a href="#">이란 : 2,992 (사망 92)</a></li>
+                       <li><a href="#">일본 : 970 (사망 12, 크루즈 706)</a></li>
+                       <li><a href="#">독일 : 349</a></li>
+                       <li><a href="#">프랑스 : 285 (사망 4)</a></li>
+                       <li><a href="#">스페인 : 228 (사망 2)</a></li>
+                       <li><a href="#">미국 : 160 (사망 11)</a></li>
+                       <li><a href="#">싱가포르 : 112</a></li>
+                       <li><a href="#">홍콩 : 105 (사망 2)</a></li>
+                       <li><a href="#">스위스 : 93 (사망 1)</a></li>
+                       <li><a href="#">영국 : 88</a></li>
+                       <li><a href="#">노르웨이 : 63</a></li>
+                       <li><a href="#">쿠웨이트 : 58</a></li>
+                       <li><a href="#">바레인 : 52</a></li>
+                       <li><a href="#">호주 : 52</a></li>
+                       <li><a href="#">스웨덴 : 52</a></li>
+                       <li><a href="#">말레이시아 : 50</a></li>
+                       <li><a href="#">태국 : 47</a></li>
                        <li><a href="#">대만 : 42 (사망 1)</a></li>
-                       <li><a href="#">말레이시아 : 36</a></li>
-                       <li><a href="#">호주 : 34</a></li>
-                       <li><a href="#">노르웨이 : 33</a></li>
-                       <li><a href="#">이라크 : 32</a></li>
-                       <li><a href="#">캐나다 : 30</a></li>
-                       <li><a href="#">스웨덴 : 30</a></li>
-                       <li><a href="#">아랍에미리트 : 27</a></li>
-                       <li><a href="#">오스트리아 : 24</a></li>
-                       <li><a href="#">네덜란드 : 24</a></li>
+                       <li><a href="#">네덜란드 : 38</a></li>
+                       <li><a href="#">오스트리아 : 37</a></li>
+                       <li><a href="#">이라크 : 35</a></li>
+                       <li><a href="#">캐나다 : 34</a></li>
+                       <li><a href="#">인도 : 29</a></li>
+                       <li><a href="#">아랍에미리트 : 28</a></li>
+                       <li><a href="#">아이슬란드 : 26</a></li>
+                       <li><a href="#">벨기에 : 23</a></li>
+                       <li><a href="#">알제리 : 17</a></li>
                        <li><a href="#">레바논 : 16</a></li>
                        <li><a href="#">베트남 : 16</a></li>
+                       <li><a href="#">오만 : 15</a></li>
+                      <li><a href="#">덴마크 : 15</a></li>
                        <li><a href="#">이스라엘 : 12</a></li>
-                       <li><a href="#">오만 : 12</a></li>
+                       <li><a href="#">핀란드 : 12</a></li>
                        <li><a href="#">크로아티아 : 11</a></li>
-                       <li><a href="#">아이슬란드 : 11</a></li>
                        <li><a href="#">마카오 : 10</a></li>
-                       <li><a href="#">벨기에 : 8</a></li>
+                       <li><a href="#">그리스 : 10</a></li>
                        <li><a href="#">산마리노 : 8</a></li>
-                       <li><a href="#">알제리 : 8</a></li>
-                       <li><a href="#">그리스 : 7</a></li>
-                       <li><a href="#">핀란드 : 7</a></li>
+                       <li><a href="#">체코 : 8</a></li>
                        <li><a href="#">에콰도르 : 7</a></li>
                        <li><a href="#">카타르 : 7</a></li>
                        <li><a href="#">멕시코 : 6</a></li>
-                       <li><a href="#">인도 : 6</a></li>
+                       <li><a href="#">루마니아 : 6</a></li>
+                       <li><a href="#">아일랜드 : 6</a></li>
+                       <li><a href="#">벨라루스 : 6</a></li>
                        <li><a href="#">러시아 : 5</a></li>
                        <li><a href="#">파키스탄 : 5</a></li>
-                       <li><a href="#">덴마크 : 4</a></li>
-                       <li><a href="#">체코 : 4</a></li>
                        <li><a href="#">포르투갈 : 4</a></li>
+                       <li><a href="#">브라질 : 4</a></li>
+                       <li><a href="#">세네갈 : 4</a></li>
+                       <li><a href="#">팔레스타인 : 4</a></li>
                        <li><a href="#">아제르바이잔 : 3</a></li>
-                       <li><a href="#">루마니아 : 3</a></li>
                        <li><a href="#">필리핀 : 3 (사망 1)</a></li>
                        <li><a href="#">조지아 : 3</a></li>
+                       <li><a href="#">칠레 : 3</a></li>
+                       <li><a href="#">아프가니스탄 : 3 (사망 1)</a></li>
                        <li><a href="#">인도네시아 : 2</a></li>
                        <li><a href="#">이집트 : 2</a></li>
-                       <li><a href="#">브라질 : 2</a></li>
                        <li><a href="#">에스토니아 : 2</a></li>
-                       <li><a href="#">아일랜드 : 2</a></li>
-                       <li><a href="#">세네갈 : 2</a></li>
+                       <li><a href="#">모로코 : 2</a></li>
+                       <li><a href="#">사우디아라비아 : 2</a></li>
+                       <li><a href="#">헝가리 : 2</a></li>
                        <li><a href="#">네팔 : 1</a></li>
                        <li><a href="#">캄보디아 : 1</a></li>
                        <li><a href="#">스리랑카 : 1</a></li>
-                       <li><a href="#">아프가니스탄 : 1</a></li>
                        <li><a href="#">북마케도니아 : 1</a></li>
                        <li><a href="#">나이지리아 : 1</a></li>
                        <li><a href="#">리투아니아 : 1</a></li>
                        <li><a href="#">뉴질랜드 : 2</a></li>
-                       <li><a href="#">벨라루스 : 1</a></li>
                        <li><a href="#">모나코 : 1</a></li>
                        <li><a href="#">룩셈부르크 : 1</a></li>
                        <li><a href="#">아르메니아 : 1</a></li>
@@ -395,17 +397,18 @@ chart.render();
                        <li><a href="#">요르단 : 1</a></li>
                        <li><a href="#">라트비아 : 1</a></li>
                        <li><a href="#">안도라 : 1</a></li>
-                       <li><a href="#">모로코 : 1</a></li>
-                       <li><a href="#">사우디아라비아 : 1</a></li>
                        <li><a href="#">튀니지 : 1</a></li>
                        <li><a href="#">우크라이나 : 1</a></li>
                        <li><a href="#">리히텐슈타인 : 1</a></li>
                        <li><a href="#">아르헨티나 : 1</a></li>
-                       <li><a href="#">칠레 : 1</a></li>
+                       <li><a href="#">페로 제도 : 1</a></li>
+                       <li><a href="#">슬로베니아 : 1</a></li>
+                       
 
 <br><br>
                      </ul>
                      </div>
+
 
     <br><br><br><br><br><br><br><br><br><br><br><br>
 <div class="imgBanner">
