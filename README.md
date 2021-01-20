@@ -1,5 +1,8 @@
-# wuhancorona
+# 코로나맵
 
-## 코로나맵
+[바로가기](https://icecream0910.github.io/wuhancorona/main.html)
 
-[바로가기] http://coronamap.coo.kr
+### 사용한 기술
+- html, css, js
+- Mapbox
+
